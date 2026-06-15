@@ -1,0 +1,17 @@
+NETWORK ID     NAME         DRIVER    SCOPE
+420b5a0b3c9f   bridge       bridge    local
+fb57d81d079a   host         host      local
+9c33b34aeb6f   my-network   bridge    local
+0aa8267fc92b   none         null      local
+
+        "Containers": {
+            "1e852f8d2e9e9307de26868ae8f00cfdc1c8a2c06f95b9c332e723eac945d839": {
+                "Name": "bind-mount-test",
+                "EndpointID": "74d3083b57d70c6bbe61b39e13febd7f03c859b4043e4f33fb46d9c810d34aab",
+                "MacAddress": "a2:05:ac:fe:79:e3",
+                "IPv4Address": "172.17.0.3/16",
+                "IPv6Address": ""
+            },
+            "75494bbc939aa226f5894a9a4b7742d760c743d9a9de01a3e432b6f4f75a324f": {
+                "Name": "volume-test-2",
+                "EndpointID": "305ab823474480211cf2bd762b6288bb9b6e56765465420b44c114e9374a8f2b",

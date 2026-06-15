@@ -1,0 +1,63 @@
+FTP Server Setup Guide - vsftpd
+
+1) نصب vsftpd
+----------------
+برای نصب بسته:
+sudo apt update
+sudo apt install vsftpd
+
+2) ویرایش فایل تنظیمات
+-----------------------
+فایل اصلی تنظیمات:
+ /etc/vsftpd.conf
+
+تنظیمات پیشنهادی:
+ anonymous_enable=YES
+ local_enable=YES
+ write_enable=YES
+ chroot_local_user=YES
+ allow_writeable_chroot=YES
+
+3) ایجاد کاربر اختصاصی FTP
+--------------------------
+مثال:
+sudo useradd -m -s /bin/bash ftpuser
+sudo passwd ftpuser
+
+4) آماده‌سازی مسیر anonymous
+----------------------------
+mkdir -p /srv/ftp
+sudo chown -R ftp:ftp /srv/ftp
+sudo chmod 755 /srv/ftp
+
+5) مدیریت سرویس
+---------------
+شروع سرویس:
+sudo systemctl start vsftpd
+
+توقف سرویس:
+sudo systemctl stop vsftpd
+
+راه‌اندازی مجدد:
+sudo systemctl restart vsftpd
+
+فعال‌سازی خودکار هنگام بوت:
+sudo systemctl enable vsftpd
+
+بررسی وضعیت:
+sudo systemctl status vsftpd
+
+6) تست
+------
+برای anonymous:
+ftp <server-ip>
+
+برای user محلی:
+ftp <server-ip>
+Username: ftpuser
+Password: (password you set)
+
+7) نکته امنیتی
+--------------
+اگر anonymous upload لازم ندارید، آن را غیرفعال نگه دارید.
+برای محیط واقعی، بهتر است از TLS/SSL و محدودسازی دسترسی‌ها استفاده شود.

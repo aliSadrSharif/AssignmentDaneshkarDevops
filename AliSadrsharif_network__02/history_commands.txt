@@ -1,0 +1,300 @@
+ 1218  clea
+ 1219  clear
+ 1220  tcpdump -r dns_capture.pcap > dns_capture.txt
+ 1221  tcpdump -r http_capture.pcap > http_capture.txt
+ 1222  sutdown
+ 1223  shutdown
+ 1224  clear
+ 1225  code .
+ 1226  exit
+ 1227  ping google.com
+ 1228  mtr testspeed.ir
+ 1229  coed .
+ 1230  exit
+ 1231  sudo apt install iperf3
+ 1232  systemctl status iperf3.service 
+ 1233  clear
+ 1234  systemctl status iperf3.service 
+ 1235  systemctl enable iperf3.service 
+ 1236  systemctl status iperf3.service 
+ 1237  systemctl restart iperf3.service 
+ 1238  systemctl status iperf3.service 
+ 1239  systemctl up iperf3.service 
+ 1240  systemctl --help
+ 1241  clear
+ 1242  systemctl status iperf3.service 
+ 1243  code .
+ 1244  exit
+ 1245  cd ../scenario_5
+ 1246  clear
+ 1247  chmod +x network_performance.sh 
+ 1248  clear
+ 1249  ./network_performance.sh 
+ 1250  زمثشق
+ 1251  clear
+ 1252  ./network_performance.sh 
+ 1253  ifconfig
+ 1254  clear
+ 1255  netstat -tulnp
+ 1256  systemctl status iperf3.service 
+ 1257  systemctl disable iperf3.service 
+ 1258  systemctl status iperf3.service 
+ 1259  systemctl restart iperf3.service 
+ 1260  systemctl status iperf3.service 
+ 1261  systemctl disable iperf3.service 
+ 1262  systemctl status iperf3.service 
+ 1263  systemctl deactive iperf3.service 
+ 1264  systemctl stop iperf3.service 
+ 1265  systemctl status iperf3.service 
+ 1266  systemctl restart iperf3.service 
+ 1267  systemctl status iperf3.service 
+ 1268  systemctl stop iperf3.service 
+ 1269  systemctl disable iperf3.service 
+ 1270  systemctl status iperf3.service 
+ 1271  clear
+ 1272  netstat -tulnp
+ 1273  clear
+ 1274  exit
+ 1275  coed .
+ 1276  code .
+ 1277  cd scenario_1
+ 1278  clear
+ 1279  openssl req -x509 -newkey rsa:2048 -nodes -keyout myapp.key -out myapp.crt -days 365 -subj "/C=IR/ST=Tehran/L=Tehran/O=MyCompany/CN=myapp.local"
+ 1280  openssl x509 -in myapp.crt -text -noout
+ 1281  openssl x509 -in myapp.crt -text -noout > myapp.crt.txt
+ 1282  openssl rsa -in myapp.key -check > myapp.key.txt
+ 1283  clear
+ 1284  chmod +x test_https.sh 
+ 1285  ./test_https.sh 
+ 1286  clear
+ 1287  ./test_https.sh 
+ 1288  clear
+ 1289  python3 https_server.py 
+ 1290  clear
+ 1291  cd ../scenario_2
+ 1292  clear
+ 1293  curl -k https://localhost:8443 > https_server_test.txt
+ 1294  code .
+ 1295  eexit
+ 1296  exit
+ 1297  sudo apt install -y software-properties-common
+ 1298  sudo add-apt-repository --yes --update ppa:ansible/ansible
+ 1299  clear
+ 1300  sudo apt install ansible
+ 1301  sudo apt update
+ 1302  ansible --version
+ 1303  clear
+ 1304  ansible localhost -m ping
+ 1305  sudo apt update
+ 1306  clear
+ 1307  htop
+ 1308  clear
+ 1309  shutdown
+ 1310  sudo apt install tree
+ 1311  cd Devops/
+ 1312  tree
+ 1313  clear
+ 1314  exit
+ 1315  curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+ 1316  sudo apt install vagrant
+ 1317  sudo apt install packer
+ 1318  clear
+ 1319  wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+ 1320  sudo apt install -y network-manager-openvpn-gnome
+ 1321  sudo apt install openvpn
+ 1322  clear
+ 1323  sudo apt install vlc
+ 1324  clear
+ 1325  sudo apt install fdm
+ 1326  clear
+ 1327  sudo apt update
+ 1328  clear
+ 1329  sudo apt upgrade
+ 1330  clear
+ 1331  htop
+ 1332  clear
+ 1333  shutdown
+ 1334  code .
+ 1335  ‫‪vsftpd‬‬‫‪install‬‬ ‫‪apt‬‬ ‫‪sudo‬‬
+ 1336  sudo apt install vsftpd
+ 1337  clear
+ 1338  cd /srv
+ 1339  ls
+ 1340  cd ftp/
+ 1341  ls
+ 1342  cd ../..
+ 1343  ls
+ 1344  clear
+ 1345  sudo ap
+ 1346  sudo apt update
+ 1347  clear
+ 1348  exit
+ 1349  clear
+ 1350  ls
+ 1351  chmod +x setup_ftp.sh 
+ 1352  clear
+ 1353  ./setup_ftp.sh 
+ 1354  sudo ./setup_ftp.sh 
+ 1355  chmod +x ftp_operations.sh 
+ 1356  clear
+ 1357  ./ftp_operations.sh 
+ 1358  clear
+ 1359  cd ../scenario_3
+ 1360  clear
+ 1361  curl -i https://moviesapi.ir/api/v1/movies/1
+ 1362  curl -o /dev/null -s -w "%{http_code}\n" https://google.com
+ 1363  curl -o /dev/null -s -w "%{http_code}\n" https://moviesapi.ir/api/v1/movies/1چ
+ 1364  curl -o /dev/null -s -w "%{http_code}\n" https://moviesapi.ir/api/v1/movies/1
+ 1365  clear
+ 1366  ls
+ 1367  chmod +x test_http_methods.sh 
+ 1368  ls
+ 1369  clear
+ 1370  ./test_http_methods.sh 
+ 1371  clear
+ 1372  ./test_http_methods.sh 
+ 1373  clear
+ 1374  ./test_http_methods.sh 
+ 1375  clear
+ 1376  chmod +x http_headers_analysis.sh 
+ 1377  ./http_headers_analysis.sh 
+ 1378  clear
+ 1379  ./http_headers_analysis.sh 
+ 1380  clear
+ 1381  cd ../scenario_4
+ 1382  clear
+ 1383  touch dns_records_explained.md
+ 1384  clear
+ 1385  dig google.com A
+ 1386  {# Query A record for google.com
+ 1387  dig google.com A
+ 1388  # Query AAAA record for google.com
+ 1389  dig google.com AAAA
+ 1390  # Query MX records for google.com
+ 1391  dig google.com MX
+ 1392  # Query TXT records for google.com
+ 1393  dig google.com TXT
+ 1394  # Query NS records for google.com
+ 1395  dig google.com NS} >> dns_records_explained.md 
+ 1396  dig google.com NS} >> dns_records_explained.txt
+ 1397  chmod +x dns_records_explained.
+ 1398  chmod +x dns_records_explained.sh
+ 1399  clear
+ 1400  ./dns_records_explained.sh 
+ 1401  chmod +x dns_analyzer.sh 
+ 1402  clear
+ 1403  ./dns_analyzer.sh 
+ 1404  clear
+ 1405  cd ../scenario_5
+ 1406  clear
+ 1407  cd ../scenario_6
+ 1408  clear
+ 1409  cd Devops/Assaignment/AliSadrsharif_network__02
+ 1410  code .
+ 1411  clear
+ 1412  cd ..
+ 1413  ls
+ 1414  open HW_L2_02_Network.pdf 
+ 1415  clear
+ 1416  open HW_L2_01_Network.pdf 
+ 1417  clear
+ 1418  ssh-keygen -t rsa -b 2048 -f ~/.ssh/mykey2048 -N ""
+ 1419  cd ~/.ssh/
+ 1420  ls
+ 1421  cat mykey2048.pub 
+ 1422  cd
+ 1423  clear
+ 1424  cd Downloads/
+ 1425  ls
+ 1426  chmod +x network_monitor.sh 
+ 1427  clear
+ 1428  ./network_monitor.sh 
+ 1429  ./network_monitor.sh wlp2s0
+ 1430  clear
+ 1431  ./network_monitor.sh wlp2s0
+ 1432  clear
+ 1433  chmod +x analyze_logs.sh 
+ 1434  clear
+ 1435  cd wd
+ 1436  mkdir petto
+ 1437  cd petto/
+ 1438  clear
+ 1439  npx create-next-app
+ 1440  cd
+ 1441  clea
+ 1442  clear
+ 1443  cd Devops/Assaignment/AliSadrsharif_network__02
+ 1444  clear
+ 1445  ls
+ 1446  code .
+ 1447  cd ~/Devops/Assaignment/
+ 1448  ls
+ 1449  open HW_L2_02_Network.pdf 
+ 1450  clear
+ 1451  ip -o link show up | awk -F': ' '{print $2}' | awk '{print $1}'
+ 1452  echo "Up interfaces: $(ip -o link show up | awk -F': ' '{print $2}' | awk '{print $1}' | tr '\n' ' ')"
+ 1453  clear
+ 1454  ifstat -i eth0 1 5
+ 1455  sudo apt install ifstat
+ 1456  clear
+ 1457  ifstat -i eth0 1 5
+ 1458  ifconfig
+ 1459  ifstat -i wlp2s0 1 5
+ 1460  clear
+ 1461  ifstat -i wlp2s0 1 5
+ 1462  ifstat -i wlp2s0 1 5 sleep 5
+ 1463  ifstat -i wlp2s0 1 5 sleep 5 | sleep 5
+ 1464  iftop
+ 1465  iftop i wlp2s0
+ 1466  iftop -i wlp2s0
+ 1467  sudo iftop -i wlp2s0
+ 1468  ifstat -i wlp2s0 1 5
+ 1469  clear
+ 1470  ifstat -i wlp2s0 1 5
+ 1471  cat /proc/net/dev
+ 1472  cat /proc/net/dev | grep wlp2s0
+ 1473  clear
+ 1474  ifstat -i wlp2s0 1 5
+ 1475  cat /proc/net/dev
+ 1476  ss -ntu | wc -l
+ 1477  ss -ntu
+ 1478  clear
+ 1479  ss -ntu | wc -l
+ 1480  clear
+ 1481  netstat -ntu
+ 1482  netstat --help
+ 1483  netstat -tulpn
+ 1484  netstat -ntu
+ 1485  netstat -n
+ 1486  clear
+ 1487  ls -lh /var/log/syslog /var/log/kern.log /var/log/auth.log
+ 1488  ls -lh /var/log/syslog
+ 1489  ls -alh
+ 1490  clear
+ 1491  ./analyze_logs.sh 
+ 1492  clear
+ 1493  chmod +x dashboard.sh 
+ 1494  clear
+ 1495  ./dashboard.sh 
+ 1496  clear
+ 1497  ./dashboard.sh 
+ 1498  clear
+ 1499  ./dashboard.sh 
+ 1500  clear
+ 1501  cd ../scenario_7
+ 1502  clear
+ 1503  chmod +x diagnose_slow_network.sh 
+ 1504  clear
+ 1505  ./diagnose_slow_network.sh 
+ 1506  chmod +x timeout_test.sh 
+ 1507  clear
+ 1508  ./timeout_test.sh
+ 1509  timeout 5 ssh user@server
+ 1510  telnet server 22
+ 1511  nc -zv -w 5 server 22
+ 1512  clear
+ 1513  cd ..
+ 1514  clear
+ 1515  history | tail -n 10
+ 1516  history | tail -n 100 > history_commands.txt
+ 1517  history | tail -n 300 > history_commands.txt

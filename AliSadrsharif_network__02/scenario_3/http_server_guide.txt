@@ -1,0 +1,7 @@
+This guide explains how to set up and test API Services using Nginx.
+
+ *   Nginx is a powerful and flexible web server, ideal for production environments.
+ *   Its key capabilities include serving static files, load balancing, SSL termination, and acting as a reverse proxy for backend applications (like APIs built with Python).
+ *   The `nginx_config.conf` example defines a virtual host for `myapp.local`, capable of serving a static website and managing custom error pages.
+
+

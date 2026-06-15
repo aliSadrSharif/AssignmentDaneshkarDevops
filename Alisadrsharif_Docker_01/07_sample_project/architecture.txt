@@ -1,0 +1,14 @@
+1. How does Nginx connect to the Python app?
+   Nginx forwards requests on /api to http://python-app:8000 using proxy_pass.
+   Both services run on the sample-project-network, so Nginx reaches the API by container name (python-app).
+
+2. What networks are used in this project?
+   A single custom network named sample-project-network, defined in docker-compose.yml.
+   Both nginx and python-app are attached to it.
+
+3. What changes would you make to add a database?
+   - Add a db service (e.g. mysql:8.0) to docker-compose.yml.
+   - Define a volume for persistent data (e.g. db-data).
+   - Set MYSQL_ROOT_PASSWORD and MYSQL_DATABASE environment variables.
+   - Keep python-app on sample-project-network and connect using the hostname db.
+   - Add depends_on if you need a specific startup order.

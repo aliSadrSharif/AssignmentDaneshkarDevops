@@ -1,0 +1,17 @@
+----- DNS Analysis Report -----
+
+Domain: daneshkar.net
+TTL: 3
+IP Addresses: 185.143.234.235 185.143.233.235 
+Response Time (ms): 0.000
+----------------------------------------
+Domain: google.com
+TTL: 3
+IP Addresses: 216.239.38.120 
+Response Time (ms): 0.000
+----------------------------------------
+Domain: varzesh3.com
+TTL: 3
+IP Addresses: 185.143.232.201 185.143.235.201 
+Response Time (ms): 0.000
+----------------------------------------

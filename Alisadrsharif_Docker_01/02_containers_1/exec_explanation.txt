@@ -1,0 +1,17 @@
+Difference between docker exec and docker attach:
+
+docker exec:
+- Runs a new command inside an already running container.
+- Does not attach to the container's main process (PID 1).
+- Can start additional processes (e.g. shell, ps, custom scripts).
+- Supports interactive mode with -it for a one-off session.
+- The container keeps running its original command when exec finishes.
+
+docker attach:
+- Connects your terminal to the main process (PID 1) of a running container.
+- You see stdout/stderr of that main process in real time.
+- Typing in the terminal sends input to the main process (if it accepts stdin).
+- If the main process exits, the container typically stops.
+- Cannot run a separate command — you are bound to whatever PID 1 is doing.
+
+Example: In this exercise, PID 1 is "sleep 3600". attach would connect to sleep; exec runs new commands alongside it.

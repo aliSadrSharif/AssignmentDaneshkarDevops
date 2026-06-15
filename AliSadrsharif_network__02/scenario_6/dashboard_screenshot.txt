@@ -1,0 +1,55 @@
+------ Network Dashboard -----
+
+[1] Network interfaces (ip -br addr)
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp3s0           DOWN           
+wlp2s0           UP             172.20.10.5/28 fe80::7411:f052:1e2:74ef/64 
+enxb61bb0a6fd9f  UP             172.20.10.3/28 fe80::ab0a:dd4c:f25e:3692/64 
+docker0          DOWN           172.17.0.1/16 
+
+[2] Active connections (ss -ntu)
+Connections count: 13
+
+[3] Open ports (Listening) using ss
+TCP Listening:
+Netid State  Recv-Q Send-Q                               Local Address:Port  Peer Address:PortProcess
+udp   UNCONN 0      0                                       127.0.0.54:53         0.0.0.0:*          
+udp   UNCONN 0      0                                    127.0.0.53%lo:53         0.0.0.0:*          
+udp   UNCONN 0      0                                          0.0.0.0:5353       0.0.0.0:*          
+udp   UNCONN 0      0                                          0.0.0.0:55000      0.0.0.0:*          
+udp   UNCONN 0      0                                             [::]:56340         [::]:*          
+udp   UNCONN 0      0                [fe80::7411:f052:1e2:74ef]%wlp2s0:546           [::]:*          
+udp   UNCONN 0      0      [fe80::ab0a:dd4c:f25e:3692]%enxb61bb0a6fd9f:546           [::]:*          
+udp   UNCONN 0      0                                             [::]:5353          [::]:*          
+tcp   LISTEN 0      511                                      127.0.0.1:40953      0.0.0.0:*          
+tcp   LISTEN 0      4096                                 127.0.0.53%lo:53         0.0.0.0:*          
+tcp   LISTEN 0      32                                         0.0.0.0:21         0.0.0.0:*          
+tcp   LISTEN 0      4096                                       0.0.0.0:22         0.0.0.0:*          
+tcp   LISTEN 0      4096                                    127.0.0.54:53         0.0.0.0:*          
+tcp   LISTEN 0      4096                                     127.0.0.1:631        0.0.0.0:*          
+tcp   LISTEN 0      4096                                         [::1]:631           [::]:*          
+tcp   LISTEN 0      4096                                          [::]:22            [::]:*          
+tcp   LISTEN 0      511                                              *:80               *:*          
+
+UDP Listening:
+State  Recv-Q Send-Q                               Local Address:Port  Peer Address:PortProcess
+UNCONN 0      0                                       127.0.0.54:53         0.0.0.0:*          
+UNCONN 0      0                                    127.0.0.53%lo:53         0.0.0.0:*          
+UNCONN 0      0                                          0.0.0.0:5353       0.0.0.0:*          
+UNCONN 0      0                                          0.0.0.0:55000      0.0.0.0:*          
+UNCONN 0      0                                             [::]:56340         [::]:*          
+UNCONN 0      0                [fe80::7411:f052:1e2:74ef]%wlp2s0:546           [::]:*          
+UNCONN 0      0      [fe80::ab0a:dd4c:f25e:3692]%enxb61bb0a6fd9f:546           [::]:*          
+UNCONN 0      0                                             [::]:5353          [::]:*          
+
+[4] DNS servers
+DNS servers: 127.0.0.53 
+
+[5] Latest 5 log entries
+2026-05-19T17:47:00.689482+03:30 SADRSHARIF fwupdmgr[5963]: Updating lvfs
+2026-05-19T17:47:16.050329+03:30 SADRSHARIF systemd-timesyncd[584]: Timed out waiting for reply from 185.125.190.56:123 (ntp.ubuntu.com).
+2026-05-19T17:47:26.299968+03:30 SADRSHARIF systemd-timesyncd[584]: Timed out waiting for reply from 91.189.91.157:123 (ntp.ubuntu.com).
+2026-05-19T17:47:36.550688+03:30 SADRSHARIF systemd-timesyncd[584]: Timed out waiting for reply from 185.125.190.57:123 (ntp.ubuntu.com).
+2026-05-19T17:47:46.799858+03:30 SADRSHARIF systemd-timesyncd[584]: Timed out waiting for reply from 185.125.190.58:123 (ntp.ubuntu.com).
+
+(Refreshing every 10s, Ctrl+C to exit)

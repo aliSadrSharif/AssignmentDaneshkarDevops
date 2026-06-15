@@ -1,0 +1,64 @@
+### ----- sshd_config_hardened -----
+
+# Change default port (optional, reduces noise from bots)
+Port 2222
+# Disable password login
+PasswordAuthentication no
+# Disable direct root login
+PermitRootLogin no
+# Allow public key auth
+PubkeyAuthentication yes
+# Limit authentication attempts
+MaxAuthTries 3
+# Recommended: disable extra auth mechanisms (optional)
+ChallengeResponseAuthentication no
+KerberosAuthentication no
+GSSAPIAuthentication no
+# Disable forwarding features (optional but safer)
+AllowTcpForwarding no
+AllowAgentForwarding no
+X11Forwarding no
+# Use stronger crypto (optional; adjust if your SSH version complains)
+KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org
+Ciphers aes256-gcm@openssh.com,aes128-gcm@openssh.com
+MACs hmac-sha2-512,hmac-sha2-256
+# Session / liveness controls (optional)
+ClientAliveInterval 300
+ClientAliveCountMax 2
+LoginGraceTime 30
+# More logging for security monitoring
+LogLevel VERBOSE
+
+# ----- Save as /etc/ssh/sshd_config -----
+
+```bash
+sudo sshd -t && sudo systemctl reload sshd
+```
+
+### Why disable PasswordAuthentication?
+
+Because it makes brute-force/password-guessing attacks much easier. If SSH passwords are enabled:
+
+attackers can repeatedly try passwords (often at scale),
+any weak password (or reused password) becomes a direct path to access. With password auth disabled, users must authenticate using SSH keys, which are generally more secure (and harder to guess).
+
+### Why disable PermitRootLogin?
+
+To prevent direct login as the root user over SSH. Even if an attacker gains some access, denying root login reduces impact. Typically:
+
+a normal user logs in,
+then access is elevated only via controlled mechanisms like sudo (with audit logs and policies), instead of giving full system control immediately.
+
+### How to monitor failed login attempts?
+
+Using your example log check:
+
+```bash
+sudo grep "Failed password" /var/log/auth.log
+```
+
+### Live monitoring:
+
+```bash
+sudo tail -f /var/log/auth.log | grep --line-buffered "Failed password"
+```

@@ -1,0 +1,107 @@
+----- Query A record for google.com -----
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.3-Ubuntu <<>> google.com A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 17940
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	A
+
+;; ANSWER SECTION:
+google.com.		30	IN	A	216.239.38.120
+
+;; Query time: 32 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon May 18 12:26:11 +0330 2026
+;; MSG SIZE  rcvd: 55
+
+----- Query AAAA record for google.com -----
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.3-Ubuntu <<>> google.com AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3372
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	AAAA
+
+;; ANSWER SECTION:
+google.com.		30	IN	AAAA	2001:4860:4802:32::78
+
+;; Query time: 179 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon May 18 12:26:11 +0330 2026
+;; MSG SIZE  rcvd: 67
+
+----- Query MX record for google.com -----
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.3-Ubuntu <<>> google.com MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38867
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	MX
+
+;; Query time: 77 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon May 18 12:26:11 +0330 2026
+;; MSG SIZE  rcvd: 39
+
+----- Query TXT record for google.com -----
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.3-Ubuntu <<>> google.com TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55027
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	TXT
+
+;; Query time: 163 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon May 18 12:26:11 +0330 2026
+;; MSG SIZE  rcvd: 39
+
+----- Query NS record for google.com -----
+
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.3-Ubuntu <<>> google.com NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60159
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	NS
+
+;; ANSWER SECTION:
+google.com.		5642	IN	NS	ns1.google.com.
+google.com.		5642	IN	NS	ns3.google.com.
+google.com.		5642	IN	NS	ns4.google.com.
+google.com.		5642	IN	NS	ns2.google.com.
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon May 18 12:26:11 +0330 2026
+;; MSG SIZE  rcvd: 111
+

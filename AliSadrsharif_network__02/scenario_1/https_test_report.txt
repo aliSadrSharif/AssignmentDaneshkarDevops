@@ -1,0 +1,352 @@
+----- HTTPS Test Report -----
+
+curl verbose HTTPS request
+
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+*  expire date: Jul 13 08:35:14 2026 GMT
+*  SSL certificate verify ok.
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+< expires: Mon, 15 Jun 2026 13:57:45 GMT
+expires: Mon, 15 Jun 2026 13:57:45 GMT
+
+insecure request to expired certificate site
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host google.com:443 was resolved.
+* IPv6: 2001:4860:4802:32::78
+* IPv4: 216.239.38.120
+*   Trying 216.239.38.120:443...
+* Connected to google.com (216.239.38.120) port 443
+* ALPN: curl offers h2,http/1.1
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+{ [15 bytes data]
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+{ [5039 bytes data]
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+{ [78 bytes data]
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+{ [52 bytes data]
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+} [52 bytes data]
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / id-ecPublicKey
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=*.google.com
+*  start date: Apr 20 08:35:15 2026 GMT
+*  expire date: Jul 13 08:35:14 2026 GMT
+*  issuer: C=US; O=Google Trust Services; CN=WE2
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+*   Certificate level 0: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using ecdsa-with-SHA256
+*   Certificate level 1: Public key type EC/prime256v1 (256/128 Bits/secBits), signed using ecdsa-with-SHA384
+*   Certificate level 2: Public key type EC/secp384r1 (384/192 Bits/secBits), signed using sha256WithRSAEncryption
+} [5 bytes data]
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://google.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: google.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.5.0]
+* [HTTP/2] [1] [accept: */*]
+} [5 bytes data]
+> GET / HTTP/2
+> Host: google.com
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [282 bytes data]
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+{ [282 bytes data]
+* old SSL session ID is stale, removing
+{ [5 bytes data]
+< HTTP/2 301 
+< location: https://www.google.com/
+< content-type: text/html; charset=UTF-8
+< content-security-policy-report-only: object-src 'none';base-uri 'self';script-src 'nonce-DysIVTJCTFmbEb1ZGNM3Ig' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+< date: Sat, 16 May 2026 13:57:46 GMT
+< expires: Mon, 15 Jun 2026 13:57:46 GMT
+< cache-control: public, max-age=2592000
+< server: gws
+< content-length: 220
+< x-xss-protection: 0
+< x-frame-options: SAMEORIGIN
+< alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+< 
+{ [220 bytes data]
+100   220  100   220    0     0    362      0 --:--:-- --:--:-- --:--:--   363
+* Connection #0 to host google.com left intact
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="https://www.google.com/">here</A>.
+</BODY></HTML>
+
+certificate chain
+
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = *.google.com
+   i:C = US, O = Google Trust Services, CN = WE2
+   a:PKEY: id-ecPublicKey, 256 (bit); sigalg: ecdsa-with-SHA256
+   v:NotBefore: Apr 20 08:35:15 2026 GMT; NotAfter: Jul 13 08:35:14 2026 GMT
+-----BEGIN CERTIFICATE-----
+MIINdDCCDRmgAwIBAgIRAPd1wF6uRI4AChR6URxszwQwCgYIKoZIzj0EAwIwOzEL
+MAkGA1UEBhMCVVMxHjAcBgNVBAoTFUdvb2dsZSBUcnVzdCBTZXJ2aWNlczEMMAoG
+A1UEAxMDV0UyMB4XDTI2MDQyMDA4MzUxNVoXDTI2MDcxMzA4MzUxNFowFzEVMBMG
+A1UEAwwMKi5nb29nbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEgm5n
+kK+6ocsaZpQVng8IQOEi7mQno6AuJfwGnRzFLJkr43L9Rq9vAD2jurhfPB5BWlLN
+aGKn6UDozF+ZsiSLhqOCDCAwggwcMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAK
+BggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBRolNM/TQzVLh9ZSBL/
+CoOXU6MVKzAfBgNVHSMEGDAWgBR1vsR3ron2RDd9z7FoHx0a69w0WTBYBggrBgEF
+BQcBAQRMMEowIQYIKwYBBQUHMAGGFWh0dHA6Ly9vLnBraS5nb29nL3dlMjAlBggr
+BgEFBQcwAoYZaHR0cDovL2kucGtpLmdvb2cvd2UyLmNydDCCCfgGA1UdEQSCCe8w
+ggnrggwqLmdvb2dsZS5jb22CFiouYXBwZW5naW5lLmdvb2dsZS5jb22CCSouYmRu
+LmRldoIVKi5vcmlnaW4tdGVzdC5iZG4uZGV2ghIqLmNsb3VkLmdvb2dsZS5jb22C
+GCouY3Jvd2Rzb3VyY2UuZ29vZ2xlLmNvbYIYKi5kYXRhY29tcHV0ZS5nb29nbGUu
+Y29tggsqLmdvb2dsZS5jYYILKi5nb29nbGUuY2yCDiouZ29vZ2xlLmNvLmlugg4q
+Lmdvb2dsZS5jby5qcIIOKi5nb29nbGUuY28udWuCDyouZ29vZ2xlLmNvbS5hcoIP
+Ki5nb29nbGUuY29tLmF1gg8qLmdvb2dsZS5jb20uYnKCDyouZ29vZ2xlLmNvbS5j
+b4IPKi5nb29nbGUuY29tLm14gg8qLmdvb2dsZS5jb20udHKCDyouZ29vZ2xlLmNv
+bS52boILKi5nb29nbGUuZGWCCyouZ29vZ2xlLmVzggsqLmdvb2dsZS5mcoILKi5n
+b29nbGUuaHWCCyouZ29vZ2xlLml0ggsqLmdvb2dsZS5ubIILKi5nb29nbGUucGyC
+CyouZ29vZ2xlLnB0gg8qLmdvb2dsZWFwaXMuY26CDCouZ3N0YXRpYy5jboIQKi5n
+c3RhdGljLWNuLmNvbYIPZ29vZ2xlY25hcHBzLmNughEqLmdvb2dsZWNuYXBwcy5j
+boIRZ29vZ2xlYXBwcy1jbi5jb22CEyouZ29vZ2xlYXBwcy1jbi5jb22CDGdrZWNu
+YXBwcy5jboIOKi5na2VjbmFwcHMuY26CEmdvb2dsZWRvd25sb2Fkcy5jboIUKi5n
+b29nbGVkb3dubG9hZHMuY26CEHJlY2FwdGNoYS5uZXQuY26CEioucmVjYXB0Y2hh
+Lm5ldC5jboIQcmVjYXB0Y2hhLWNuLm5ldIISKi5yZWNhcHRjaGEtY24ubmV0ggt3
+aWRldmluZS5jboINKi53aWRldmluZS5jboIRYW1wcHJvamVjdC5vcmcuY26CEyou
+YW1wcHJvamVjdC5vcmcuY26CEWFtcHByb2plY3QubmV0LmNughMqLmFtcHByb2pl
+Y3QubmV0LmNughdnb29nbGUtYW5hbHl0aWNzLWNuLmNvbYIZKi5nb29nbGUtYW5h
+bHl0aWNzLWNuLmNvbYIXZ29vZ2xlYWRzZXJ2aWNlcy1jbi5jb22CGSouZ29vZ2xl
+YWRzZXJ2aWNlcy1jbi5jb22CEWdvb2dsZXZhZHMtY24uY29tghMqLmdvb2dsZXZh
+ZHMtY24uY29tghFnb29nbGVhcGlzLWNuLmNvbYITKi5nb29nbGVhcGlzLWNuLmNv
+bYIVZ29vZ2xlb3B0aW1pemUtY24uY29tghcqLmdvb2dsZW9wdGltaXplLWNuLmNv
+bYISZG91YmxlY2xpY2stY24ubmV0ghQqLmRvdWJsZWNsaWNrLWNuLm5ldIIYKi5m
+bHMuZG91YmxlY2xpY2stY24ubmV0ghYqLmcuZG91YmxlY2xpY2stY24ubmV0gg5k
+b3VibGVjbGljay5jboIQKi5kb3VibGVjbGljay5jboIUKi5mbHMuZG91YmxlY2xp
+Y2suY26CEiouZy5kb3VibGVjbGljay5jboIRZGFydHNlYXJjaC1jbi5uZXSCEyou
+ZGFydHNlYXJjaC1jbi5uZXSCHWdvb2dsZXRyYXZlbGFkc2VydmljZXMtY24uY29t
+gh8qLmdvb2dsZXRyYXZlbGFkc2VydmljZXMtY24uY29tghhnb29nbGV0YWdzZXJ2
+aWNlcy1jbi5jb22CGiouZ29vZ2xldGFnc2VydmljZXMtY24uY29tghdnb29nbGV0
+YWdtYW5hZ2VyLWNuLmNvbYIZKi5nb29nbGV0YWdtYW5hZ2VyLWNuLmNvbYIYZ29v
+Z2xlc3luZGljYXRpb24tY24uY29tghoqLmdvb2dsZXN5bmRpY2F0aW9uLWNuLmNv
+bYIkKi5zYWZlZnJhbWUuZ29vZ2xlc3luZGljYXRpb24tY24uY29tghZhcHAtbWVh
+c3VyZW1lbnQtY24uY29tghgqLmFwcC1tZWFzdXJlbWVudC1jbi5jb22CC2d2dDEt
+Y24uY29tgg0qLmd2dDEtY24uY29tggtndnQyLWNuLmNvbYINKi5ndnQyLWNuLmNv
+bYILMm1kbi1jbi5uZXSCDSouMm1kbi1jbi5uZXSCFGdvb2dsZWZsaWdodHMtY24u
+bmV0ghYqLmdvb2dsZWZsaWdodHMtY24ubmV0ggxhZG1vYi1jbi5jb22CDiouYWRt
+b2ItY24uY29tghkqLmdlbWluaS5jbG91ZC5nb29nbGUuY29tghRnb29nbGVzYW5k
+Ym94LWNuLmNvbYIWKi5nb29nbGVzYW5kYm94LWNuLmNvbYIeKi5zYWZlbnVwLmdv
+b2dsZXNhbmRib3gtY24uY29tgg0qLmdzdGF0aWMuY29tghQqLm1ldHJpYy5nc3Rh
+dGljLmNvbYIKKi5ndnQxLmNvbYIRKi5nY3BjZG4uZ3Z0MS5jb22CCiouZ3Z0Mi5j
+b22CDiouZ2NwLmd2dDIuY29tghAqLnVybC5nb29nbGUuY29tghYqLnlvdXR1YmUt
+bm9jb29raWUuY29tggsqLnl0aW1nLmNvbYIKYWkuYW5kcm9pZIILYW5kcm9pZC5j
+b22CDSouYW5kcm9pZC5jb22CEyouZmxhc2guYW5kcm9pZC5jb22CBGcuY26CBiou
+Zy5jboIEZy5jb4IGKi5nLmNvggZnb28uZ2yCCnd3dy5nb28uZ2yCFGdvb2dsZS1h
+bmFseXRpY3MuY29tghYqLmdvb2dsZS1hbmFseXRpY3MuY29tggpnb29nbGUuY29t
+ghJnb29nbGVjb21tZXJjZS5jb22CFCouZ29vZ2xlY29tbWVyY2UuY29tgghnZ3Bo
+dC5jboIKKi5nZ3BodC5jboIKdXJjaGluLmNvbYIMKi51cmNoaW4uY29tggh5b3V0
+dS5iZYILeW91dHViZS5jb22CDSoueW91dHViZS5jb22CEW11c2ljLnlvdXR1YmUu
+Y29tghMqLm11c2ljLnlvdXR1YmUuY29tghR5b3V0dWJlZWR1Y2F0aW9uLmNvbYIW
+Ki55b3V0dWJlZWR1Y2F0aW9uLmNvbYIPeW91dHViZWtpZHMuY29tghEqLnlvdXR1
+YmVraWRzLmNvbYIFeXQuYmWCByoueXQuYmWCGmFuZHJvaWQuY2xpZW50cy5nb29n
+bGUuY29tghMqLmFuZHJvaWQuZ29vZ2xlLmNughIqLmNocm9tZS5nb29nbGUuY26C
+FiouZGV2ZWxvcGVycy5nb29nbGUuY26CFSouYWlzdHVkaW8uZ29vZ2xlLmNvbTAT
+BgNVHSAEDDAKMAgGBmeBDAECATA2BgNVHR8ELzAtMCugKaAnhiVodHRwOi8vYy5w
+a2kuZ29vZy93ZTIvNjRPVUlWenBaVjQuY3JsMIIBAgYKKwYBBAHWeQIEAgSB8wSB
+8ADuAHUA1219ENGn9XfCx+lf1wC/+YLJM1pl4dCzAXMXwMjFaXcAAAGdqj6MCQAA
+BAMARjBEAiBM5o+Vbn1xRJVki+KnUMY47BI1NMhBSWwjogJbmwrKigIgNTCBo2BH
+EKWfBiwVWLkykWroVOwuAbqZ1xek44GnTsQAdQDLOPcViXyEoURfW8Hd+8lu8ppZ
+zUcKaQWFsMsUwxRY5wAAAZ2qPow7AAAEAwBGMEQCIE2igShV4xC7IuMQMPqcDxrx
+buL+k5ZMUvMEfPwK+AGKAiAzySlA8aoocS6YXTZqatL5c8QekE7vJaYUTURZCAYi
+sjAKBggqhkjOPQQDAgNJADBGAiEAuaJpQVCcjmNCU1xtdPwb1Rs2vK+pzUFfIPcF
+C9BZWJ4CIQDer1qcZkUiRCDTHV6caKSMWTYs5EM2f6DK+9YrDfiJsQ==
+-----END CERTIFICATE-----
+ 1 s:C = US, O = Google Trust Services, CN = WE2
+   i:C = US, O = Google Trust Services LLC, CN = GTS Root R4
+   a:PKEY: id-ecPublicKey, 256 (bit); sigalg: ecdsa-with-SHA384
+   v:NotBefore: Dec 13 09:00:00 2023 GMT; NotAfter: Feb 20 14:00:00 2029 GMT
+-----BEGIN CERTIFICATE-----
+MIICnjCCAiWgAwIBAgIQf/Mta0CdFdWWWwWHOnxy4DAKBggqhkjOPQQDAzBHMQsw
+CQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExMQzEU
+MBIGA1UEAxMLR1RTIFJvb3QgUjQwHhcNMjMxMjEzMDkwMDAwWhcNMjkwMjIwMTQw
+MDAwWjA7MQswCQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZp
+Y2VzMQwwCgYDVQQDEwNXRTIwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ1fh/y
+FO2QfeGeKjRDhsHVlugncN+eBMupyoZ5CwhNRorCdKS72b/u/SPXOPNL71QX4b7n
+ylUlqAwwrC1dTqFRo4H+MIH7MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggr
+BgEFBQcDAQYIKwYBBQUHAwIwEgYDVR0TAQH/BAgwBgEB/wIBADAdBgNVHQ4EFgQU
+db7Ed66J9kQ3fc+xaB8dGuvcNFkwHwYDVR0jBBgwFoAUgEzW63T/STaj1dj8tT7F
+avCUHYwwNAYIKwYBBQUHAQEEKDAmMCQGCCsGAQUFBzAChhhodHRwOi8vaS5wa2ku
+Z29vZy9yNC5jcnQwKwYDVR0fBCQwIjAgoB6gHIYaaHR0cDovL2MucGtpLmdvb2cv
+ci9yNC5jcmwwEwYDVR0gBAwwCjAIBgZngQwBAgEwCgYIKoZIzj0EAwMDZwAwZAIw
+C724NlXINaPS2X05c9P394K4CdGBb+VkRdveqsAORRKPrJPoH2DsLn5ELCKUkeys
+AjAv3wyQdkwtaWHVT/2YmBiE2zTqmOybzYhi/9Jl5TNqmgztI0k4L1G/kdASosk4
+ONo=
+-----END CERTIFICATE-----
+ 2 s:C = US, O = Google Trust Services LLC, CN = GTS Root R4
+   i:C = BE, O = GlobalSign nv-sa, OU = Root CA, CN = GlobalSign Root CA
+   a:PKEY: id-ecPublicKey, 384 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Nov 15 03:43:21 2023 GMT; NotAfter: Jan 28 00:00:42 2028 GMT
+-----BEGIN CERTIFICATE-----
+MIIDejCCAmKgAwIBAgIQf+UwvzMTQ77dghYQST2KGzANBgkqhkiG9w0BAQsFADBX
+MQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTEQMA4GA1UE
+CxMHUm9vdCBDQTEbMBkGA1UEAxMSR2xvYmFsU2lnbiBSb290IENBMB4XDTIzMTEx
+NTAzNDMyMVoXDTI4MDEyODAwMDA0MlowRzELMAkGA1UEBhMCVVMxIjAgBgNVBAoT
+GUdvb2dsZSBUcnVzdCBTZXJ2aWNlcyBMTEMxFDASBgNVBAMTC0dUUyBSb290IFI0
+MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAE83Rzp2iLYK5DuDXFgTB7S0md+8Fhzube
+Rr1r1WEYNa5A3XP3iZEwWus87oV8okB2O6nGuEfYKueSkWpz6bFyOZ8pn6KY019e
+WIZlD6GEZQbR3IvJx3PIjGov5cSr0R2Ko4H/MIH8MA4GA1UdDwEB/wQEAwIBhjAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDwYDVR0TAQH/BAUwAwEB/zAd
+BgNVHQ4EFgQUgEzW63T/STaj1dj8tT7FavCUHYwwHwYDVR0jBBgwFoAUYHtmGkUN
+l8qJUC99BM00qP/8/UswNgYIKwYBBQUHAQEEKjAoMCYGCCsGAQUFBzAChhpodHRw
+Oi8vaS5wa2kuZ29vZy9nc3IxLmNydDAtBgNVHR8EJjAkMCKgIKAehhxodHRwOi8v
+Yy5wa2kuZ29vZy9yL2dzcjEuY3JsMBMGA1UdIAQMMAowCAYGZ4EMAQIBMA0GCSqG
+SIb3DQEBCwUAA4IBAQAYQrsPBtYDh5bjP2OBDwmkoWhIDDkic574y04tfzHpn+cJ
+odI2D4SseesQ6bDrarZ7C30ddLibZatoKiws3UL9xnELz4ct92vID24FfVbiI1hY
++SW6FoVHkNeWIP0GCbaM4C6uVdF5dTUsMVs/ZbzNnIdCp5Gxmx5ejvEau8otR/Cs
+kGN+hr/W5GvT1tMBjgWKZ1i4//emhA1JG1BbPzoLJQvyEotc03lXjTaCzv8mEbep
+8RqZ7a2CPsgRbuvTPBwcOMBBmuFeU88+FSBX6+7iP0il8b4Z0QFqIwwMHfs/L6K1
+vepuoxtGzi4CZ68zJpiq1UvSqTbFJjtbD4seiMHl
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN = *.google.com
+issuer=C = US, O = Google Trust Services, CN = WE2
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ECDSA
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 5331 bytes and written 392 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 256 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+HTTP/1.0 400 Bad Request
+Content-Type: text/html; charset=UTF-8
+Referrer-Policy: no-referrer
+Content-Length: 1555
+Date: Sat, 16 May 2026 14:00:08 GMT
+
+<!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+  <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+  <title>Error 400 (Bad Request)!!1</title>
+  <style>
+    *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo_color_150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){#logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo_color_150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px}
+  </style>
+  <a href=//www.google.com/><span id=logo aria-label=Google></span></a>
+  <p><b>400.</b> <ins>That’s an error.</ins>
+  <p>Your client has issued a malformed or illegal request.  <ins>That’s all we know.</ins>
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 045E850127C37A3F56F79BE56124EAC5D06DA942BF043B3758678EDC29936829
+    Session-ID-ctx: 
+    Resumption PSK: BC000F42D3BE86C7493C896B6284FA7AC4526EFE0EF3D01DF3C6F2BAE69BE93BB40E7E65447AC8C99B87EC090542F129
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 172799 (seconds)
+    TLS session ticket:
+    0000 - 02 34 39 7a 00 2b 11 bc-11 d5 12 5a 3d bf a8 9c   .49z.+.....Z=...
+    0010 - a4 5f 01 9d ec 72 d9 1a-0a b9 48 cb 95 19 a7 7f   ._...r....H.....
+    0020 - 0b f8 81 f4 f8 78 c1 ba-f5 4f bc 47 8a f9 0d 34   .....x...O.G...4
+    0030 - 53 b6 e6 62 1d 5a 03 63-70 1c ee 3c 29 e2 2b 7a   S..b.Z.cp..<).+z
+    0040 - 3b 06 10 66 39 62 48 1a-4d 3a af ab e2 08 f9 f6   ;..f9bH.M:......
+    0050 - 02 40 2a dd 47 f3 a6 b6-25 c2 4c a4 6d 7c 78 90   .@*.G...%.L.m|x.
+    0060 - b2 5a e5 fc 84 f7 2b 5b-de 79 cc f6 1d ca 92 7a   .Z....+[.y.....z
+    0070 - da 5c ca 52 58 33 aa a3-8f eb 1c bf e3 c3 23 08   .\.RX3........#.
+    0080 - 8a fe d6 54 c7 f5 7d ae-5b ca 23 cb c0 e3 e3 bd   ...T..}.[.#.....
+    0090 - b7 96 89 18 4e 37 b7 6a-98 c2 43 2d 30 ed 1d d6   ....N7.j..C-0...
+    00a0 - 9c 18 cc a7 d8 5a a2 a6-85 69 22 45 38 e8 17 ea   .....Z...i"E8...
+    00b0 - b8 76 8d 0d 37 d3 f0 b5-ad 43 69 5c 5f 30 bc e4   .v..7....Ci\_0..
+    00c0 - 2d 49 5e 97 54 97 78 24-50 22 3d c2 93 66 f9 cc   -I^.T.x$P"=..f..
+    00d0 - ec da f5 8a 86 8c 15 fe-a6 cf bd 3b 4c 74 9d f1   ...........;Lt..
+    00e0 - 21 2a db 2b a5 de 2d d4-fd 2a 46 52 41 70 40 7e   !*.+..-..*FRAp@~
+    00f0 - 59 e2 71 e2 a6                                    Y.q..
+
+    Start Time: 1778940009
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 14336
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 6E35259C65BF40E64EE593FC72473A441CA359ECF88FBD21746DD9266DBD9E4A
+    Session-ID-ctx: 
+    Resumption PSK: FD5BFBCC23017CDC1AF5CFA42E54CCC134A914531A96CA01FD7EF8307F33D703DF3F0071ADD19C441711FADA8E826F50
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 172799 (seconds)
+    TLS session ticket:
+    0000 - 02 34 39 7a 00 2b 11 bc-11 d5 12 5a 3d bf a8 9c   .49z.+.....Z=...
+    0010 - fd ce c0 af 2c 38 45 f9-cb a6 5d 91 28 0d 67 e7   ....,8E...].(.g.
+    0020 - 4c b9 66 28 99 b8 d3 06-a9 33 fa 73 77 35 5e 55   L.f(.....3.sw5^U
+    0030 - e7 b4 16 64 ac c9 ee 59-c8 a0 ca 5a c8 13 c6 f0   ...d...Y...Z....
+    0040 - 96 c0 64 e7 31 47 2b 4a-c8 8c 9a bc 71 a1 53 9e   ..d.1G+J....q.S.
+    0050 - 51 8d e2 9d 83 9d 60 ef-9e 72 49 c0 80 35 cf c5   Q.....`..rI..5..
+    0060 - 6a 50 36 66 ba 99 07 d1-63 61 fc ac a1 28 4b 0e   jP6f....ca...(K.
+    0070 - 0e 99 68 12 0c d7 f7 c8-b7 49 94 de 5b 5e 89 65   ..h......I..[^.e
+    0080 - 01 42 02 a9 e4 f1 37 77-8e a0 d0 b3 4f 87 5f 8c   .B....7w....O._.
+    0090 - 19 cc 18 ae fe e7 46 63-5b 17 d9 f8 14 b6 d5 1a   ......Fc[.......
+    00a0 - 2f ba 91 66 e8 ad e9 46-7e 44 77 fd 9e 4c bd bc   /..f...F~Dw..L..
+    00b0 - 49 46 b5 31 57 54 cd 80-4e e6 a5 92 c1 52 da 4e   IF.1WT..N....R.N
+    00c0 - 73 e2 59 de 6b b3 06 fa-7c dd d0 00 5c a1 bb 5d   s.Y.k...|...\..]
+    00d0 - 4d 8a ff 0d f6 5d bf 5a-0f 6a 52 5c d3 c8 cf 4a   M....].Z.jR\...J
+    00e0 - 21 e4 04 fb 8c d3 85 65-09 5c 46 52 41 f3 49 c3   !......e.\FRA.I.
+    00f0 - 33 57 55 89 29                                    3WU.)
+
+    Start Time: 1778940009
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 14336
+---
+read R BLOCK
+
+certificate expiration dates
+
+notBefore=Apr 20 08:35:15 2026 GMT
+notAfter=Jul 13 08:35:14 2026 GMT
+

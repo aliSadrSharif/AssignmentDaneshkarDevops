@@ -1,0 +1,31 @@
+=== docker pull nginx:alpine ===
+alpine: Pulling from library/nginx
+Digest: sha256:8b1e78743a03dbb2c95171cc58639fef29abc8816598e27fb910ed2e621e589a
+Status: Image is up to date for nginx:alpine
+docker.io/library/nginx:alpine
+
+=== docker images | grep nginx ===
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+nginx:alpine   8b1e78743a03       93.6MB           27MB        
+
+=== docker tag nginx:alpine my-nginx:v1.0 ===
+
+=== docker images | grep -E 'nginx|my-nginx' ===
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+my-nginx:v1.0   8b1e78743a03       93.6MB           27MB        
+nginx:alpine    8b1e78743a03       93.6MB           27MB        
+
+=== docker inspect nginx:alpine | grep -A 5 Architecture ===
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 26057046,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+
+=== docker rmi my-nginx:v1.0 ===
+Untagged: my-nginx:v1.0
+
+=== docker images | grep -E 'nginx|my-nginx' (after rmi) ===
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+nginx:alpine   8b1e78743a03       93.6MB           27MB        

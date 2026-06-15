@@ -1,0 +1,4 @@
+             Name                           Command               State                  Ports                
+--------------------------------------------------------------------------------------------------------------
+07_sample_project_nginx_1        /docker-entrypoint.sh ngin ...   Up      0.0.0.0:3000->80/tcp,:::3000->80/tcp
+07_sample_project_python-app_1   python app.py                    Up                                          

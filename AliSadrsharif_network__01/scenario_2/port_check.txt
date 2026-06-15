@@ -1,0 +1,5 @@
+----- Port Check on localhost -----
+
+port 80 is OPEN
+port 22 is OPEN
+port 3306 is CLOSED or FILTERED

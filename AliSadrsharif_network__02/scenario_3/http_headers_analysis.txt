@@ -1,0 +1,71 @@
+----- Headrs for academy arvancloud -----
+
+HTTP/2 200 
+date: Mon, 18 May 2026 07:49:14 GMT
+content-type: text/html; charset=UTF-8
+vary: Accept-Encoding
+vary: Accept-Encoding
+server-timing: wp-total;dur=11026.94
+x-app-cache: MISS
+strict-transport-security: max-age=15724800; includeSubDomains
+x-frame-options: SAMEORIGIN
+x-xss-protection: 1; mode=block
+server: ArvanCloud
+server-timing: total;dur=11258
+x-cache: BYPASS
+x-request-id: 0d062b2703b1daefe71d3da17b4fd890
+x-sid: 2066
+
+
+----- Headrs for google -----
+
+HTTP/2 301 
+location: https://www.google.com/
+content-type: text/html; charset=UTF-8
+content-security-policy-report-only: object-src 'none';base-uri 'self';script-src 'nonce-FtRc7zqB7X28brQtOzbO2g' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+date: Mon, 18 May 2026 07:49:15 GMT
+expires: Wed, 17 Jun 2026 07:49:15 GMT
+cache-control: public, max-age=2592000
+server: gws
+content-length: 220
+x-xss-protection: 0
+x-frame-options: SAMEORIGIN
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+
+
+----- Headrs for daneshkar -----
+
+HTTP/2 200 
+date: Mon, 18 May 2026 07:49:16 GMT
+content-type: text/html; charset=utf-8
+content-length: 608725
+vary: Accept-Encoding
+cache-control: s-maxage=600, stale-while-revalidate
+etag: "50z0gr0g17cmc5"
+referrer-policy: strict-origin-when-cross-origin
+vary: Accept-Encoding
+vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+x-nextjs-cache: STALE
+x-powered-by: Next.js
+content-security-policy: upgrade-insecure-requests
+x-xss-protection: 1; mode=block
+alt-svc: h3=":443"; ma=86400
+server: ArvanCloud
+server-timing: total;dur=220
+x-cache: BYPASS
+x-request-id: 02c9046b60aadb74a2c797ed48cf893a
+x-sid: 2066
+accept-ranges: bytes
+
+
+----- Results for Daneshkar -----
+
+Header      	           Status 	               Info 
+Content-Type            	good 	      HTML with UTF8 format
+Server 	                  acceptle        expose details,it should reveal less info
+Cache-Control 	            good 	      great integration with CDN, better performance
+X-Frame-Options 	        good 	      prevent clickjacking
+Content-Security-Policy   acceptle 	      shows vulnerability requiers upgrade
+

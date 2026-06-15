@@ -1,0 +1,16 @@
+Security Report - Fri May 15 09:34:53 AM +0330 2026
+
+----- IPs with more than 100 connections -----
+No suspicious IPs found.
+
+----- Failed SSH login attempts (Failed password) -----
+Total failed SSH login attempts: 4
+Sample failed login entries:
+2026-05-15T09:28:52.519330+03:30 SADRSHARIF sudo:      ali : TTY=pts/0 ; PWD=/home/ali/Devops/Assaignment/AliSadrsharif_network__01/scenario_2 ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/log/auth.log
+2026-05-15T09:29:18.025397+03:30 SADRSHARIF sudo:      ali : TTY=pts/0 ; PWD=/home/ali/Devops/Assaignment/AliSadrsharif_network__01/scenario_2 ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/log/auth.log
+2026-05-15T09:30:11.990285+03:30 SADRSHARIF sudo:      ali : TTY=pts/0 ; PWD=/home/ali/Devops/Assaignment/AliSadrsharif_network__01/scenario_2 ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/log/auth.log
+2026-05-15T09:34:53.574149+03:30 SADRSHARIF sudo:      ali : TTY=pts/0 ; PWD=/home/ali/Devops/Assaignment/AliSadrsharif_network__01/scenario_2 ; USER=root ; COMMAND=/usr/bin/grep 'Failed password' /var/log/auth.log
+
+----- IPs connected to unusual ports (ports >10000 connections) -----
+No suspicious high-volume unusual-port connections found.
+

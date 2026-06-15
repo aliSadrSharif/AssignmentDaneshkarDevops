@@ -1,0 +1,21 @@
+services:
+  db:
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+    image: mysql:8.0
+    volumes:
+    - db-data:/var/lib/mysql:rw
+  web:
+    environment:
+      APP_NAME: MyApp
+    image: nginx:alpine
+    ports:
+    - published: 3000
+      target: 80
+    volumes:
+    - /home/tantan/assaignments/Alisadrsharif_Docker_01/06_docker_compose/web:/usr/share/nginx/html:ro
+version: '3.8'
+volumes:
+  db-data: {}
+

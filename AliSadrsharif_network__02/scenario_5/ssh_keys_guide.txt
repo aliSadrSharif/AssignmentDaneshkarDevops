@@ -1,0 +1,21 @@
+SSH Key-Based Authentication (RSA 2048)
+
+1) Generate RSA key pair:
+   ssh-keygen -t rsa -b 2048 -f ~/.ssh/mykey -N ""
+2) Public key location:
+   ~/.ssh/mykey.pub
+3) How passwordless works:
+   - Private key stays on client: ~/.ssh/mykey
+   - Public key is added to server:
+       ~/.ssh/authorized_keys
+   - SSH uses a challenge-response mechanism:
+       client proves identity using private key,
+       server verifies using public key, so password is not needed.
+   - SSH uses an asynchrones and synchrones hashing algorythm for data encryption:
+4) SSH config for easy connection:
+   Edit ~/.ssh/config and add:
+   Host myserver
+     HostName 192.168.1.10
+     User admin
+     IdentityFile ~/.ssh/mykey2048
+     Port 22

@@ -1,0 +1,6 @@
+        "Containers": {
+            "0b8d06c9baa38be55194413b51d0617313ee95f990de820e92cf8b7ad493ed9e": {
+                "Name": "container-b",
+                "EndpointID": "45f226202ae850789060cee960b50d5f4f1bde26dd8e83759ac70291004d2ba0",
+                "MacAddress": "c2:15:95:64:69:3d",
+                "IPv4Address": "172.19.0.3/16",

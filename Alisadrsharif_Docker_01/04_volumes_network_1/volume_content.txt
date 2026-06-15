@@ -1,0 +1,4 @@
+Content of the volume from volume-test1:
+Hello from container
+Content of the volume from volume-test2:
+Hello from container

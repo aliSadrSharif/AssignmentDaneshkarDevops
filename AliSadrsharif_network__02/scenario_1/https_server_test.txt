@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory listing for /</title>
+</head>
+<body>
+<h1>Directory listing for /</h1>
+<hr>
+<ul>
+<li><a href="certs/">certs/</a></li>
+<li><a href="https_server.py">https_server.py</a></li>
+<li><a href="https_test_report.txt">https_test_report.txt</a></li>
+<li><a href="ssl_generation.txt">ssl_generation.txt</a></li>
+<li><a href="test_https.sh">test_https.sh</a></li>
+</ul>
+<hr>
+</body>
+</html>

@@ -1,0 +1,8 @@
+NAMES            STATUS     RESTARTCOUNT
+/always-restart  running  RestartCount=1
+/unless-stopped  running  RestartCount=1
+/no-restart  exited  RestartCount=0
+
+            "RestartPolicy": {
+                "Name": "always",
+                "MaximumRetryCount": 0

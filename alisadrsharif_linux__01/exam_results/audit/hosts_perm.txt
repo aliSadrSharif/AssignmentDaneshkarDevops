@@ -1,0 +1,3 @@
+#this file contains hosts permissions
+
+-rw------- 1 ali ali 225 May 15 08:48 hosts.bak

@@ -1,0 +1,19 @@
+----- TCP Ports in LISTEN State -----
+LISTEN 0      511        127.0.0.1:39503      0.0.0.0:*          
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          
+LISTEN 0      32           0.0.0.0:21         0.0.0.0:*          
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*          
+LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          
+LISTEN 0      4096       127.0.0.1:631        0.0.0.0:*          
+LISTEN 0      511                *:80               *:*          
+LISTEN 0      4096            [::]:22            [::]:*          
+LISTEN 0      4096           [::1]:631           [::]:*          
+
+----- ESTABLISHED TCP Connections -----
+There is no TCP established connection
+
+----- Processes Listening on port 80 -----
+tcp   LISTEN 0      511                *:80               *:*                                   
+
+----- Processes Listening on port 443 -----
+There is no process on port 443

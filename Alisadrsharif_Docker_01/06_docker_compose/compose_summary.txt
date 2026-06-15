@@ -1,0 +1,11 @@
+1. What networks were created by docker-compose?
+
+   06_docker_compose_default — the default bridge network for the compose project, connecting web, app, and db services.
+
+2. What volumes were created?
+
+   06_docker_compose_db-data — a named volume for persistent MySQL data (/var/lib/mysql in the db service).
+
+3. How does the web service access the app service?
+
+   Both services are on the same default compose network. Docker provides built-in DNS, so web can reach app by hostname "app" (e.g. ping app, or proxy_pass http://app:5000). No manual linking is required.

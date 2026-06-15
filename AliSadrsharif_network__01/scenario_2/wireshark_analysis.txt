@@ -1,0 +1,49 @@
+Wireshark Analysis
+==================
+
+Purpose
+-------
+This file summarizes the Wireshark packet analysis for the captured traffic. It is intended to be placed beside the Wireshark screenshots so the screenshots and written explanation can be reviewed together.
+
+Observed Traffic
+----------------
+The capture shows two main types of traffic:
+
+1. HTTP traffic between the local client and the local web server.
+2. DNS traffic between the local client and the local DNS stub resolver.
+
+HTTP/TCP Analysis
+-----------------
+The HTTP packets show communication with a local web service on port 80. The client uses temporary source ports and connects to `localhost.http`.
+
+Before each HTTP request, Wireshark shows the normal TCP three-way handshake:
+
+1. SYN from the client to the server.
+2. SYN-ACK from the server to the client.
+3. ACK from the client to the server.
+
+After the TCP connection is established, the client sends an HTTP `GET / HTTP/1.1` request. The server responds with `HTTP/1.1 200 OK`, which means the request was successful and the server returned the requested content.
+
+The connections are closed normally using FIN and ACK packets. This indicates that the HTTP sessions completed without visible connection errors.
+
+DNS Analysis
+------------
+The DNS packets show repeated lookups for `google.com`. The client sends A-record queries to the local DNS stub resolver, displayed as `_localdnsstub.domain`.
+
+The query asks for the IPv4 address of `google.com`. The resolver replies with an A record containing the IPv4 address `216.239.38.120`.
+
+The repeated DNS query and response pairs show that DNS resolution is working correctly. Each query receives a valid response from the local resolver.
+
+Useful Wireshark Filters
+------------------------
+The following filters can be used to inspect the traffic more clearly:
+
+http
+tcp
+dns
+tcp.port == 80
+dns.qry.name == "google.com"
+
+Conclusion
+----------
+The Wireshark capture confirms that both services are functioning correctly. HTTP communication succeeds over TCP on localhost, and DNS resolution for `google.com` returns a valid IPv4 address through the local DNS resolver.

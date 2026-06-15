@@ -1,0 +1,14 @@
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/04_text_processing/extract_errors.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/04_text_processing/clean_config.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/01_principles/cleanup_redirect.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/01_principles/run_redirect.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/01_principles/syntax_checker.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/06_tcp/tcp_count.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/06_tcp/quick_scan.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/05_cron/validate_cron.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/05_cron/simulate_cron.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/02_control_structures/system_checker.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/02_control_structures/process_monitor.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/02_control_structures/file_processor.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/03_functions_args/cli_tool.sh
+OK: /home/ali/thispc/Devops/Assaignment/Alisadrsharif_Bash_01/03_functions_args/utils.sh

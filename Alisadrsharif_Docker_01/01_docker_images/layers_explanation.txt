@@ -1,0 +1,15 @@
+1. How many layers exist in the nginx:alpine image?
+
+   8 layers (counted from RootFS.Layers in docker inspect output).
+
+2. Which is the biggest layer?
+
+   The largest layer is 51.9 MB — the RUN step that installs nginx and related packages via apk (buildkit.dockerfile.v0).
+   The second largest is the Alpine base filesystem layer at 9.11 MB (ADD alpine-minirootfs).
+
+3. Why is using small images like alpine better?
+
+   - Smaller download and storage footprint (faster pull/push in CI/CD)
+   - Smaller attack surface (fewer installed packages and binaries)
+   - Faster container startup and less disk usage on hosts
+   - Better layer caching efficiency when building derivative images

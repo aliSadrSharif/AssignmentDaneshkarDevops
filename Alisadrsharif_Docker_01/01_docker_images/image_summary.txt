@@ -1,0 +1,14 @@
+1. What is the size of the nginx:alpine image?
+
+   - Disk usage: 93.6 MB (shown by `docker images`)
+   - Content size: 27 MB (compressed layers on disk)
+   - Inspect size: 26,057,046 bytes (~25 MB)
+
+2. What is the Architecture of this image?
+
+   amd64 (64-bit x86 architecture), OS: linux
+
+3. What is the difference between docker pull and docker run?
+
+   - docker pull: Downloads an image from a registry (e.g. Docker Hub) and stores it locally. It does not start a container.
+   - docker run: Creates and starts a new container from an image. If the image is not present locally, docker run automatically pulls it first, then runs the container with the specified options.

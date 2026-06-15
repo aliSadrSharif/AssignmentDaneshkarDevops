@@ -1,0 +1,24 @@
+Network Information
+
+----- Interfaces -----
+1: lo
+2: enp3s0
+3: wlp2s0
+4: docker0
+5: enxb61bb0a6fd9f
+
+----- IP Address -----
+127.0.0.1/8
+172.20.10.5/28
+172.17.0.1/16
+172.20.10.3/28
+::1/128
+fe80::7411:f052:1e2:74ef/64
+fe80::ab0a:dd4c:f25e:3692/64
+
+----- Default Gateway -----
+172.20.10.1
+172.20.10.1
+
+----- DNS Servers -----
+127.0.0.53

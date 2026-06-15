@@ -1,0 +1,44 @@
+--- TCP Bandwidth Test (Client -> Server) ---
+Connecting to host localhost, port 5201
+[  5] local 127.0.0.1 port 33562 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  2.64 GBytes  22.7 Gbits/sec    0   1.50 MBytes       
+[  5]   1.00-2.00   sec  3.15 GBytes  27.1 Gbits/sec    0   2.87 MBytes       
+[  5]   2.00-3.00   sec  2.85 GBytes  24.5 Gbits/sec    0   4.25 MBytes       
+[  5]   3.00-4.00   sec  3.42 GBytes  29.4 Gbits/sec    0   4.25 MBytes       
+[  5]   4.00-5.00   sec  3.46 GBytes  29.8 Gbits/sec    0   4.25 MBytes       
+[  5]   5.00-6.00   sec  3.38 GBytes  29.0 Gbits/sec    0   4.25 MBytes       
+[  5]   6.00-7.00   sec  3.44 GBytes  29.5 Gbits/sec    0   4.25 MBytes       
+[  5]   7.00-8.00   sec  3.36 GBytes  28.8 Gbits/sec    0   4.25 MBytes       
+[  5]   8.00-9.00   sec  3.23 GBytes  27.8 Gbits/sec    0   4.25 MBytes       
+[  5]   9.00-10.00  sec  3.08 GBytes  26.5 Gbits/sec    0   4.25 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec  32.2 GBytes  27.7 Gbits/sec    0             sender
+[  5]   0.00-10.00  sec  32.2 GBytes  27.7 Gbits/sec                  receiver
+
+iperf Done.
+
+
+--- UDP Test (Jitter, Latency, Packet Loss) ---
+Connecting to host localhost, port 5201
+[  5] local 127.0.0.1 port 35745 connected to 127.0.0.1 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  11.9 MBytes   100 Mbits/sec  382  
+[  5]   1.00-2.00   sec  11.9 MBytes  99.9 Mbits/sec  381  
+[  5]   2.00-3.00   sec  11.9 MBytes   100 Mbits/sec  382  
+[  5]   3.00-4.00   sec  11.9 MBytes  99.9 Mbits/sec  381  
+[  5]   4.00-5.00   sec  11.9 MBytes  99.9 Mbits/sec  381  
+[  5]   5.00-6.00   sec  11.9 MBytes   100 Mbits/sec  382  
+[  5]   6.00-7.00   sec  11.9 MBytes  99.9 Mbits/sec  381  
+[  5]   7.00-8.00   sec  11.9 MBytes   100 Mbits/sec  382  
+[  5]   8.00-9.00   sec  11.9 MBytes  99.9 Mbits/sec  381  
+[  5]   9.00-10.00  sec  11.9 MBytes   100 Mbits/sec  382  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
+[  5]   0.00-10.00  sec   119 MBytes   100 Mbits/sec  0.000 ms  0/3815 (0%)  sender
+[  5]   0.00-10.00  sec   119 MBytes   100 Mbits/sec  0.890 ms  0/3815 (0%)  receiver
+
+iperf Done.
+
+

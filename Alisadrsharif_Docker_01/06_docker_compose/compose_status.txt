@@ -1,0 +1,5 @@
+         Name                        Command               State                    Ports                  
+-----------------------------------------------------------------------------------------------------------
+06_docker_compose_app_1   sh -c apk add --no-cache p ...   Up      0.0.0.0:5000->5000/tcp,:::5000->5000/tcp
+06_docker_compose_db_1    docker-entrypoint.sh mysqld      Up      3306/tcp, 33060/tcp                     
+06_docker_compose_web_1   /docker-entrypoint.sh ngin ...   Up      0.0.0.0:8080->80/tcp,:::8080->80/tcp    

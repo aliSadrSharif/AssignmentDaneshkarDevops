@@ -1,0 +1,17 @@
+1. What is the health check status?
+
+   healthy — the health check command (curl to localhost:80) succeeded, so Docker reports the container as healthy.
+
+2. When does the health check run?
+
+   - First check starts after the container starts (after start period if configured).
+   - Then every 5 seconds (--health-interval=5s).
+   - Each check must complete within 3 seconds (--health-timeout=3s).
+   - After 3 consecutive failures (--health-retries=3), status becomes unhealthy.
+
+3. Why are health checks important?
+
+   - Detect when a container is running but the application inside is broken.
+   - Enable orchestrators (Docker Compose, Swarm, Kubernetes) to restart or stop routing traffic to unhealthy containers.
+   - Improve reliability and automated recovery without manual intervention.
+   - Provide clear status for monitoring and alerting (healthy / unhealthy / starting).

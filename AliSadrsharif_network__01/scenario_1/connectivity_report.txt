@@ -1,0 +1,25 @@
+----- Network Connectivity Test -----
+
+Pinging 8.8.8.8:
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+
+--- 8.8.8.8 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4084ms
+
+
+Pinging google.com:
+PING google.com (216.239.38.120) 56(84) bytes of data.
+64 bytes from any-in-2678.1e100.net (216.239.38.120): icmp_seq=1 ttl=114 time=204 ms
+64 bytes from any-in-2678.1e100.net (216.239.38.120): icmp_seq=2 ttl=114 time=227 ms
+64 bytes from any-in-2678.1e100.net (216.239.38.120): icmp_seq=3 ttl=114 time=147 ms
+64 bytes from any-in-2678.1e100.net (216.239.38.120): icmp_seq=4 ttl=114 time=170 ms
+64 bytes from any-in-2678.1e100.net (216.239.38.120): icmp_seq=5 ttl=114 time=193 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4004ms
+rtt min/avg/max/mdev = 146.831/188.257/227.115/27.680 ms
+
+DNS Resolution for github.com:
+140.82.121.4
+
+Test Completed.

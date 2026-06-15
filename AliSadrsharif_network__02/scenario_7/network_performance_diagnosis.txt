@@ -1,0 +1,56 @@
+----- Network Performance Diagnosis -----
+DNS domain: daneshkar.net
+----- Latency test -----
+rtt min/avg/max/mdev = 31.892/160.249/924.302/270.416 ms
+
+----- Packet loss (from ping) -----
+PING daneshkar.net (185.143.233.235) 56(84) bytes of data.
+64 bytes from 185.143.233.235: icmp_seq=1 ttl=52 time=29.8 ms
+64 bytes from 185.143.233.235: icmp_seq=2 ttl=52 time=40.2 ms
+64 bytes from 185.143.233.235: icmp_seq=3 ttl=52 time=123 ms
+64 bytes from 185.143.233.235: icmp_seq=4 ttl=52 time=37.1 ms
+64 bytes from 185.143.233.235: icmp_seq=5 ttl=52 time=114 ms
+64 bytes from 185.143.233.235: icmp_seq=6 ttl=52 time=34.0 ms
+64 bytes from 185.143.233.235: icmp_seq=7 ttl=52 time=44.1 ms
+64 bytes from 185.143.233.235: icmp_seq=8 ttl=52 time=59.2 ms
+64 bytes from 185.143.233.235: icmp_seq=9 ttl=52 time=151 ms
+64 bytes from 185.143.233.235: icmp_seq=10 ttl=52 time=61.1 ms
+
+--- daneshkar.net ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9009ms
+rtt min/avg/max/mdev = 29.773/69.332/151.163/41.319 ms
+
+----- DNS resolution time -----
+
+; <<>> DiG 9.18.39-0ubuntu0.24.04.3-Ubuntu <<>> daneshkar.net
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13894
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;daneshkar.net.			IN	A
+
+;; ANSWER SECTION:
+daneshkar.net.		58	IN	A	185.143.233.235
+daneshkar.net.		58	IN	A	185.143.234.235
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue May 19 18:37:28 +0330 2026
+;; MSG SIZE  rcvd: 74
+
+
+----- MTU size check -----
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+2: enp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+3: wlp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+4: enxb61bb0a6fd9f: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+5: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+
+Based on results:
+- High avg latency => likely RTT/routing/ISP issue
+- High packet loss => likely congestion or unstable path
+- MTU/fragmentation symptoms => likely Path MTU / MTU problem

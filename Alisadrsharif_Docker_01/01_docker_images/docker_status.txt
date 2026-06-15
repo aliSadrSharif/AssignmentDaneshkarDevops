@@ -1,0 +1,17 @@
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2026-06-09 15:34:52 UTC; 43s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 24820 (dockerd)
+      Tasks: 9
+     Memory: 24.4M
+        CPU: 266ms
+     CGroup: /system.slice/docker.service
+             └─24820 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Jun 09 15:34:52 tantantoon dockerd[24820]: time="2026-06-09T15:34:52.000968686Z" level=info msg="Restoring containers: start."
+Jun 09 15:34:52 tantantoon dockerd[24820]: time="2026-06-09T15:34:52.032354349Z" level=info msg="Deleting nftables IPv4 rules" error="exit status 1"
+Jun 09 15:34:52 tantantoon dockerd[24820]: time="2026-06-09T15:34:52.044659637Z" level=info msg="Deleting nftables IPv6 rules" error="exit status 1"
+
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES

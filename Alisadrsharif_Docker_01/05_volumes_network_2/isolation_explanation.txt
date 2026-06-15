@@ -1,0 +1,12 @@
+1. Why couldn't container-a ping container-b?
+
+   They were on different Docker networks (network-a and network-b). Containers on separate networks are isolated and cannot reach each other by name or IP unless they share at least one network.
+
+2. What happened after docker network connect?
+
+   container-b was attached to network-a in addition to network-b. After that, container-a could resolve and ping container-b by name because both containers were on network-a.
+
+3. What is the difference between bridge network and custom network?
+
+   - Default bridge: Containers get IP addresses but cannot resolve each other by container name unless --link is used (legacy). All containers share one default bridge unless specified otherwise.
+   - Custom network: Docker provides automatic DNS resolution by container name, better isolation between networks, and easier multi-container app design. Custom networks are recommended for linked services.

@@ -1,0 +1,42 @@
+----- Routing Table -----
+default via 172.20.10.1 dev enxb61bb0a6fd9f proto dhcp src 172.20.10.3 metric 20100 
+default via 172.20.10.1 dev wlp2s0 proto dhcp src 172.20.10.5 metric 20600 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.20.10.0/28 dev enxb61bb0a6fd9f proto kernel scope link src 172.20.10.3 metric 100 
+172.20.10.0/28 dev wlp2s0 proto kernel scope link src 172.20.10.5 metric 600 
+
+----- Trace to daneshkar -----
+traceroute to daneshkar.net (185.143.234.235), 30 hops max, 60 byte packets
+ 1  app.local (172.20.10.1)  1.974 ms  1.936 ms  1.910 ms
+ 2  * * *
+ 3  10.134.144.145 (10.134.144.145)  46.336 ms  39.498 ms  46.308 ms
+ 4  10.134.147.5 (10.134.147.5)  39.386 ms  39.450 ms  30.662 ms
+ 5  10.0.138.34 (10.0.138.34)  39.341 ms  29.551 ms  39.200 ms
+ 6  * * 10.0.12.93 (10.0.12.93)  27.292 ms
+ 7  10.0.81.209 (10.0.81.209)  27.268 ms  28.458 ms  28.396 ms
+ 8  * * 10.0.81.216 (10.0.81.216)  20.594 ms
+ 9  * * *
+10  * * *
+11  10.0.138.64 (10.0.138.64)  21.838 ms *  20.097 ms
+12  10.0.80.224 (10.0.80.224)  18.751 ms  18.684 ms  30.781 ms
+13  10.0.99.7 (10.0.99.7)  36.715 ms  40.633 ms  34.860 ms
+14  * 10.0.81.186 (10.0.81.186)  40.810 ms  26.637 ms
+15  * * *
+16  * * *
+17  * * *
+18  * * *
+19  * * *
+20  * * *
+21  * * *
+22  * * *
+23  * * *
+24  * * *
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *
+
+----- Router Definition -----
+A router is a network device that forwards data packets between different networks. It examines the destination IP address and chooses the best path for delivery. Routers can also connect multiple networks and manage traffic between them.
