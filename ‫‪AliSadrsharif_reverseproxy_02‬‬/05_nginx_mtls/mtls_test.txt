@@ -1,0 +1,19 @@
+=== Test without client certificate ===
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / RSASSA-PSS
+* Server certificate:
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* using HTTP/1.x
+> GET / HTTP/1.1
+* old SSL session ID is stale, removing
+< HTTP/1.1 400 Bad Request
+<head><title>400 No required SSL certificate was sent</title></head>
+<center>No required SSL certificate was sent</center>
+
+=== Test with client certificate ===
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519 / RSASSA-PSS
+* Server certificate:
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* using HTTP/1.x
+> GET / HTTP/1.1
+* old SSL session ID is stale, removing
+< HTTP/1.1 200 OK

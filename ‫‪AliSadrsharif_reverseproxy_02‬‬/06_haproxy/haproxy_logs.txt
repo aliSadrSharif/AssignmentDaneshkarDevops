@@ -1,0 +1,8 @@
+### HAProxy logs ###
+
+Connect from 172.18.0.1:42098 to 172.18.0.4:9000 (http_front/HTTP)
+Connect from 172.18.0.1:42114 to 172.18.0.4:9000 (http_front/HTTP)
+Connect from 172.18.0.1:42118 to 172.18.0.4:9000 (http_front/HTTP)
+Connect from 172.18.0.1:42132 to 172.18.0.4:9000 (http_front/HTTP)
+Connect from 172.18.0.1:42146 to 172.18.0.4:9000 (http_front/HTTP)
+Connect from 172.18.0.1:42148 to 172.18.0.4:9000 (http_front/HTTP)

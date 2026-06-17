@@ -1,0 +1,3 @@
+total 8.0K
+-rw-rw-r-- 1 ali ali 1.3K Jun 15 17:46 demo.crt
+-rw------- 1 ali ali 1.7K Jun 15 17:46 demo.key

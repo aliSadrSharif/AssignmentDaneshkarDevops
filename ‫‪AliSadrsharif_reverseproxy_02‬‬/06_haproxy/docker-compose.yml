@@ -1,0 +1,37 @@
+services:
+  backend1:
+    image: nginx:alpine
+    container_name: backend1
+    ports:
+      - "8080:80"
+    volumes:
+      - ./backend1:/usr/share/nginx/html:ro
+    networks:
+      - haproxy-net
+
+  backend2:
+    image: nginx:alpine
+    container_name: backend2
+    ports:
+      - "8081:80"
+    volumes:
+      - ./backend2:/usr/share/nginx/html:ro
+    networks:
+      - haproxy-net
+
+  haproxy-lb:
+    image: haproxy:alpine
+    container_name: haproxy-lb
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - backend1
+      - backend2
+    networks:
+      - haproxy-net
+
+networks:
+  haproxy-net:
+    driver: bridge

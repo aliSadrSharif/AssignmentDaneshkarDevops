@@ -1,0 +1,48 @@
+HTTP vs HTTPS Comparison
+========================
+
+1. What is the main difference between HTTP and HTTPS?
+-------------------------------------------------------
+HTTP sends data in plain text without encryption. Anyone on the network can read or modify the traffic.
+
+HTTPS adds TLS/SSL encryption on top of HTTP. Data is encrypted between client and server, which provides confidentiality, integrity, and (with valid certificates) authentication of the server.
+
+
+2. Why should we use different ports for HTTP and HTTPS in Docker?
+------------------------------------------------------------------
+- HTTP and HTTPS are different protocols and Nginx must listen on separate ports inside the container (typically 80 for HTTP and 443 for HTTPS).
+- A single port can only bind one listener per address/protocol at a time, so both cannot share the same port.
+- Docker maps container ports to host ports (e.g. 8080:80 and 8443:443). Using different host ports avoids conflicts with other services and follows standard conventions.
+- It also makes routing, firewall rules, and debugging easier because each service is clearly identified by port.
+
+
+3. How can you enable both HTTP and HTTPS in one container?
+-------------------------------------------------------------
+Configure two server blocks in the same Nginx config file:
+
+  - server { listen 80; ... }        for HTTP
+  - server { listen 443 ssl; ... }   for HTTPS with ssl_certificate and ssl_certificate_key
+
+Then publish both ports when running the container:
+
+  docker run -p 8080:80 -p 8443:443 ...
+
+Both server blocks can serve the same content or different locations inside one Nginx process.
+
+
+Command Outputs
+===============
+
+### docker port nginx-https ###
+
+443/tcp -> 0.0.0.0:8443
+443/tcp -> [::]:8443
+
+### ss -tuln | grep -E ':8443' ###
+
+tcp   LISTEN 0      4096         0.0.0.0:8443       0.0.0.0:*
+tcp   LISTEN 0      4096            [::]:8443          [::]:*
+
+Interpretation:
+- Container port 443 is mapped to host port 8443 (IPv4 and IPv6).
+- ss confirms the host is listening on 8443 for incoming HTTPS connections.

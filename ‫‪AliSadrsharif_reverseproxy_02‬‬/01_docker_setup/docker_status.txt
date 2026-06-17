@@ -1,0 +1,40 @@
+### Docker system df ###
+
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          10        0         2.574GB   700.1MB (27%)
+Containers      0         0         0B        0B
+Local Volumes   1         0         48.72MB   48.72MB (100%)
+Build Cache     19        0         894.3MB   592.7MB
+
+### Docker network inspect bridge ###
+
+[
+    {
+        "Name": "bridge",
+        "Id": "1bfac3e1e7c3aa1fb3756b8bf16589b95f482f6f30d4d20096a3f9aff37c5e1f",
+        "Created": "2026-06-15T10:34:58.546274939+03:30",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "IPRange": "",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",

@@ -1,0 +1,20 @@
+HAProxy Load Balancing
+=======================
+
+1. What load balancing algorithm is used?
+-----------------------------------------
+Round-robin (balance roundrobin). HAProxy distributes each new request to the next backend server in rotation, giving each server an equal share of traffic when they are healthy.
+
+
+2. How does HAProxy perform health checks?
+------------------------------------------
+The `check` option on each server line enables active health checks. HAProxy periodically sends probe requests to backends; if a server fails checks it is marked DOWN and removed from rotation until it recovers. In this config, HTTP mode checks verify that port 80 on each backend is reachable and responding.
+
+
+3. What is the difference between HAProxy and Nginx as a load balancer?
+-----------------------------------------------------------------------
+HAProxy is dedicated to load balancing and proxying with advanced health checks, session persistence, and detailed backend statistics. It is often used purely as an L4/L7 load balancer.
+
+Nginx is primarily a web server and reverse proxy that also supports upstream load balancing. It is simpler for static content and single reverse-proxy setups but has fewer specialized LB features than HAProxy.
+
+HAProxy excels at high-concurrency TCP/HTTP balancing; Nginx is more versatile as a combined web server + proxy in one tool.

@@ -1,0 +1,6 @@
+### Nginx stub_status output ###
+
+Active connections: 1 
+server accepts handled requests
+ 6 6 6 
+Reading: 0 Writing: 1 Waiting: 0 

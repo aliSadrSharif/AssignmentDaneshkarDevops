@@ -1,0 +1,39 @@
+### Static check ###
+
+### Initial response ###
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.1
+Date: Mon, 15 Jun 2026 13:38:57 GMT
+Content-Type: text/html
+Content-Length: 86
+Last-Modified: Mon, 15 Jun 2026 13:38:05 GMT
+Connection: keep-alive
+ETag: "6a30003d-56"
+Accept-Ranges: bytes
+
+<html>
+<body>
+<h1>Demo Site 01</h1>
+<p>Served by Nginx in Docker.</p>
+</body>
+</html>
+### Modified response ###
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.1
+Date: Mon, 15 Jun 2026 13:38:57 GMT
+Content-Type: text/html
+Content-Length: 100
+Last-Modified: Mon, 15 Jun 2026 13:38:57 GMT
+Connection: keep-alive
+ETag: "6a300071-64"
+Accept-Ranges: bytes
+
+<html>
+<body>
+<h1>Demo Site 01</h1>
+<p>Served by Nginx in Docker.</p>
+</body>
+</html>
+File modified

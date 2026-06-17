@@ -1,0 +1,7 @@
+### HTTPS response ###
+
+HTTPS OK
+### Certificate dates ###
+
+notBefore=Jun 15 14:16:47 2026 GMT
+notAfter=Jun 15 14:16:47 2027 GMT

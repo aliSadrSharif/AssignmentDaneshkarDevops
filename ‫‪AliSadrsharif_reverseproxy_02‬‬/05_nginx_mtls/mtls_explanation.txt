@@ -1,0 +1,35 @@
+mTLS and Certificate Chain
+==========================
+
+1. What is the difference between TLS and mTLS?
+---------------------------------------------
+TLS (Transport Layer Security) encrypts traffic between a client and server. Only the server presents a certificate; the client verifies the server identity.
+
+mTLS (mutual TLS) requires both sides to present certificates. The server verifies the client certificate in addition to the client verifying the server. This provides mutual authentication and is common for service-to-service APIs and zero-trust networks.
+
+
+2. Why must the client trust rootCA.crt?
+----------------------------------------
+The client certificate was signed by the CA (rootCA.crt). During mTLS, the server checks that the client cert chains to a trusted CA. Similarly, the client must trust the CA that signed the server certificate to validate the server.
+
+rootCA.crt is the root of trust — without it, certificates cannot be verified as issued by your organization's CA.
+
+
+3. How can you manage certificates securely in Docker?
+------------------------------------------------------
+- Use Docker Secrets (Swarm) or Kubernetes Secrets instead of baking certs into images.
+- Mount certificates as read-only volumes only where needed; never commit private keys to git.
+- Restrict file permissions on keys (chmod 600) on the host.
+- Rotate certificates regularly and automate renewal (e.g. cert-manager, Let's Encrypt).
+- Use external secret stores (HashiCorp Vault, AWS Secrets Manager) and inject at runtime.
+- Separate CA, server, and client certs into distinct paths with minimal container access.
+
+
+OpenSSL Verify Output
+=====================
+
+$ openssl verify -CAfile ca/rootCA.crt client/client.crt
+
+client/client.crt: OK
+
+This confirms the client certificate is valid and signed by the DevOpsClass CA.

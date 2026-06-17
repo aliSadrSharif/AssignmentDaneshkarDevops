@@ -1,0 +1,8 @@
+### Nginx network settings ###
+
+        "NetworkSettings": {
+            "SandboxID": "d3ea1b15146a2a930375a2cdd33b73bfe62647792eb3c526fda9c3f996182d7b",
+            "SandboxKey": "/var/run/docker/netns/d3ea1b15146a",
+            "Ports": {
+                "80/tcp": [
+                    {

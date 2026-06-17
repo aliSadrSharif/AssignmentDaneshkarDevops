@@ -1,0 +1,17 @@
+### Traefik logs ###
+
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [33mWRN[0m [1mTraefik can reject some encoded characters in the request path.When your backend is not fully compliant with [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986),it is recommended to set these options to `false` to avoid split-view situation.Refer to the documentation for more details: https://doc.traefik.io/traefik/v3.7/migrate/v3/#encoded-characters-configuration-default-values[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mTraefik version 3.7.5 built on 2026-06-10T14:51:33Z[0m [36mversion=[0m3.7.5
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mVersion check is enabled.[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mTraefik checks for new releases to notify you if your version is out of date.[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mIt also collects usage data during this process.[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mCheck the documentation to get more info: https://doc.traefik.io/traefik/contributing/data-collection/[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1m
+traefik-1  | Stats collection is disabled.
+traefik-1  | Help us improve Traefik by turning this feature on :)
+traefik-1  | More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+traefik-1  | [0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mStarting provider aggregator *aggregator.ProviderAggregator[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mStarting provider *traefik.Provider[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mStarting provider *docker.Provider[0m
+traefik-1  | [90m2026-06-17T13:22:08Z[0m [32mINF[0m [1mStarting provider *acme.ChallengeTLSALPN[0m

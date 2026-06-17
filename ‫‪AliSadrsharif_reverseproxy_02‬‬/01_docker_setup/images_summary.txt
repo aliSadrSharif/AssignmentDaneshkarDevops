@@ -1,0 +1,17 @@
+Image Size Summary
+==================
+
+REPOSITORY   TAG          SIZE
+haproxy      alpine       75.2MB
+nginx        alpine       93.6MB
+python       3.9-alpine   80.4MB
+traefik      v3.0         222MB
+
+Notes:
+- nginx:alpine       -> 93.6MB
+- haproxy:alpine     -> 75.2MB
+- traefik:v3.0       -> 222MB
+- python:3.9-alpine  -> 80.4MB
+
+Generated with:
+docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}" | grep -E 'nginx|haproxy|traefik|python'

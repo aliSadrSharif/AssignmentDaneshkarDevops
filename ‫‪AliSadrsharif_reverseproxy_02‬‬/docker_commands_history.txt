@@ -1,0 +1,47 @@
+# Key Docker commands used in this project
+
+# --- Section 01 ---
+docker --version
+docker info
+docker ps -a
+docker network ls
+docker volume ls
+docker system df
+docker network inspect bridge
+docker pull nginx:alpine
+docker pull haproxy:alpine
+docker pull traefik:v3.0
+docker pull python:3.9-alpine
+docker images
+
+# --- Section 02 ---
+docker run -d --name nginx-basic -p 8080:80 nginx:alpine
+docker run -d --name nginx-static -p 8080:80 -v ./web:/usr/share/nginx/html:ro nginx:alpine
+docker compose up -d
+docker compose down
+
+# --- Section 03 ---
+docker run -d --name nginx-https -p 8443:443 -v ./nginx_https.conf:/etc/nginx/nginx.conf:ro -v ./certs:/etc/nginx/certs:ro nginx:alpine
+curl -k https://localhost:8443/status
+openssl s_client -connect localhost:8443 -servername demo.local
+
+# --- Section 04 ---
+docker run -d --name nginx-status -p 8090:80 -v ./nginx_status.conf:/etc/nginx/nginx.conf:ro nginx:alpine
+docker run -d --name nginx-logs -p 8091:80 nginx:alpine
+docker logs nginx-logs --tail 20
+
+# --- Section 05 ---
+docker run -d --name nginx-mtls -p 9443:9443 -v ./nginx_mtls.conf:/etc/nginx/nginx.conf:ro -v .:/etc/nginx/mtls:ro nginx:alpine
+curl -k https://localhost:9443/ --cert client/client.crt --key client/client.key
+
+# --- Section 06 ---
+docker compose up -d backend1 backend2
+docker compose up -d
+curl http://localhost:9000/
+docker stats --no-stream haproxy-lb backend1 backend2
+
+# --- Section 07 ---
+docker compose up -d
+docker compose -f docker-compose-advanced.yml up -d
+curl -H "Host: web1.localhost" http://localhost:8080
+curl http://localhost:8081/api/http/routers

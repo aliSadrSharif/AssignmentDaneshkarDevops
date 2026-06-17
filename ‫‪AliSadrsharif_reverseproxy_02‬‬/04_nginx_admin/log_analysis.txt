@@ -1,0 +1,25 @@
+Container Log Analysis
+======================
+
+1. What is the difference between docker logs and filesystem log files?
+-----------------------------------------------------------------------
+docker logs reads stdout/stderr captured by the Docker logging driver from the container process. Filesystem log files (e.g. /var/log/nginx/access.log inside the container) are written directly to disk inside the container filesystem and are not automatically collected unless configured.
+
+docker logs is centralized at the Docker daemon level; filesystem logs require mounting volumes or entering the container to read them.
+
+
+2. How can you redirect container logs to the filesystem?
+---------------------------------------------------------
+- Configure the application to write logs to a mounted volume path (e.g. -v /host/logs:/var/log/nginx).
+- Use Docker logging drivers such as json-file (default), syslog, or fluentd to forward logs to external systems.
+- Use docker logs with redirection: docker logs container_name > /host/path/app.log
+- In docker-compose, set logging driver options to write to a specific location.
+
+
+3. What are the advantages of using docker logs?
+------------------------------------------------
+- No extra volume configuration needed for basic debugging.
+- Works even when the container has no persistent storage.
+- Supports filtering by time (--since, --until) and following in real time (-f).
+- Integrates with docker-compose logs for multi-container stacks.
+- Centralized access without shelling into the container.
