@@ -1,0 +1,45 @@
+.
+├── 01_ansible_install
+│   ├── ansible_config
+│   │   ├── ansible.cfg
+│   │   ├── connection_test.txt
+│   │   └── hosts.ini
+│   ├── ansible_status.txt
+│   ├── ansible_version.txt
+│   ├── config_explanation.md
+│   ├── install_ansible.sh
+│   ├── installation_notes.md
+│   └── test_connection.sh
+├── 02_ansible_basics
+│   ├── ansible_architecture.txt
+│   ├── ansible_complete_explanation.md
+│   ├── inventory
+│   ├── inventory_explanation.md
+│   ├── inventory_operations.sh
+│   └── inventory_operations.txt
+├── 03_ansible_concepts
+│   ├── idempotency_demo.sh
+│   ├── idempotency_demo.txt
+│   ├── idempotency_explanation.md
+│   ├── modules_doc.txt
+│   ├── modules_documentation.sh
+│   ├── modules_explanation.md
+│   └── module_usage_guide.md
+├── 04_ansible_components
+│   ├── config_demo.sh
+│   ├── config_demo.txt
+│   ├── configuration_explanation.md
+│   ├── facts_all.json
+│   ├── facts_demo.sh
+│   ├── facts_demo.txt
+│   └── facts_variables_explanation.md
+├── 05_ansible_adhoc
+│   ├── adhoc_best_practices.md
+│   ├── adhoc_commands.sh
+│   ├── adhoc_explanation.md
+│   └── adhoc_output.txt
+├── ansible_commands_history.txt
+├── final_structure.txt
+└── README.md
+
+7 directories, 36 files

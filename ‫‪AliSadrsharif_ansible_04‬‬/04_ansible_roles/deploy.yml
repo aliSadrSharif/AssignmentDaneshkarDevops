@@ -1,0 +1,52 @@
+---
+# Application deployment using roles with pre_tasks, post_tasks and tags.
+- name: Deploy Application
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars:
+    environment: production
+    app_version: 1.0.0
+  pre_tasks:
+    - name: Show deployment info
+      # Runs before any role.
+      debug:
+        msg: "Deploying v{{ app_version }} to {{ environment }}"
+
+    - name: Check requirements
+      # Make sure the host has enough memory before deploying.
+      assert:
+        that:
+          - ansible_memtotal_mb >= 1024
+        fail_msg: "Insufficient memory"
+
+  roles:
+    - role: common
+      tags: common
+    - role: webserver
+      vars:
+        webserver_port: 8080
+      tags: webserver
+    - role: monitoring
+      tags: monitoring
+
+  post_tasks:
+    - name: Verify deployment
+      # Try to reach the web server; never fail the play on this check.
+      uri:
+        url: http://localhost:8080
+        status_code: 200
+      register: health
+      failed_when: false
+      ignore_errors: yes
+
+    - name: Log deployment
+      # Write a deployment log entry.
+      copy:
+        content: |
+          Deployment: {{ app_version }}
+          Time: {{ ansible_date_time.iso8601 }}
+          Status: Success
+        dest: /opt/logs/deploy.log
+      become: yes
+      ignore_errors: yes

@@ -1,0 +1,86 @@
+================================================================================
+                        ANSIBLE ARCHITECTURE OVERVIEW
+================================================================================
+
+1. CONTROL NODE (where you run Ansible)
+   --------------------------------------------------------------------------
+   - Hosts: ansible CLI, ansible-playbook, ansible-inventory
+   - Stores: inventory files, playbooks, roles, ansible.cfg
+   - Reads configuration and decides what to run on which hosts
+
+2. INVENTORY
+   --------------------------------------------------------------------------
+   - Lists managed nodes (hosts) and groups (webservers, dbservers, etc.)
+   - Supplies variables per host, group, or globally
+   - Formats: INI, YAML, dynamic scripts, cloud plugins
+
+3. PLAYBOOKS & ROLES
+   --------------------------------------------------------------------------
+   - Playbooks: YAML files with plays and tasks
+   - Roles: reusable bundles of tasks, vars, templates, handlers
+
+4. MODULES & PLUGINS
+   --------------------------------------------------------------------------
+   - Modules: do the work (install package, copy file, start service)
+   - Plugins: extend connections, callbacks, inventory, lookups
+
+5. MANAGED NODES (targets)
+   --------------------------------------------------------------------------
+   - Receive tasks over SSH (Linux) or WinRM (Windows)
+   - No permanent Ansible agent required
+   - Execute module code and return JSON result to control node
+
+================================================================================
+                              DATA FLOW
+================================================================================
+
+  [Operator]
+      |
+      v
+  +-------------------+
+  |  Control Node     |
+  |  ansible-playbook |
+  +--------+----------+
+           |
+           | 1. Load inventory + playbook
+           | 2. Resolve hosts and variables
+           | 3. For each task, pick module + connection
+           v
+  +-------------------+
+  |  SSH / WinRM /    |
+  |  local connection |
+  +--------+----------+
+           |
+           | 4. Copy & execute module on target
+           v
+  +-------------------+-------------------+
+  | Managed Node 1    | Managed Node 2 ...|
+  | (module runs)     | (module runs)     |
+  +-------------------+-------------------+
+           |
+           | 5. Return changed/failed/ok + facts
+           v
+  +-------------------+
+  |  Control Node     |
+  |  (aggregates      |
+  |   output)         |
+  +-------------------+
+
+================================================================================
+                         PUSH MODEL (ANSIBLE)
+================================================================================
+
+  Control Node  ----push tasks---->  Managed Nodes
+
+  - Execution starts when you run ansible/ansible-playbook
+  - No agent daemon on targets
+  - Suitable for deployment, patching, and orchestration on demand
+
+================================================================================
+                    AGENTLESS vs AGENT-BASED (e.g. Puppet)
+================================================================================
+
+  Ansible (agentless):     Control --SSH--> Target (temporary module run)
+  Puppet (agent-based):    Target agent --pull--> Puppet server
+
+================================================================================

@@ -1,0 +1,142 @@
+=== Ping Test ===
+localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+
+=== Gather Facts ===
+localhost | SUCCESS => {
+    "ansible_facts": {
+        "ansible_distribution": "Ubuntu",
+        "ansible_distribution_file_parsed": true,
+        "ansible_distribution_file_path": "/etc/os-release",
+        "ansible_distribution_file_variety": "Debian",
+        "ansible_distribution_major_version": "24",
+        "ansible_distribution_release": "noble",
+        "ansible_distribution_version": "24.04"
+    },
+    "changed": false
+}
+
+=== File Operations ===
+localhost | CHANGED => {
+    "changed": true,
+    "gid": 1000,
+    "group": "ali",
+    "mode": "0755",
+    "owner": "ali",
+    "path": "/tmp/ansible_test",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1000
+}
+localhost | SUCCESS => {
+    "changed": false,
+    "stat": {
+        "atime": 1782379292.538354,
+        "attr_flags": "e",
+        "attributes": [
+            "extents"
+        ],
+        "block_size": 4096,
+        "blocks": 8,
+        "charset": "binary",
+        "ctime": 1782379292.5394285,
+        "dev": 66306,
+        "device_type": 0,
+        "disk_usage_bytes": 4096,
+        "executable": true,
+        "exists": true,
+        "gid": 1000,
+        "gr_name": "ali",
+        "inode": 23856460,
+        "isblk": false,
+        "ischr": false,
+        "isdir": true,
+        "isfifo": false,
+        "isgid": false,
+        "islnk": false,
+        "isreg": false,
+        "issock": false,
+        "isuid": false,
+        "mimetype": "inode/directory",
+        "mode": "0755",
+        "mtime": 1782379292.538354,
+        "nlink": 2,
+        "path": "/tmp/ansible_test",
+        "pw_name": "ali",
+        "readable": true,
+        "rgrp": true,
+        "roth": true,
+        "rusr": true,
+        "size": 4096,
+        "uid": 1000,
+        "version": "2013583822",
+        "wgrp": false,
+        "woth": false,
+        "writeable": true,
+        "wusr": true,
+        "xgrp": true,
+        "xoth": true,
+        "xusr": true
+    }
+}
+
+=== Command Execution ===
+localhost | CHANGED | rc=0 >>
+ 12:51:35 up  2:34,  1 user,  load average: 1.79, 0.97, 0.89
+localhost | CHANGED | rc=0 >>
+/home/ali
+ali
+
+=== Copy File ===
+localhost | CHANGED => {
+    "changed": true,
+    "checksum": "31e179f65d8d69e747aa5daf93ad269c1b015ca7",
+    "dest": "/tmp/test_dest.txt",
+    "gid": 1000,
+    "group": "ali",
+    "md5sum": "8f2146fa957421e3eeda907d3aae31d3",
+    "mode": "0664",
+    "owner": "ali",
+    "size": 25,
+    "src": "/home/ali/.ansible/tmp/ansible-tmp-1782379297.4111967-26647-84702582805011/.source.txt",
+    "state": "file",
+    "uid": 1000
+}
+
+=== Get URL ===
+localhost | CHANGED => {
+    "changed": true,
+    "checksum_dest": null,
+    "checksum_src": "43d9a1a38eb292c29b4caf76095fa2e0da8ba932",
+    "dest": "/tmp/google.html",
+    "elapsed": 1,
+    "gid": 1000,
+    "group": "ali",
+    "md5sum": "263e6f43f5d19b8fae0af58646016732",
+    "mode": "0664",
+    "msg": "OK (unknown bytes)",
+    "owner": "ali",
+    "size": 80595,
+    "src": "/home/ali/.ansible/tmp/ansible-tmp-1782379299.0098636-26683-60062473006114/tmp_8574dkp",
+    "state": "file",
+    "status_code": 200,
+    "uid": 1000,
+    "url": "https://www.google.com"
+}
+
+=== Package Management ===
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[ERROR]: Task failed: Premature end of stream waiting for become success.
+>>> Standard Error
+sudo: a password is required
+Origin: <adhoc 'apt' task>
+
+{'action': 'apt', 'args': {'name': 'curl', 'state': 'present', 'update_cache': 'yes'}, 'timeout': 0, 'async_val': [...]
+
+localhost | FAILED! => {
+    "changed": false,
+    "msg": "Task failed: Premature end of stream waiting for become success.\n>>> Standard Error\nsudo: a password is required"
+}
+Skipped no sudo access

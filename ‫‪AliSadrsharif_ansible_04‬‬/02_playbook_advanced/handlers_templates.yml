@@ -1,0 +1,80 @@
+---
+# Demonstrates handlers (notify) and Jinja2 templates.
+- name: Handlers and Templates Demo
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  become: yes
+  vars:
+    app_name: "MyApp"
+    app_version: "2.0.0"
+    app_port: 8080
+    environment: "development"
+    nginx_port: 80
+    nginx_root: /var/www/html
+    server_name: localhost
+    enable_gzip: yes
+    dev_db_host: "localhost"
+    prod_db_host: "db.example.com"
+    app_users:
+      - name: admin
+        role: administrator
+      - name: user1
+        role: user
+  tasks:
+    - name: Install nginx
+      # Install the web server (ignored if no privileges / offline).
+      apt:
+        name: nginx
+        state: present
+      ignore_errors: yes
+
+    - name: Generate nginx config
+      # Render the nginx template; notify the restart handler on change.
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+        backup: yes
+      notify: Restart nginx
+      ignore_errors: yes
+
+    - name: Create app config directory
+      # Make sure the destination directory for the app config exists.
+      file:
+        path: /etc/myapp
+        state: directory
+      ignore_errors: yes
+
+    - name: Generate app config
+      # Render the application config template.
+      template:
+        src: templates/app.conf.j2
+        dest: /etc/myapp/app.conf
+      ignore_errors: yes
+
+    - name: Deploy index page
+      # Write a simple HTML landing page; notify the reload handler on change.
+      copy:
+        content: |
+          <html><body>
+          <h1>{{ app_name }} v{{ app_version }}</h1>
+          <p>Deployed at {{ ansible_date_time.iso8601 }}</p>
+          </body></html>
+        dest: "{{ nginx_root }}/index.html"
+      notify: Reload nginx
+      ignore_errors: yes
+
+  handlers:
+    - name: Restart nginx
+      # Runs only if notified and a change occurred.
+      service:
+        name: nginx
+        state: restarted
+      ignore_errors: yes
+
+    - name: Reload nginx
+      # Reloads nginx without a full restart.
+      service:
+        name: nginx
+        state: reloaded
+      ignore_errors: yes

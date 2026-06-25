@@ -1,0 +1,4 @@
+---
+# The monitoring role depends on the common role, so common runs first.
+dependencies:
+  - role: common

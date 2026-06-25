@@ -1,0 +1,73 @@
+# Ansible Commands History
+# All Ansible CLI commands used across this homework project
+
+# =============================================================================
+# Section 1.1 — Install and verify
+# =============================================================================
+ansible --version
+ansible-doc -l
+ansible-doc -l | head -30
+ansible-config dump
+ansible-config dump | head -30
+
+# =============================================================================
+# Section 1.2 — Connection and inventory (ansible_config/)
+# =============================================================================
+ansible localhost -m ping -e ansible_become=false
+ansible-inventory --list
+ansible all --list-hosts
+ansible-inventory --host localhost
+
+# =============================================================================
+# Section 2.2 — Inventory operations (02_ansible_basics/)
+# =============================================================================
+ansible-inventory -i inventory --list
+ansible-inventory -i inventory --list -y
+ansible webservers -i inventory --list-hosts
+ansible all -i inventory --list-hosts
+ansible production -i inventory --list-hosts
+ansible-inventory -i inventory --host web1
+ansible all -i inventory -m ping -e ansible_become=false
+
+# =============================================================================
+# Section 3.1 — Idempotency demo
+# =============================================================================
+ansible localhost -m file -a "path=/tmp/ansible_idempotency state=directory" -e ansible_become=false
+
+# =============================================================================
+# Section 3.2 — Module documentation
+# =============================================================================
+ansible-doc -l | head -50
+ansible-doc apt
+ansible-doc file
+ansible-doc copy
+ansible-doc -t module ping
+
+# =============================================================================
+# Section 4.1 — Facts
+# =============================================================================
+ansible localhost -m setup -e ansible_become=false
+ansible localhost -m setup -a "filter=ansible_distribution*" -e ansible_become=false
+ansible localhost -m setup -a "filter=ansible_default_ipv4" -e ansible_become=false
+ansible localhost -m setup -a "filter=ansible_memtotal_mb" -e ansible_become=false
+
+# =============================================================================
+# Section 4.2 — Configuration
+# =============================================================================
+ansible-config dump
+ansible-config dump | grep inventory
+ansible-config dump | grep -i ssh
+ansible-config dump | grep become
+
+# =============================================================================
+# Section 5.1 — Ad-hoc commands
+# =============================================================================
+ansible localhost -m ping -e ansible_become=false
+ansible localhost -m setup -a "filter=ansible_distribution*" -e ansible_become=false
+ansible localhost -m file -a "path=/tmp/ansible_test state=directory mode=0755" -e ansible_become=false
+ansible localhost -m stat -a "path=/tmp/ansible_test" -e ansible_become=false
+ansible localhost -m command -a "uptime" -e ansible_become=false
+ansible localhost -m shell -a "echo $HOME && whoami" -e ansible_become=false
+ansible localhost -m copy -a "src=/tmp/test_source.txt dest=/tmp/test_dest.txt" -e ansible_become=false
+ansible localhost -m get_url -a "url=https://www.google.com dest=/tmp/google.html" -e ansible_become=false
+ansible localhost -m apt -a "name=curl state=present update_cache=yes" --become

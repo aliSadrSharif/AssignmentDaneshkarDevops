@@ -1,0 +1,87 @@
+# Project structure (generated 2026-06-25T11:49:51Z)
+# Command: tree -a -I '.git|.ansible_tmp'  (find fallback shown)
+
+.
+├── 01_playbook_basics
+│   ├── concepts.md
+│   ├── conditionals_loops.yml
+│   ├── first_playbook.yml
+│   └── loops_explanation.md
+├── 02_playbook_advanced
+│   ├── concepts.md
+│   ├── error_handling.yml
+│   ├── handlers_templates.yml
+│   └── templates
+│       ├── app.conf.j2
+│       └── nginx.conf.j2
+├── 03_playbook_complex
+│   ├── concepts.md
+│   ├── inventory
+│   ├── multi_play.yml
+│   ├── tags_demo.yml
+│   └── tasks
+│       ├── configure.yml
+│       └── install.yml
+├── 04_ansible_roles
+│   ├── conditional_roles.yml
+│   ├── deploy.yml
+│   ├── roles
+│   │   ├── common
+│   │   │   ├── defaults
+│   │   │   │   └── main.yml
+│   │   │   ├── files
+│   │   │   ├── handlers
+│   │   │   │   └── main.yml
+│   │   │   ├── meta
+│   │   │   │   └── main.yml
+│   │   │   ├── README.md
+│   │   │   ├── tasks
+│   │   │   │   └── main.yml
+│   │   │   ├── templates
+│   │   │   ├── tests
+│   │   │   │   ├── inventory
+│   │   │   │   └── test.yml
+│   │   │   └── vars
+│   │   │       └── main.yml
+│   │   ├── monitoring
+│   │   │   ├── defaults
+│   │   │   │   └── main.yml
+│   │   │   ├── files
+│   │   │   ├── handlers
+│   │   │   │   └── main.yml
+│   │   │   ├── meta
+│   │   │   │   └── main.yml
+│   │   │   ├── README.md
+│   │   │   ├── tasks
+│   │   │   │   └── main.yml
+│   │   │   ├── templates
+│   │   │   ├── tests
+│   │   │   │   ├── inventory
+│   │   │   │   └── test.yml
+│   │   │   └── vars
+│   │   │       └── main.yml
+│   │   └── webserver
+│   │       ├── defaults
+│   │       │   └── main.yml
+│   │       ├── files
+│   │       ├── handlers
+│   │       │   └── main.yml
+│   │       ├── meta
+│   │       │   └── main.yml
+│   │       ├── README.md
+│   │       ├── tasks
+│   │       │   └── main.yml
+│   │       ├── templates
+│   │       │   └── index.html.j2
+│   │       ├── tests
+│   │       │   ├── inventory
+│   │       │   └── test.yml
+│   │       └── vars
+│   │           └── main.yml
+│   └── roles_concepts.md
+├── ansible.cfg
+├── final_structure.txt
+├── playbook_runs.txt
+└── README.md
+
+35 directories, 47 files

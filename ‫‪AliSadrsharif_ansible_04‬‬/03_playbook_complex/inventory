@@ -1,0 +1,13 @@
+# Static inventory for the complex multi-play example.
+# All hosts point to localhost so the playbook can run on a single machine.
+
+[webservers]
+web1 ansible_host=localhost ansible_connection=local
+
+[dbservers]
+db1 ansible_host=localhost ansible_connection=local
+
+# Parent group that contains both groups above.
+[all:children]
+webservers
+dbservers

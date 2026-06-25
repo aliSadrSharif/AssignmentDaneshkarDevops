@@ -1,0 +1,56 @@
+---
+# First playbook: demonstrates variables, facts, Jinja2 and basic modules.
+- name: First Playbook with Variables
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars:
+    # Plain play variables.
+    app_name: "MyApp"
+    app_version: "1.0.0"
+    app_port: 8080
+    # A variable that references another variable via Jinja2.
+    app_home: "/opt/{{ app_name }}"
+  tasks:
+    - name: Display system info
+      # Print application info using vars and the gathered hostname fact.
+      debug:
+        msg: "Running {{ app_name }} v{{ app_version }} on {{ ansible_hostname }}"
+
+    - name: Show system resources
+      # Show distribution / CPU / RAM facts collected by gather_facts.
+      debug:
+        msg: "System: {{ ansible_distribution }} | CPU: {{ ansible_processor_vcpus }} | RAM: {{ ansible_memtotal_mb }}MB"
+
+    - name: Create app directory
+      # Ensure the application home directory exists.
+      file:
+        path: "{{ app_home }}"
+        state: directory
+        mode: '0755'
+      become: yes
+      ignore_errors: yes
+
+    - name: Deploy config file
+      # Render a small env file from the variables and facts.
+      copy:
+        content: |
+          APP_NAME={{ app_name }}
+          APP_VERSION={{ app_version }}
+          APP_PORT={{ app_port }}
+          HOSTNAME={{ ansible_hostname }}
+          DEPLOYED_AT={{ ansible_date_time.iso8601 }}
+        dest: "{{ app_home }}/config.env"
+      become: yes
+      ignore_errors: yes
+
+    - name: Set deployment facts
+      # Create runtime facts that later tasks can reuse.
+      set_fact:
+        deployment_time: "{{ ansible_date_time.iso8601 }}"
+        deployment_user: "{{ ansible_user_id }}"
+
+    - name: Show deployment info
+      # Use the facts that were just set.
+      debug:
+        msg: "Deployed by {{ deployment_user }} at {{ deployment_time }}"

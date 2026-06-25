@@ -1,0 +1,15 @@
+---
+# Reusable task file: update the package cache and install a list of packages.
+# Expects the variable `packages` (a list) to be defined by the caller.
+- name: Update cache
+  apt:
+    update_cache: yes
+  when: ansible_os_family == "Debian"
+  ignore_errors: yes
+
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ packages }}"
+  ignore_errors: yes

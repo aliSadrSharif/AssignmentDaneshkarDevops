@@ -1,0 +1,41 @@
+=== Connection Test ===
+localhost | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+
+=== Inventory List ===
+{
+    "_meta": {
+        "hostvars": {
+            "localhost": {
+                "ansible_connection": "local",
+                "ansible_python_interpreter": "/usr/bin/python3"
+            }
+        },
+        "profile": "inventory_legacy"
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "local",
+            "webservers",
+            "dbservers"
+        ]
+    },
+    "local": {
+        "hosts": [
+            "localhost"
+        ]
+    }
+}
+
+=== All Hosts ===
+  hosts (1):
+    localhost
+
+=== Host Variables ===
+{
+    "ansible_connection": "local",
+    "ansible_python_interpreter": "/usr/bin/python3"
+}

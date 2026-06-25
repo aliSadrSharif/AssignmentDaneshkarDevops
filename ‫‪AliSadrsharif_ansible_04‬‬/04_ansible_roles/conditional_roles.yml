@@ -1,0 +1,19 @@
+---
+# Advanced usage: applying roles dynamically with include_role.
+- name: Conditional Role Usage
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: Include webserver role
+      # Only apply the webserver role on Ubuntu hosts.
+      include_role:
+        name: webserver
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Use role with custom vars
+      # Apply the monitoring role and pass a custom variable to it.
+      include_role:
+        name: monitoring
+      vars:
+        monitoring_interval: 60

@@ -1,0 +1,38 @@
+=== First Run should create ===
+localhost | CHANGED => {
+    "changed": true,
+    "gid": 1000,
+    "group": "ali",
+    "mode": "0775",
+    "owner": "ali",
+    "path": "/tmp/ansible_idempotency",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1000
+}
+
+=== Second Run should NOT create, changed=false ===
+localhost | SUCCESS => {
+    "changed": false,
+    "gid": 1000,
+    "group": "ali",
+    "mode": "0775",
+    "owner": "ali",
+    "path": "/tmp/ansible_idempotency",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1000
+}
+
+=== Third Run should NOT create, changed=false ===
+localhost | SUCCESS => {
+    "changed": false,
+    "gid": 1000,
+    "group": "ali",
+    "mode": "0775",
+    "owner": "ali",
+    "path": "/tmp/ansible_idempotency",
+    "size": 4096,
+    "state": "directory",
+    "uid": 1000
+}

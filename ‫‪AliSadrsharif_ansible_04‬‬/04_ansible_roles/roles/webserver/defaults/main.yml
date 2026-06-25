@@ -1,0 +1,4 @@
+---
+# Default variables for the webserver role (lowest precedence, easily overridden).
+webserver_port: 80
+webserver_root: /var/www/html

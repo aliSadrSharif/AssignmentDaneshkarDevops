@@ -1,0 +1,30 @@
+---
+# monitoring role: install monitoring tools and a small status script.
+- name: Install monitoring tools
+  apt:
+    name:
+      - htop
+      - iotop
+    state: present
+  become: yes
+  ignore_errors: yes
+
+- name: Ensure scripts directory exists
+  # /opt/scripts must exist before the script below can be written.
+  file:
+    path: /opt/scripts
+    state: directory
+  become: yes
+  ignore_errors: yes
+
+- name: Create monitor script
+  copy:
+    content: |
+      #!/bin/bash
+      echo "=== System Status ==="
+      free -h
+      df -h /
+    dest: /opt/scripts/monitor.sh
+    mode: '0755'
+  become: yes
+  ignore_errors: yes

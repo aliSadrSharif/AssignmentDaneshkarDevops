@@ -1,0 +1,8 @@
+---
+# Handler for the webserver role: restart nginx when notified.
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+  become: yes
+  ignore_errors: yes

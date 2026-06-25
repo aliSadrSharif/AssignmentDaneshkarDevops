@@ -1,0 +1,573 @@
+############################################################
+# Ansible Homework - Playbook execution log
+# Generated: 2026-06-25T11:44:50Z
+# Host: sadrsharif | ansible [core 2.16.3]
+# Note: privilege-escalation plays were run with --ask-become-pass (-K).
+############################################################
+
+============================================================
+$ ansible-playbook 01_playbook_basics/first_playbook.yml --syntax-check
+============================================================
+
+playbook: 01_playbook_basics/first_playbook.yml
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 01_playbook_basics/first_playbook.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [First Playbook with Variables] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Display system info] *****************************************************
+ok: [localhost] => {
+    "msg": "Running MyApp v1.0.0 on sadrsharif"
+}
+
+TASK [Show system resources] ***************************************************
+ok: [localhost] => {
+    "msg": "System: Ubuntu | CPU: 12 | RAM: 15776MB"
+}
+
+TASK [Create app directory] ****************************************************
+changed: [localhost]
+
+TASK [Deploy config file] ******************************************************
+changed: [localhost]
+
+TASK [Set deployment facts] ****************************************************
+ok: [localhost]
+
+TASK [Show deployment info] ****************************************************
+ok: [localhost] => {
+    "msg": "Deployed by ali at 2026-06-25T11:44:55Z"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=7    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 01_playbook_basics/first_playbook.yml -e app_port=9090 app_version=2.0.0 -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [First Playbook with Variables] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Display system info] *****************************************************
+ok: [localhost] => {
+    "msg": "Running MyApp v2.0.0 on sadrsharif"
+}
+
+TASK [Show system resources] ***************************************************
+ok: [localhost] => {
+    "msg": "System: Ubuntu | CPU: 12 | RAM: 15776MB"
+}
+
+TASK [Create app directory] ****************************************************
+ok: [localhost]
+
+TASK [Deploy config file] ******************************************************
+changed: [localhost]
+
+TASK [Set deployment facts] ****************************************************
+ok: [localhost]
+
+TASK [Show deployment info] ****************************************************
+ok: [localhost] => {
+    "msg": "Deployed by ali at 2026-06-25T11:45:00Z"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 01_playbook_basics/conditionals_loops.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Conditionals and Loops] **************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Install packages on Debian] **********************************************
+failed: [localhost] (item=curl) => {"ansible_loop_var": "item", "changed": false, "item": "curl", "msg": "Failed to update apt cache: W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'https://apt.releases.hashicorp.com jammy Release' no longer has a Release file."}
+ok: [localhost] => (item=wget)
+ok: [localhost] => (item=git)
+...ignoring
+
+TASK [Create users] ************************************************************
+changed: [localhost] => (item={'name': 'user1', 'state': 'present'})
+changed: [localhost] => (item={'name': 'user2', 'state': 'present'})
+
+TASK [Check directory] *********************************************************
+ok: [localhost]
+
+TASK [Create if not exists] ****************************************************
+changed: [localhost]
+
+TASK [Memory check] ************************************************************
+ok: [localhost] => {
+    "msg": "Sufficient memory"
+}
+
+TASK [Multiple conditions] *****************************************************
+ok: [localhost] => {
+    "msg": "Ubuntu with enough RAM"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=7    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 02_playbook_advanced/handlers_templates.yml --syntax-check
+============================================================
+
+playbook: 02_playbook_advanced/handlers_templates.yml
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 02_playbook_advanced/handlers_templates.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+[WARNING]: Found variable using reserved name: environment
+
+PLAY [Handlers and Templates Demo] *********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Install nginx] ***********************************************************
+changed: [localhost]
+
+TASK [Generate nginx config] ***************************************************
+changed: [localhost]
+
+TASK [Create app config directory] *********************************************
+changed: [localhost]
+
+TASK [Generate app config] *****************************************************
+changed: [localhost]
+
+TASK [Deploy index page] *******************************************************
+changed: [localhost]
+
+RUNNING HANDLER [Restart nginx] ************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to restart service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+RUNNING HANDLER [Reload nginx] *************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=8    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 02_playbook_advanced/error_handling.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Error Handling Demo] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Task that fails but ignored] *********************************************
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["/bin/false"], "delta": "0:00:00.003535", "end": "2026-06-25 15:16:30.671625", "msg": "non-zero return code", "rc": 1, "start": "2026-06-25 15:16:30.668090", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [Custom fail condition] ***************************************************
+changed: [localhost]
+
+TASK [No change reported] ******************************************************
+ok: [localhost]
+
+TASK [Debug variable] **********************************************************
+ok: [localhost] => {
+    "msg": "Hostname: sadrsharif, RAM: 15776MB"
+}
+
+TASK [Assert requirements] *****************************************************
+ok: [localhost] => {
+    "changed": false,
+    "msg": "All checks passed"
+}
+
+TASK [Risky task] **************************************************************
+fatal: [localhost]: FAILED! => {"changed": true, "cmd": ["/bin/false"], "delta": "0:00:00.003384", "end": "2026-06-25 15:16:31.684736", "msg": "non-zero return code", "rc": 1, "start": "2026-06-25 15:16:31.681352", "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+
+TASK [Handle error] ************************************************************
+ok: [localhost] => {
+    "msg": "Error handled gracefully"
+}
+
+TASK [Cleanup] *****************************************************************
+ok: [localhost] => {
+    "msg": "Always executed"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=1    ignored=1   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook -i 03_playbook_complex/inventory 03_playbook_complex/multi_play.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Setup all servers] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [db1]
+ok: [web1]
+
+TASK [Show host] ***************************************************************
+ok: [web1] => {
+    "msg": "Configuring sadrsharif"
+}
+ok: [db1] => {
+    "msg": "Configuring sadrsharif"
+}
+
+TASK [Update cache] ************************************************************
+changed: [db1]
+fatal: [web1]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:The repository 'https://apt.releases.hashicorp.com jammy Release' no longer has a Release file."}
+...ignoring
+
+TASK [Install packages] ********************************************************
+ok: [db1] => (item=curl)
+ok: [web1] => (item=curl)
+ok: [web1] => (item=wget)
+ok: [db1] => (item=wget)
+ok: [db1] => (item=vim)
+ok: [web1] => (item=vim)
+
+TASK [Include configuration] ***************************************************
+included: /home/ali/thispc/Devops/Assaignment/‫‪AliSadrsharif_ansible_04‬‬/03_playbook_complex/tasks/configure.yml for web1, db1
+
+TASK [Create directories] ******************************************************
+changed: [web1] => (item=/opt/apps)
+ok: [db1] => (item=/opt/apps)
+changed: [web1] => (item=/opt/logs)
+ok: [db1] => (item=/opt/logs)
+
+TASK [Deploy config] ***********************************************************
+ok: [db1]
+changed: [web1]
+
+PLAY [Configure web servers] ***************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [web1]
+
+TASK [Install nginx] ***********************************************************
+ok: [web1]
+
+TASK [Deploy web page] *********************************************************
+changed: [web1]
+
+PLAY [Configure database] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [db1]
+
+TASK [Create db directory] *****************************************************
+changed: [db1]
+
+TASK [Create db config] ********************************************************
+changed: [db1]
+
+PLAY RECAP *********************************************************************
+db1                        : ok=10   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+web1                       : ok=10   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 03_playbook_complex/tags_demo.yml --tags install -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Tags Demo] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Always runs] *************************************************************
+ok: [localhost] => {
+    "msg": "This always executes"
+}
+
+TASK [Install web] *************************************************************
+ok: [localhost]
+
+TASK [Install db] **************************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 03_playbook_complex/tags_demo.yml --tags webserver -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Tags Demo] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Always runs] *************************************************************
+ok: [localhost] => {
+    "msg": "This always executes"
+}
+
+TASK [Install web] *************************************************************
+ok: [localhost]
+
+TASK [Configure web] ***********************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 03_playbook_complex/tags_demo.yml --skip-tags configure -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Tags Demo] ***************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Always runs] *************************************************************
+ok: [localhost] => {
+    "msg": "This always executes"
+}
+
+TASK [Install web] *************************************************************
+ok: [localhost]
+
+TASK [Install db] **************************************************************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 03_playbook_complex/tags_demo.yml --list-tags
+============================================================
+
+playbook: 03_playbook_complex/tags_demo.yml
+
+  play #1 (localhost): Tags Demo	TAGS: []
+      TASK TAGS: [always, configure, database, install, never, webserver]
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 04_ansible_roles/deploy.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+[WARNING]: Found variable using reserved name: environment
+
+PLAY [Deploy Application] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Show deployment info] ****************************************************
+ok: [localhost] => {
+    "msg": "Deploying v1.0.0 to []"
+}
+
+TASK [Check requirements] ******************************************************
+ok: [localhost] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [common : Install base packages] ******************************************
+ok: [localhost]
+
+TASK [common : Create directories] *********************************************
+ok: [localhost] => (item=/opt/apps)
+ok: [localhost] => (item=/opt/logs)
+
+TASK [webserver : Install nginx] ***********************************************
+ok: [localhost]
+
+TASK [webserver : Deploy index] ************************************************
+changed: [localhost]
+
+TASK [webserver : Start nginx] *************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+TASK [common : Install base packages] ******************************************
+ok: [localhost]
+
+TASK [common : Create directories] *********************************************
+ok: [localhost] => (item=/opt/apps)
+ok: [localhost] => (item=/opt/logs)
+
+TASK [monitoring : Install monitoring tools] ***********************************
+changed: [localhost]
+
+TASK [monitoring : Ensure scripts directory exists] ****************************
+changed: [localhost]
+
+TASK [monitoring : Create monitor script] **************************************
+changed: [localhost]
+
+RUNNING HANDLER [webserver : Restart nginx] ************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+TASK [Verify deployment] *******************************************************
+ok: [localhost]
+
+TASK [Log deployment] **********************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=16   changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 04_ansible_roles/deploy.yml --tags webserver -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+[WARNING]: Found variable using reserved name: environment
+
+PLAY [Deploy Application] ******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [webserver : Install nginx] ***********************************************
+ok: [localhost]
+
+TASK [webserver : Deploy index] ************************************************
+changed: [localhost]
+
+TASK [webserver : Start nginx] *************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+RUNNING HANDLER [webserver : Restart nginx] ************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+
+[exit code: 0]
+
+============================================================
+$ ansible-playbook 04_ansible_roles/conditional_roles.yml -K
+============================================================
+/usr/lib/python3.12/getpass.py:91: GetPassWarning: Can not control echo on the terminal.
+  passwd = fallback_getpass(prompt, stream)
+Warning: Password input may be echoed.
+BECOME password: 
+
+PLAY [Conditional Role Usage] **************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Include webserver role] **************************************************
+
+TASK [webserver : Install nginx] ***********************************************
+ok: [localhost]
+
+TASK [webserver : Deploy index] ************************************************
+changed: [localhost]
+
+TASK [webserver : Start nginx] *************************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+TASK [Use role with custom vars] ***********************************************
+
+TASK [common : Install base packages] ******************************************
+ok: [localhost]
+
+TASK [common : Create directories] *********************************************
+ok: [localhost] => (item=/opt/apps)
+ok: [localhost] => (item=/opt/logs)
+
+TASK [monitoring : Install monitoring tools] ***********************************
+ok: [localhost]
+
+TASK [monitoring : Ensure scripts directory exists] ****************************
+ok: [localhost]
+
+TASK [monitoring : Create monitor script] **************************************
+ok: [localhost]
+
+RUNNING HANDLER [webserver : Restart nginx] ************************************
+fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unable to start service nginx: Job for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xeu nginx.service\" for details.\n"}
+...ignoring
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=10   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=2   
+
+[exit code: 0]

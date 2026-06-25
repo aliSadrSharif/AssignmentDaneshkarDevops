@@ -1,0 +1,67 @@
+---
+# Demonstrates conditionals (when), loops (loop) and register.
+- name: Conditionals and Loops
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars:
+    # A simple list to iterate over.
+    packages:
+      - curl
+      - wget
+      - git
+    # A list of dictionaries to iterate over.
+    users:
+      - name: user1
+        state: present
+      - name: user2
+        state: present
+  tasks:
+    - name: Install packages on Debian
+      # Loop over the package list, only on Debian-family systems.
+      apt:
+        name: "{{ item }}"
+        state: present
+        update_cache: yes
+      loop: "{{ packages }}"
+      when: ansible_os_family == "Debian"
+      become: yes
+      ignore_errors: yes
+
+    - name: Create users
+      # Loop over a list of dicts and access fields with item.<key>.
+      user:
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
+        shell: /bin/bash
+      loop: "{{ users }}"
+      become: yes
+      ignore_errors: yes
+
+    - name: Check directory
+      # Inspect a path and store the result for later use.
+      stat:
+        path: /opt/myapp
+      register: dir_check
+
+    - name: Create if not exists
+      # Only create the directory when the previous check says it is missing.
+      file:
+        path: /opt/myapp
+        state: directory
+      when: not dir_check.stat.exists
+      become: yes
+      ignore_errors: yes
+
+    - name: Memory check
+      # Inline Jinja2 conditional expression based on a fact.
+      debug:
+        msg: "{{ 'Sufficient memory' if ansible_memtotal_mb > 1024 else 'Low memory' }}"
+
+    - name: Multiple conditions
+      # All listed conditions must be true (logical AND).
+      debug:
+        msg: "Ubuntu with enough RAM"
+      when:
+        - ansible_distribution == "Ubuntu"
+        - ansible_memtotal_mb > 1024

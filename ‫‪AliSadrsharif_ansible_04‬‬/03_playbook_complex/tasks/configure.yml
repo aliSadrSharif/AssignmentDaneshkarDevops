@@ -1,0 +1,15 @@
+---
+# Reusable task file: create directories and deploy a config file.
+# Expects `directories` (list), `config_content` and `config_path` to be set.
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop: "{{ directories }}"
+  ignore_errors: yes
+
+- name: Deploy config
+  copy:
+    content: "{{ config_content }}"
+    dest: "{{ config_path }}"
+  ignore_errors: yes
