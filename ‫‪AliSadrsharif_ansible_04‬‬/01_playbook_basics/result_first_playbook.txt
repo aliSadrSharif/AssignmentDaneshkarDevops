@@ -1,0 +1,71 @@
+***** Running the playbook *****
+
+PLAY [First Playbook with Variables] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Display system info] *****************************************************
+ok: [localhost] => {
+    "msg": "Running MyApp v1.0.0 on sadrsharif"
+}
+
+TASK [Show system resources] ***************************************************
+ok: [localhost] => {
+    "msg": "System: Ubuntu | CPU: 12 | RAM: 15776MB"
+}
+
+TASK [Create app directory] ****************************************************
+ok: [localhost]
+
+TASK [Deploy config file] ******************************************************
+changed: [localhost]
+
+TASK [Set deployment facts] ****************************************************
+ok: [localhost]
+
+TASK [Show deployment info] ****************************************************
+ok: [localhost] => {
+    "msg": "Deployed by root at 2026-07-02T12:52:40Z"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+***** Checking the syntax of the playbook *****
+
+playbook: first_playbook.yml
+***** Running the playbook with the variables *****
+
+PLAY [First Playbook with Variables] *******************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Display system info] *****************************************************
+ok: [localhost] => {
+    "msg": "Running MyApp v2.0.0 on sadrsharif"
+}
+
+TASK [Show system resources] ***************************************************
+ok: [localhost] => {
+    "msg": "System: Ubuntu | CPU: 12 | RAM: 15776MB"
+}
+
+TASK [Create app directory] ****************************************************
+ok: [localhost]
+
+TASK [Deploy config file] ******************************************************
+changed: [localhost]
+
+TASK [Set deployment facts] ****************************************************
+ok: [localhost]
+
+TASK [Show deployment info] ****************************************************
+ok: [localhost] => {
+    "msg": "Deployed by root at 2026-07-02T12:52:43Z"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

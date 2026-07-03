@@ -1,0 +1,35 @@
+***** Running the playbook *****
+
+PLAY [Conditionals and Loops] **************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Install packages on Debian] **********************************************
+ok: [localhost] => (item=curl)
+ok: [localhost] => (item=wget)
+ok: [localhost] => (item=git)
+
+TASK [Create users] ************************************************************
+ok: [localhost] => (item={'name': 'user1', 'state': 'present'})
+ok: [localhost] => (item={'name': 'user2', 'state': 'present'})
+
+TASK [Check directory] *********************************************************
+ok: [localhost]
+
+TASK [Create if not exists] ****************************************************
+skipping: [localhost]
+
+TASK [Memory check] ************************************************************
+ok: [localhost] => {
+    "msg": "Sufficient memory"
+}
+
+TASK [Multiple conditions] *****************************************************
+ok: [localhost] => {
+    "msg": "Ubuntu with enough RAM"
+}
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=6    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
