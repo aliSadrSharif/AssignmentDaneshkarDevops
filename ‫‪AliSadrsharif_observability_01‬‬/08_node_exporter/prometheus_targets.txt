@@ -1,0 +1,12 @@
+### Status targets ###
+
+{
+  "job": null,
+  "health": "up",
+  "lastScrape": "2026-07-19T19:44:45.380168401+03:30"
+}
+{
+  "job": null,
+  "health": "up",
+  "lastScrape": "2026-07-19T19:44:43.597206752+03:30"
+}

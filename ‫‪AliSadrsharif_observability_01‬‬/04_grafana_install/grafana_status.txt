@@ -1,0 +1,40 @@
+##### This file has info of following details #####
+
+### Grafana version ###
+
+grafana version 13.1.0
+### Grafana service directories ###
+
+/usr/sbin/grafana-server
+### Grafana service status ###
+
+● grafana-server.service - Grafana instance
+     Loaded: loaded (/usr/lib/systemd/system/grafana-server.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-07-19 17:18:32 +0330; 7min ago
+       Docs: http://docs.grafana.org
+   Main PID: 17024 (grafana)
+      Tasks: 37 (limit: 16715)
+     Memory: 184.8M (peak: 231.1M)
+        CPU: 6.601s
+     CGroup: /system.slice/grafana-server.service
+             ├─17024 /usr/share/grafana/bin/grafana server --config=/etc/grafana/grafana.ini --pidfile=/run/grafana/grafana-server.pid --packaging=deb cfg:default.paths.logs=/var/log/grafana cfg:default.paths.data=/var/lib/grafana cfg:default.paths.plugins=/var/lib/grafana/plugins cfg:default.paths.provisioning=/etc/grafana/provisioning
+             └─17155 /var/lib/grafana/plugins/zipkin/gpx_grafana-zipkin-datasource_linux_amd64
+
+Jul 19 17:20:19 sadrsharif grafana[17024]: logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=getStats t=2026-07-19T17:20:19.953709166+03:30 level=info msg="Finished building index" elapsed=401.446µs listRV=1784468915703986
+Jul 19 17:20:19 sadrsharif grafana[17024]: logger=bleve-backend namespace=default group=folder.grafana.app resource=folders reason=getStats t=2026-07-19T17:20:19.953743576+03:30 level=info msg="Storing index in cache" key="{Namespace:default Group:folder.grafana.app Resource:folders}" expiration=2026-07-19T17:30:19.953742903+03:30
+Jul 19 17:20:19 sadrsharif grafana[17024]: logger=infra.usagestats t=2026-07-19T17:20:19.95510236+03:30 level=info msg="Usage stats are ready to report"
+Jul 19 17:20:23 sadrsharif grafana[17024]: logger=plugin.installer t=2026-07-19T17:20:23.965578659+03:30 level=info msg="Installing plugin" pluginId=grafana-pyroscope-app version=
+Jul 19 17:20:24 sadrsharif grafana[17024]: logger=installer.fs t=2026-07-19T17:20:24.026192109+03:30 level=info msg="Downloaded and extracted grafana-pyroscope-app v2.1.1 zip successfully to /var/lib/grafana/plugins/grafana-pyroscope-app"
+Jul 19 17:20:24 sadrsharif grafana[17024]: logger=plugins.registration t=2026-07-19T17:20:24.061475657+03:30 level=info msg="Plugin registered" pluginId=grafana-pyroscope-app
+Jul 19 17:20:24 sadrsharif grafana[17024]: logger=plugin.backgroundinstaller t=2026-07-19T17:20:24.061509495+03:30 level=info msg="Plugin successfully installed" pluginId=grafana-pyroscope-app version= duration=14.691076118s
+Jul 19 17:26:08 sadrsharif grafana[17024]: logger=authn.service t=2026-07-19T17:26:08.55478334+03:30 level=warn msg="Failed to authenticate request" client=auth.client.session error="user token not found"
+Jul 19 17:26:08 sadrsharif grafana[17024]: logger=context userId=0 orgId=0 uname= t=2026-07-19T17:26:08.555052904+03:30 level=info msg="Request Completed" method=GET path=/favicon.ico status=302 remote_addr=[::1] time_ms=0 duration=763.946µs size=55 referer=http://localhost:3000/api/health handler=public-assets status_source=server
+Jul 19 17:26:08 sadrsharif grafana[17024]: logger=authn.service t=2026-07-19T17:26:08.56443983+03:30 level=warn msg="Failed to authenticate request" client=auth.client.session error="user token not found"
+
+### Grafana response ###
+
+{
+  "database": "ok",
+  "version": "13.1.0",
+  "commit": "b309c9bb3b81a748c3a75289236a27309ed2566a"
+}

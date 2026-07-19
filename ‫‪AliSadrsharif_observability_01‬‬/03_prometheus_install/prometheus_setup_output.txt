@@ -1,0 +1,28 @@
+##### This file containes info about prometheus #####
+
+### Status service prometheus ###
+
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-07-19 16:49:07 +0330; 10min ago
+   Main PID: 6855 (prometheus)
+      Tasks: 18 (limit: 16715)
+     Memory: 40.9M (peak: 41.7M)
+        CPU: 277ms
+     CGroup: /system.slice/prometheus.service
+             └─6855 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.path /var/lib/prometheus/ --web.console.templates=/etc/prometheus/consoles --web.console.libraries=/etc/prometheus/console_libraries --web.listen-address=0.0.0.0:9090
+
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.211Z caller=head.go:676 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=1.535µs
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.211Z caller=head.go:684 level=info component=tsdb msg="Replaying WAL, this may take a while"
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.213Z caller=head.go:755 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.213Z caller=head.go:792 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=25.043µs wal_replay_duration=1.324642ms wbl_replay_duration=122ns total_replay_duration=1.384733ms
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.214Z caller=main.go:1040 level=info fs_type=EXT4_SUPER_MAGIC
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.214Z caller=main.go:1043 level=info msg="TSDB started"
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.214Z caller=main.go:1224 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.215Z caller=main.go:1261 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=1.101304ms db_storage=557ns remote_storage=1.652µs web_handler=171ns query_engine=416ns scrape=606.023µs scrape_sd=14.189µs notify=563ns notify_sd=1.068µs rules=628ns tracing=345.755µs
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.215Z caller=main.go:1004 level=info msg="Server is ready to receive web requests."
+Jul 19 16:49:07 sadrsharif prometheus[6855]: ts=2026-07-19T13:19:07.215Z caller=manager.go:995 level=info component="rule manager" msg="Starting rule manager..."
+
+### Checking prometheus response ###
+
+{"status":"success","data":{"yaml":"global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\n  evaluation_interval: 15s\nscrape_configs:\n- job_name: prometheus\n  honor_timestamps: true\n  scrape_interval: 15s\n  scrape_timeout: 10s\n  metrics_path: /metrics\n  scheme: http\n  follow_redirects: true\n  enable_http2: true\n  static_configs:\n  - targets:\n    - 0.0.0.0:9090\n"}}

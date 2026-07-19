@@ -1,0 +1,20 @@
+***** This file contains information about prometheus status *****
+
+/usr/local/bin/prometheus
+
+prometheus, version 2.45.0 (branch: HEAD, revision: 8ef767e396bf8445f009f945b0162fd71827f445)
+  build user:       root@920118f645b7
+  build date:       20230623-15:09:49
+  go version:       go1.20.5
+  platform:         linux/amd64
+  tags:             netgo,builtinassets,stringlabels
+
+total 24
+drwxr-xr-x   4 prometheus prometheus  4096 Jul 19 11:09 .
+drwxr-xr-x 156 root       root       12288 Jul 19 11:08 ..
+drwxr-xr-x   2 prometheus prometheus  4096 Jul 19 11:09 console_libraries
+drwxr-xr-x   2 prometheus prometheus  4096 Jul 19 11:09 consoles
+
+total 8
+drwxr-xr-x  2 prometheus prometheus 4096 Jul 19 11:08 .
+drwxr-xr-x 86 root       root       4096 Jul 19 11:08 ..

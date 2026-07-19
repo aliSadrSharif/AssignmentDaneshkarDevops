@@ -1,0 +1,84 @@
+### node exporter version ###
+
+node_exporter, version 1.6.1 (branch: HEAD, revision: 4a1b77600c1873a8233f3ffb55afcedbb63b8d84)
+  build user:       root@586879db11e5
+  build date:       20230717-12:10:52
+  go version:       go1.20.6
+  platform:         linux/amd64
+  tags:             netgo osusergo static_build
+
+### node exporter service status ###
+
+● node_exporter.service - Node Exporter
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2026-07-19 19:32:01 +0330; 10s ago
+   Main PID: 25990 (node_exporter)
+      Tasks: 5 (limit: 16715)
+     Memory: 6.5M (peak: 7.6M)
+        CPU: 26ms
+     CGroup: /system.slice/node_exporter.service
+             └─25990 /usr/local/bin/node_exporter
+
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.247Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.247Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+Jul 19 19:32:01 sadrsharif node_exporter[25990]: ts=2026-07-19T16:02:01.248Z caller=stdlib.go:105 level=error caller="error encoding and sending metric family: write tcp [::1" msg="]:9100->[::1]:40170: write: broken pipe"
+
+### node exporter response ###
+
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 1.3759e-05
+go_gc_duration_seconds{quantile="0.25"} 1.3759e-05
+go_gc_duration_seconds{quantile="0.5"} 1.3759e-05
+go_gc_duration_seconds{quantile="0.75"} 1.3759e-05
+go_gc_duration_seconds{quantile="1"} 1.3759e-05
+go_gc_duration_seconds_sum 1.3759e-05
+go_gc_duration_seconds_count 1
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 7
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.20.6"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 2.539592e+06
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 4.7462e+06
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.446584e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 22471
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 8.081984e+06
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 2.539592e+06
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 3.907584e+06
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 4.05504e+06
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 30285
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 3.145728e+06
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 7.962624e+06
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge

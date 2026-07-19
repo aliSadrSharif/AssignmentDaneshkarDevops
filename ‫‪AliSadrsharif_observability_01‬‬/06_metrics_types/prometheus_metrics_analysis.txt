@@ -1,0 +1,76 @@
+### List metrics ###
+
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 2.0568e-05
+go_gc_duration_seconds{quantile="0.25"} 3.114e-05
+go_gc_duration_seconds{quantile="0.5"} 4.7235e-05
+go_gc_duration_seconds{quantile="0.75"} 7.2397e-05
+go_gc_duration_seconds{quantile="1"} 0.000218178
+go_gc_duration_seconds_sum 0.00445308
+go_gc_duration_seconds_count 78
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 32
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.20.5"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 2.0990072e+07
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 5.09784464e+08
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.508577e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 2.667741e+06
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 8.957192e+06
+
+### Response specific metric ###
+
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": []
+  }
+}
+
+### Response type with metric ###
+
+{
+  "status": "success",
+  "data": {
+    "activeTargets": [
+      {
+        "discoveredLabels": {
+          "__address__": "0.0.0.0:9090",
+          "__metrics_path__": "/metrics",
+          "__scheme__": "http",
+          "__scrape_interval__": "15s",
+          "__scrape_timeout__": "10s",
+          "job": "prometheus"
+        },
+        "labels": {
+          "instance": "0.0.0.0:9090",
+          "job": "prometheus"
+        },
+        "scrapePool": "prometheus",
+        "scrapeUrl": "http://0.0.0.0:9090/metrics",
+        "globalUrl": "http://0.0.0.0:9090/metrics",
+        "lastError": "",
+        "lastScrape": "2026-07-19T19:07:58.596181674+03:30",
+        "lastScrapeDuration": 0.002834284,
+        "health": "up",
+        "scrapeInterval": "15s",
+        "scrapeTimeout": "10s"
+      }
+    ],
+    "droppedTargets": []
+  }
+}
