@@ -1,0 +1,71 @@
+  800  docker compose down
+  801  docker compose pull
+  802  docker compose up -d
+  803  docker compose ps
+  804  docker compose down
+  809  docker compose down
+  810  docker compose up -d
+  811  docker compose logs
+  812  docker compose down
+  813  docker compose up -d
+  814  docker compose down
+  815  docker compose up -d --force-recreate
+  816  docker compose up -d
+  817  docker compose down
+  818  docker compose up -d
+  819  docker compose down
+  821  docker images
+  822  docker rmi -f 96f843878ca2 d4de0dd6b928 3e29449a6bee 8b1e78743a03 fb9065b6e3e2 16bc17c64a57 090ba77e2958 6341b98aec5e
+  823  docker images
+  827  mkdir 01_docker_setup 02_nginx_basics 03_nginx_certs 04_nginx_admin 05_nginx_mtls 06_haproxy 07_traefik
+  828  cd 01_docker_setup/
+  829  bash ‫‪check_docker.sh 
+  830  docker images
+  831  docker rmi -f b3
+  832  docker rmi  b3
+  833  docker -f rmi b3
+  834  docker rmi -f b3f1fb2a51d9
+  835  docker images
+  836  docker prune
+  837  docker images  prune
+  838  docker image prune
+  839  docker images
+  842  docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}"
+  843  docker images
+  845  docker images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}"
+ 1171  docker compose ps
+ 1174  docker compose ps
+ 1175  docker compose up 
+ 1176  docker compose up -d
+ 1177  docker compose ps
+ 1178  docker compose down
+ 1179  docker compose ps
+ 1184  whereis docker
+ 1186  whatis docker
+ 1195  docker compose up compose.yml -d
+ 1196  docker compose ps
+ 1198  docker compose up -d
+ 1199  docker compose down
+ 1201  docker compose ps
+ 1202  docker ps
+ 1203  docker ps -a
+ 1204  docker image ls
+ 1205  docker -rmi a208c74fd80a 2cd5cc75530c 06ddf61ee653 16acb89c6db3 d6858791f9e7
+ 1206  docker -rmi -f a208c74fd80a 2cd5cc75530c 06ddf61ee653 16acb89c6db3 d6858791f9e7
+ 1207  docker rmi -f a208c74fd80a 2cd5cc75530c 06ddf61ee653 16acb89c6db3 d6858791f9e7
+ 1208  docker image ls
+ 1209  docker rmi -f a2d49ea686c2 d0ca281fca32 8b1e78743a03 c99b6eb43b3a 200689790a0a
+ 1210  docker image ls
+ 1211  docker ps
+ 1212  docker ps -a
+ 1600  systemctl status docker
+ 1740  docker compose up -d
+ 1743  docker compose up -d
+ 1744  docker compose ps
+ 1746  docker compose ps
+ 1749  docker compose down
+ 1751  docker compose ps
+ 1755  docker ps -a
+ 1756  docker exec -it docker-composes-prometheus-1
+ 1757  docker exec -it docker-composes-prometheus-1 sh
+ 1782  history | grep docker > "commands_history.txt"

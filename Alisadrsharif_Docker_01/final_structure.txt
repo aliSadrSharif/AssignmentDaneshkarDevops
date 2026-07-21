@@ -1,0 +1,101 @@
+.
+├── 01_docker_images
+│   ├── docker_status.txt
+│   ├── docker_version.txt
+│   ├── image_history.txt
+│   ├── image_layers.sh
+│   ├── image_operations.sh
+│   ├── image_operations.txt
+│   ├── image_rootfs.txt
+│   ├── image_size_bytes.txt
+│   ├── image_summary.txt
+│   ├── install_docker.sh
+│   └── layers_explanation.txt
+├── 02_containers_1
+│   ├── container_basics.sh
+│   ├── container_state.txt
+│   ├── env_check.sh
+│   ├── env_output.txt
+│   ├── exec_explanation.txt
+│   ├── exec_operations.sh
+│   ├── exec_output.txt
+│   ├── exec_processes.txt
+│   ├── nginx_logs.txt
+│   ├── port_mapping_test.txt
+│   └── port_test.sh
+├── 03_containers_2
+│   ├── all_logs.txt
+│   ├── health_check.sh
+│   ├── health_details.txt
+│   ├── health_explanation.txt
+│   ├── health_status.txt
+│   ├── last_5_logs.txt
+│   ├── log_operations.sh
+│   ├── recent_logs.txt
+│   ├── resource_check.sh
+│   ├── resource_stats.txt
+│   ├── restart_policy_test.sh
+│   └── restart_status.txt
+├── 04_volumes_network_1
+│   ├── backup_info.txt
+│   ├── bind_mount_output.html
+│   ├── bind_mount_output_modified.html
+│   ├── bind_mount_test.sh
+│   ├── restored_data.txt
+│   ├── volume_backup.sh
+│   ├── volume_backup.tar.gz
+│   ├── volume_content.txt
+│   ├── volume_info.txt
+│   ├── volume_operations.sh
+│   └── web
+│       └── index.html
+├── 05_volumes_network_2
+│   ├── all_networks.txt
+│   ├── bridge_network_info.txt
+│   ├── container_communication.sh
+│   ├── db_connectivity.txt
+│   ├── isolation_explanation.txt
+│   ├── isolation_test.txt
+│   ├── network_a_containers.txt
+│   ├── network_info.txt
+│   ├── network_isolation.sh
+│   ├── network_operations.sh
+│   └── ping_test.txt
+├── 06_docker_compose
+│   ├── app
+│   │   └── app.py
+│   ├── compose_inspect.sh
+│   ├── compose_networks.txt
+│   ├── compose_operations.sh
+│   ├── compose_status.txt
+│   ├── compose_summary.txt
+│   ├── compose_volumes.txt
+│   ├── compose_with_env.txt
+│   ├── db_env_vars.txt
+│   ├── docker-compose.yml
+│   ├── env_test.sh
+│   ├── service_communication.txt
+│   ├── web
+│   │   └── index.html
+│   ├── web_logs.txt
+│   └── web_response.html
+├── 07_sample_project
+│   ├── api_test.json
+│   ├── app
+│   │   ├── app.py
+│   │   └── Dockerfile
+│   ├── architecture.txt
+│   ├── docker-compose.yml
+│   ├── frontend_test.html
+│   ├── nginx
+│   │   └── nginx.conf
+│   ├── project_logs.txt
+│   ├── project_status.txt
+│   ├── README.md
+│   ├── run_project.sh
+│   └── web
+│       └── index.html
+├── ‫‪final_structure.txt
+└── final_structure.txt‬‬
+
+14 directories, 85 files
