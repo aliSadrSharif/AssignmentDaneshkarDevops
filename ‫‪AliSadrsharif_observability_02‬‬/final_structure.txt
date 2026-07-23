@@ -1,0 +1,38 @@
+.
+├── 01_red_metrics
+│   ├── red_metrics_examples.md
+│   └── red_metrics_explanation.md
+├── 02_monitoring_install_docker_1
+│   ├── docker-compose.yml
+│   ├── docker_setup_explanation.md
+│   ├── prometheus_docker_status.txt
+│   ├── prometheus.yml
+│   └── start_prometheus.sh
+├── 03_monitoring_install_docker_2
+│   ├── docker_compose_explanation.md
+│   ├── docker-compose.yml
+│   ├── prometheus.yml
+│   ├── stack_status.txt
+│   └── start_monitoring_stack.sh
+├── 04_prometheus_architecture_1
+│   ├── architecture_diagram.md
+│   ├── prometheus_architecture.md
+│   └── prometheus_components.md
+├── 05_prometheus_architecture_2
+│   ├── advanced_config_explanation.md
+│   ├── prometheus.yml
+│   ├── service_discovery.md
+│   └── targets.json
+├── 06_promql_queries_1
+│   ├── promql_basics.md
+│   ├── promql_examples.md
+│   └── query_results.txt
+├── 07_promql_queries_2
+│   ├── advanced_promql.md
+│   ├── advanced_queries.md
+│   ├── recording_rules_explanation.md
+│   └── recording_rules.yml
+├── command_history.txt
+└── final_structure.txt
+
+8 directories, 28 files

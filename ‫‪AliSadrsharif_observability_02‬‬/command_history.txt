@@ -1,0 +1,250 @@
+ 1612  cp prometheus.service /etc/systemd/system/
+ 1613  sudo cp prometheus.yml /etc/prometheus
+ 1614  sudo cp prometheus.service /etc/systemd/system/
+ 1615  systemctl status prometheus
+ 1616  sudo systemctl reload prometheus
+ 1617  sudo systemctl restart prometheus
+ 1618  systemctl status prometheus
+ 1619  systemctl enable prometheus
+ 1620  systemctl status prometheus
+ 1621  sudo systemctl reload prometheus
+ 1622  systemctl status prometheus
+ 1623  clear
+ 1624  whereis prometheus
+ 1625  cd /etc/systemd/system
+ 1626  ls
+ 1627  cat sshd.service 
+ 1628  cat prometheus.service 
+ 1629  cd -
+ 1630  clear
+ 1631  sudo systemctl restart prometheus
+ 1632  systemvtl status prometheus
+ 1633  systemctl status prometheus
+ 1634  cd /etc/prometheus/
+ 1635  ld
+ 1636  ls
+ 1637  cd console_libraries/
+ 1638  ls
+ 1639  cat menu.lib 
+ 1640  cat prom.lib 
+ 1641  cd -
+ 1642  cd /home/ali/thispc/Devops/Assaignment/‫‪AliSadrsharif_observability_01‬‬/03_prometheus_install
+ 1643  clear
+ 1644  systemctl status prometheus
+ 1645  cd ~/wd/Monitoring-And-Observability/Docker-composes/server.dir/
+ 1646  ls
+ 1647  cat prometheus.yml 
+ 1648  clear
+ 1649  cd -
+ 1650  clear
+ 1651  sudo cp prometheus.yml /etc/prometheus
+ 1652  sudo systemctl restart prometheus
+ 1653  systemctl status prometheus
+ 1654  clear
+ 1655  systemctl status prometheus
+ 1656  systemctl status grafana-server
+ 1657  cd
+ 1658  cd wd/Monitoring-And-Observability/Docker-composes/server.dir/
+ 1659  vim prometheus.yml 
+ 1660  cd -
+ 1661  clear
+ 1662  exit
+ 1663  pwd
+ 1664  {     echo -e "##### This file containes info about prometheus #####\n";     echo -e "### Status service prometheus ###\n";     systemctl status prometheus --no-pager;     echo "";     echo -e "### Checking prometheus respons ###\n";     curl -s http://localhost:9090/api/v1/status/config | head -20; } > "prometheus_setup_output.txt"
+ 1665  cd ../04_grafana_install/
+ 1666  bash install_grafana.sh 
+ 1667  sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+ 1668  cd /etc/apt/keyrings
+ 1669  ls
+ 1670  clear
+ 1671  cd -
+ 1672  bash install_grafana.sh 
+ 1673  {     echo "##### This file has info of following details #####";     echo "";     echo "### Grafana version ###";     echo "";     grafana -v;     echo "### Grafana service directories ###";     echo "";     which grafana-server;     echo "### Grafana service status ###";     echo "";     systemctl status grafana-server --no-pager;     echo "### Grafana response ###";     echo "";     curl -s http://localhost:3000/api/health; } > "grafana_status.txt"
+ 1674  {     echo "### Grafana api org ###";     echo "";     curl -u admin:admin http://localhost:3000/api/org;     echo "";     echo "### Grafana api datasources ###";     echo "";     curl -u admin:admin http://localhost:3000/api/datasources; } > "grafana_api_info.txt"
+ 1675  curl -u admin:admin http://localhost:3000/api/datasources
+ 1676  clear
+ 1677  cd ../05_prometheus_grafana_connect/
+ 1678  curl -u admin:admin http://localhost:3000/api/datasources
+ 1679  clear
+ 1680  curl -u admin:admin http://localhost:3000/api/datasources
+ 1681  curl -s http://localhost:9090/api/v1/label/__name__/values‬‬ | head -50
+ 1682  curl -s http://localhost:9090/metrics | head -5prometheus_metrics.txt
+ 1683  curl -s http://localhost:9090/metrics | head -50
+ 1684  clear
+ 1685  curl -s
+ 1686  'http://localhost:9090/api/v1/query?query=prometheus_tsdb_head_samples'
+ 1687  | jq
+ 1688  curl -s 'http://localhost:9090/api/v1/query?query=prometheus_tsdb_head_samples' | jq
+ 1689  curl -s http://localhost:9090/api/v1/targets | jq `.data.activeTargets[]`
+ 1690  cd ../06_metrics_types/
+ 1691  bash prometheus_metrics_analysis.sh 
+ 1692  cd ../07_grafana_explore/
+ 1693  clear
+ 1694  cd ../08_node_exporter/
+ 1695  bash ‫‪install_node_exporter.sh 
+ 1696  {     echo -e "### node exporter version ###\n";     node_exporter --version;     echo -e "\n### node exporter service status ###\n";     sudo systemctl status node_exporter --no-pager;     echo -e "\n### node exporter response ###\n";     curl -s http://localhost:9100/metrics | head -50; } > "node_exporter_status.txt"
+ 1697  bash update_prometheus_config.sh 
+ 1698  clear
+ 1699  curl -s http://localhost:9090/api/v1/targets | jq '.data.activeTargets[] | {job: .job, health: .health, lastScrape: .lastScrape}'
+ 1700  cat /etc/prometheus/prometheus.yml 
+ 1701  clear
+ 1702  sudo systemctl status prometheus
+ 1703  clear
+ 1704  sudo systemctl status prometheus
+ 1705  clear
+ 1706  sudo systemctl reload prometheus
+ 1707  sudo systemctl restart prometheus
+ 1708  sudo systemctl status prometheus
+ 1709  curl -s http://localhost:9090/api/v1/targets | jq '.data.activeTargets[] | {job: .job, health: .health, lastScrape: .lastScrape}'
+ 1710  bash update_prometheus_config.sh 
+ 1711  {     echo -e "### Status targets ###\n";     curl -s http://localhost:9090/api/v1/targets | jq '.data.activeTargets[] | {job: .job, health: .health, lastScrape: .lastScrape}'; } > "prometheus_targets.txt"
+ 1712  clear
+ 1713  cd ..
+ 1714  history | tail -50 > command_history.txt
+ 1715  history | tail -150 > command_history.txt
+ 1716  git add .
+ 1717  git status
+ 1718  git push -u origin
+ 1719  git status
+ 1720  git commit -m "observability part 1 added"
+ 1721  git push -u origin
+ 1722  git status
+ 1723  clear
+ 1724  systemctl status prometheus
+ 1725  netstat -tulnp
+ 1726  clear
+ 1727  exit
+ 1728  cd wd/Monitoring-And-Observability/
+ 1729  cursor .
+ 1730  systemctl status grafana-server
+ 1731  sudo systemctl stop grafana-server
+ 1732  systemctl status grafana-server
+ 1733  sudo systemctl disable grafana-server
+ 1734  systemctl status grafana-server
+ 1735  sudo systemctl stop prometheus
+ 1736  sudo systemctl disable prometheus
+ 1737  sudo systemctl status prometheus
+ 1738  clear
+ 1739  cd Docker-composes/
+ 1740  docker compose up -d
+ 1741  clear
+ 1742  ifconfig
+ 1743  docker compose up -d
+ 1744  docker compose ps
+ 1745  clear
+ 1746  docker compose ps
+ 1747  clear
+ 1748  pwd
+ 1749  docker compose down
+ 1750  clear
+ 1751  docker compose ps
+ 1752  clear
+ 1753  exit
+ 1754  cd /home/ali/wd/Monitoring-And-Observability/Docker-composes
+ 1755  docker ps -a
+ 1756  docker exec -it docker-composes-prometheus-1
+ 1757  docker exec -it docker-composes-prometheus-1 sh
+ 1758  clear
+ 1759  netstat -tulpn
+ 1760  nc 127.0.0.1:3306
+ 1761  nc 127.0.0.1 3306
+ 1762  clear
+ 1763  netstat -tulpn
+ 1764  curl 127.0.0.1:38965
+ 1765  clear
+ 1766  curl 127.0.0.1:38965
+ 1767  clear
+ 1768  netstat -tulpn
+ 1769  clear
+ 1770  exit
+ 1771  systemctl status grafana-server
+ 1772  clear
+ 1773  exit
+ 1774  systemctl status prometheus
+ 1775  clear
+ 1776  cursor .
+ 1777  clear
+ 1778  ls
+ 1779  tr final_structure.txt‬‬
+ 1780  tree > "final_structure.txt‬‬"
+ 1781  clear
+ 1782  history | grep docker > "commands_history.txt"
+ 1783  git commit -am "edit docker assignment"
+ 1784  git add .
+ 1785  git commit -m "edit docker assignment"
+ 1786  git push origin
+ 1787  git status
+ 1788  clear
+ 1789  exit
+ 1790  cd wd
+ 1791  npx create-next-app@latest portfolio --yes
+ 1792  cd portfolio
+ 1793  npm run dev
+ 1794  npm audit fix --force
+ 1795  clear
+ 1796  cd ..
+ 1797  rm -rf portfolio/
+ 1798  ls
+ 1799  clear
+ 1800  npx create-next-app@latest portfolio --yes
+ 1801  cd portfolio/
+ 1802  cursor .
+ 1803  npx shadcn@latest init --preset bbVK0Dg --base radix --template next --rtl --pointer
+ 1804  clear
+ 1805  git init
+ 1806  git add .
+ 1807  git commit -m "hello world"
+ 1808  git branch -M main
+ 1809  git remote add origin git@github.com:aliSadrSharif/portfolio.git
+ 1810  git push -u origin main
+ 1811  mkdir 01_red_metrics 02_monitoring_install_docker_1 03_monitoring_install_docker_2 04_prometheus_architecture_1 05_prometheus_architecture_2 06_promql_queries_1 07_promql_queries_2
+ 1812  cd 02_monitoring_install_docker_1/
+ 1813  docker-compose up -d
+ 1814  ls
+ 1815  docker compose up -d
+ 1816  docker ps | grep prometheus
+ 1817  curl -s http://localhost:9090/api/v1/status/config | head -10
+ 1818  {     echo -e "##### This file contains result of docker run for prometheus #####\n";     echo -e "### Checking prometheus status ###\n";     docker ps | grep prometheus;     echo -e "\n### Log prometheus form docker ###\n";     docker logs prometheus | tail -20;     echo -e "\n### test prometheus endpoint ###\n";     curl -s http://localhost:9090/api/v1/status/config | jq '.data.yaml' | head -20;     echo -e "\n### Check prometheus volume ###\n";     docker volume ls | grep prometheus; } > "prometheus_docker_status.txt"
+ 1819  زمثشق
+ 1820  clear
+ 1821  {     echo -e "##### This file contains result of docker run for prometheus #####\n";     echo -e "### Checking prometheus status ###\n";     docker ps | grep prometheus;     echo -e "\n### Log prometheus form docker ###\n";     docker logs prometheus | tail -20;     echo -e "\n### test prometheus endpoint ###\n";     curl -s http://localhost:9090/api/v1/status/config | jq '.data.yaml' | head -20;     echo -e "\n### Check prometheus volume ###\n";     docker volume ls | grep prometheus; } > "prometheus_docker_status.txt"
+ 1822  clear
+ 1823  cd ../03_monitoring_install_docker_2/
+ 1824  clear
+ 1825  cd -
+ 1826  docker compose down
+ 1827  clear
+ 1828  cd ../03_monitoring_install_docker_2/
+ 1829  clear
+ 1830  docker compose up -d
+ 1831  docker compose ps
+ 1832  docker compose down
+ 1833  docker compose ps
+ 1834  docker ps -a
+ 1835  clear
+ 1836  netstat -tulpn
+ 1837  clear
+ 1838  docker compose up -d
+ 1839  netstat -tulpn
+ 1840  docker compose down
+ 1841  netstat -tulpn
+ 1842  docker compose up -d
+ 1843  docker-compose ps
+ 1844  docker compose ps
+ 1845  {     echo -e "##### This file contains result of docker compose for monitoring stacks #####\n";     echo -e "### Checking docker compose status ###\n";     docker compose ps;     echo -e "\n### Check network for monitoring ###\n";     docker network ls | grep monitoring;     echo -e "\n### Check volume for monitoring ###\n";     docker volume ls | grep -E "prometheus|grafana";     echo -e "\n### test prometheus endpoint ###\n";     curl -s http://localhost:9090/api/v1/targets | jq '.data.activeTargets[] | {job: .job, health: .health}'; } > "stack_status.txt"
+ 1846  docker compose down
+ 1847  clear
+ 1848  docker compose up -d
+ 1849  curl -s 'http://localhost:9090/api/v1/query?query=up' | jq
+ 1850  curl -s 'http://localhost:9090/api/v1/query?query=rate(prometheus_http_requests_total[5m])' | jq
+ 1851  curl -s 'http://localhost:9090/api/v1/query?query=sum(prometheus_http_requests_total) by (handler)' | jq
+ 1852  curl -s 'http://localhost:9090/api/v1/query?query=rate(prometheus_http_requests_total[5m])' | jq
+ 1853  curl 'http://localhost:9090/api/v1/query?query=rate(prometheus_http_requests_total[5m])' | jq
+ 1854  curl -s 'http://localhost:9090/api/v1/query?query=up' | jq
+ 1855  curl -s 'http://localhost:9090/api/v1/query?query=rate(prometheus_http_requests_total[5m])' | jq
+ 1856  curl -s 'http://localhost:9090/api/v1/query?query=rate(prometheus_http_requests_total[5m])'
+ 1857  curl -s 'http://localhost:9090/api/v1/query?query=sum(prometheus_http_requests_total) by (handler)' | jq
+ 1858  cd ..
+ 1859  history > command_history.txt
+ 1860  history | tail -150 > command_history.txt
+ 1861  history | tail -250 > command_history.txt
