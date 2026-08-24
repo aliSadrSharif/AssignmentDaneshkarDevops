@@ -1,0 +1,1000 @@
+ 1021  vim fanapkey.pub
+ 1022  ssh fanap
+ 1023  ssh ubuntu@37.152.187.172
+ 1024  cat > ~/.ssh/id_ed25519_fanap << 'EOF'
+ 1025  -----BEGIN OPENSSH PRIVATE KEY-----
+ 1026  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUx
+ 1027  OQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAIj31wL099cC9AAAAAtzc2gt
+ 1028  ZWQyNTUxOQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAEDcJdsxVyujHDQg
+ 1029  mf1UY6QZUOMRR3Gm9YrnokpGk1MK7xNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBhAAAA
+ 1030  AAECAwQF
+ 1031  -----END OPENSSH PRIVATE KEY-----
+ 1032  EOF
+ 1033  chmod 600 ~/.ssh/id_ed25519_fanap
+ 1034  cat > ~/.ssh/id_ed25519_fanap.pub << 'EOF'
+ 1035  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBh
+ 1036  EOF
+ 1037  chmod 644 ~/.ssh/id_ed25519_fanap.pub
+ 1038  eval "$(ssh-agent -s)"
+ 1039  ssh-add ~/.ssh/id_ed25519_fanap
+ 1040  ls
+ 1041  ssh -i ~/.ssh/id_ed25519_fanap ubuntu@37.152.187.172
+ 1042  ssh fanap
+ 1043  ls
+ 1044  vim config 
+ 1045  ls
+ 1046  cd
+ 1047  clear
+ 1048  cd .ssh/
+ 1049  ls
+ 1050  cat id_ed25519_fanap
+ 1051  cd
+ 1052  clear
+ 1053  ssh fnap
+ 1054  ssh fanap
+ 1055  ssh fnap
+ 1056  ssh fanap
+ 1057  زمثشق
+ 1058  clear
+ 1059  ls /etc/netplan/
+ 1060  cat /etc/netplan/50-cloud-init.yaml 
+ 1061  sudo cat /etc/netplan/50-cloud-init.yaml 
+ 1062  sudo cat /etc/netplan/01-network-manager-all.yaml 
+ 1063  curl 127.0.0.53
+ 1064  netstat -tulpn
+ 1065  nc 127.0.0.53 53
+ 1066  netstat -tulpn
+ 1067  htop
+ 1068  clear
+ 1069  netstat
+ 1070  netstat -tulpn
+ 1071  sudo lsof -i :36403
+ 1072  sudo lsof -i :3306
+ 1073  clear
+ 1074  htop
+ 1075  clear
+ 1076  ping -s 1700 google.com
+ 1077  ping -M do 1472 google.com
+ 1078  ping -M do 1473 google.com
+ 1079  clear
+ 1080  cd wd/Monitoring-And-Observability/
+ 1081  cursor .
+ 1082  cd wd/Monitoring-And-Observability/
+ 1083  exit
+ 1084  pwd
+ 1085  cd Docker-composes/server.dir/
+ 1086  pwd
+ 1087  ifconfig
+ 1088  cd wd
+ 1089  ls
+ 1090  cd haproxy/
+ 1091  ls
+ 1092  cat haproxy/
+ 1093  cd haproxy/
+ 1094  ls
+ 1095  vim haproxy.cfg 
+ 1096  cat /etc/hosts
+ 1097  cat /etc/host.conf 
+ 1098  cat /etc/hostname 
+ 1099  clear
+ 1100  exit
+ 1101  cd wd/Monitoring-And-Observability/Docker-composes/
+ 1102  ls
+ 1103  tree
+ 1104  cler
+ 1105  clear
+ 1106  tree
+ 1107  vim compose.yml 
+ 1108  sudo apt update
+ 1109  exit
+ 1110  mtr google.com
+ 1111  ping google.com
+ 1112  clear
+ 1113  exit
+ 1114  sudo apt update
+ 1115  sudo apt upgrade
+ 1116  clear
+ 1117  sudo apt upgrade
+ 1118  clear
+ 1119  exit
+ 1120  git init
+ 1121  git remote add origin git@github.com:aliSadrSharif/devops_templates.git
+ 1122  git branch -M main
+ 1123  git push -u origin main
+ 1124  git add .
+ 1125  git commit -m "repo git"
+ 1126  git push -u origin main
+ 1127  git status
+ 1128  git add .
+ 1129  git status
+ 1130  git add .
+ 1131  cursor .
+ 1132  git status
+ 1133  git stauts
+ 1134  git status
+ 1135  ss -tulpn
+ 1136  cd .ssh/
+ 1137  ls
+ 1138  cat config 
+ 1139  cat > ~/.ssh/id_ed25519_fanap << 'EOF'
+ 1140  -----BEGIN OPENSSH PRIVATE KEY-----
+ 1141  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUx
+ 1142  OQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAIgEk/GDBJPxgwAAAAtzc2gt
+ 1143  ZWQyNTUxOQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAEDcJdsxVyujHDQg
+ 1144  mf1UY6QZUOMRR3Gm9YrnokpGk1MK7xNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBhAAAA
+ 1145  AAECAwQF
+ 1146  -----END OPENSSH PRIVATE KEY-----
+ 1147  EOF
+ 1148  chmod 600 ~/.ssh/id_ed25519_fanap
+ 1149  cat > ~/.ssh/id_ed25519_fanap.pub << 'EOF'
+ 1150  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBh
+ 1151  EOF
+ 1152  chmod 644 ~/.ssh/id_ed25519_fanap.pub
+ 1153  vim config 
+ 1154  cd
+ 1155  clear
+ 1156  ssh fanap
+ 1157  cd .ssh/
+ 1158  cat > ~/.ssh/id_ed25519_fanap << 'EOF'
+ 1159  -----BEGIN OPENSSH PRIVATE KEY-----
+ 1160  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUx
+ 1161  OQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAIgEk/GDBJPxgwAAAAtzc2gt
+ 1162  ZWQyNTUxOQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAEDcJdsxVyujHDQg
+ 1163  mf1UY6QZUOMRR3Gm9YrnokpGk1MK7xNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBhAAAA
+ 1164  AAECAwQF
+ 1165  -----END OPENSSH PRIVATE KEY-----
+ 1166  EOF
+ 1167  chmod 600 ~/.ssh/id_ed25519_fanap
+ 1168  cat > ~/.ssh/id_ed25519_fanap.pub << 'EOF'
+ 1169  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBh
+ 1170  EOF
+ 1171  chmod 644 ~/.ssh/id_ed25519_fanap.pub
+ 1172  ls
+ 1173  cat id_ed25519_fanap
+ 1174  vim config 
+ 1175  ssh fanap
+ 1176  exit
+ 1177  sudo apt install ~/Downloads/claude-desktop_amd64.deb
+ 1178  cd Downloads/
+ 1179  ls
+ 1180  sudo apt install ~/Downloads/claude-desktop_amd64.deb
+ 1181  sudo tcpdump -D
+ 1182  dig google.com
+ 1183  dig -x 8.8.8.8
+ 1184  clear
+ 1185  dig +short google.com
+ 1186  dig +trace google.com
+ 1187  resolvectl status
+ 1188  resolvectl query google.com
+ 1189  resolvectl dns
+ 1190  ip addr
+ 1191  ip route
+ 1192  ip link
+ 1193  ip addr
+ 1194  clear
+ 1195  curl google.com
+ 1196  curl-I google.com
+ 1197  curl -I google.com
+ 1198  curl -s -o /dev/null -w "%{http_code}\n" https://google.com
+ 1199  clear
+ 1200  tcpdump
+ 1201  clear
+ 1202  sudo apt update
+ 1203  sudo apt upgrade -y
+ 1204  clear
+ 1205  curl https://esale.ikco.ir/
+ 1206  clear
+ 1207  ping https://esale.ikco.ir/
+ 1208  curl -f https://esale.ikco.ir/
+ 1209  history | grep claude
+ 1210  history | grep .tar.gz
+ 1211  history | grep tar.gz
+ 1212  clear
+ 1213  cd .ssh/
+ 1214  cat > ~/.ssh/id_ed25519_fanap << 'EOF'
+ 1215  -----BEGIN OPENSSH PRIVATE KEY-----
+ 1216  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWQyNTUx
+ 1217  OQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAIir8Rpnq/EaZwAAAAtzc2gt
+ 1218  ZWQyNTUxOQAAACATZiS2dvdD0M3M00R3XUKiPJB47WZTSsF4swq25szwYQAAAEDcJdsxVyujHDQg
+ 1219  mf1UY6QZUOMRR3Gm9YrnokpGk1MK7xNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBhAAAA
+ 1220  AAECAwQF
+ 1221  -----END OPENSSH PRIVATE KEY-----
+ 1222  EOF
+ 1223  chmod 600 ~/.ssh/id_ed25519_fanap
+ 1224  cat > ~/.ssh/id_ed25519_fanap.pub << 'EOF'
+ 1225  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNmJLZ290PQzczTRHddQqI8kHjtZlNKwXizCrbmzPBh
+ 1226  EOF
+ 1227  chmod 644 ~/.ssh/id_ed25519_fanap.pub
+ 1228  vim config 
+ 1229  cd
+ 1230  ssh fanap
+ 1231  time
+ 1232  htop
+ 1233  top
+ 1234  clear
+ 1235  ss -tupna
+ 1236  ss -tupnah
+ 1237  ss -tupna
+ 1238  clear
+ 1239  bmon
+ 1240  iftop
+ 1241  clear
+ 1242  sudo apt install nethogs
+ 1243  nethogs
+ 1244  sudo netogs
+ 1245  sudo nethogs
+ 1246  clearsystemctl status nginx.service
+ 1247  systemctl status nginx.service
+ 1248  sudo systemctl disable nginx.service
+ 1249  sudo systemctl down nginx.service
+ 1250  systemctl status nginx.service
+ 1251  sudo systemctl stop nginx.service
+ 1252  systemctl status nginx.service
+ 1253  clear
+ 1254  ssh fanap
+ 1255  pwd
+ 1256  clear
+ 1257  exit
+ 1258  cd wd
+ 1259  ls
+ 1260  cd tmp/
+ 1261  ls
+ 1262  cd Monitoring-And-Observability/
+ 1263  cursor .
+ 1264  cd ../Monitoring-And-Observability/
+ 1265  tree
+ 1266  cursor .
+ 1267  cd ..
+ 1268  ls
+ 1269  rm -rf Monitoring-And-Observability/
+ 1270  ls
+ 1271  clear
+ 1272  exit
+ 1273  cd Downloads/
+ 1274  curl -f https://zed.dev/install.sh | sh
+ 1275  htop
+ 1276  cd wd
+ 1277  git clone git@github.com:sarvinstylecoding/DockerTestApp.git
+ 1278  ls
+ 1279  cd DockerTestApp/
+ 1280  ls
+ 1281  tree
+ 1282  clear
+ 1283  ls -alh
+ 1284  rm -rf .git
+ 1285  rm -rf .gitignore 
+ 1286  ls -alh
+ 1287  clear
+ 1288  git remote add origin git@github.com:aliSadrSharif/ansibleLab.git
+ 1289  git branch -M main
+ 1290  git push -u origin main
+ 1291  git init
+ 1292  git remote add origin git@github.com:aliSadrSharif/ansibleLab.git
+ 1293  git branch -M main
+ 1294  git push -u origin main
+ 1295  git add .
+ 1296  git status
+ 1297  git remote add origin git@github.com:aliSadrSharif/ansibleLab.git
+ 1298  git branch -M main
+ 1299  git push -u origin main
+ 1300  git status
+ 1301  git commit -m "intiat"
+ 1302  git status
+ 1303  git remote
+ 1304  clear
+ 1305  git push
+ 1306  git push -u origin main
+ 1307  clear
+ 1308  exit
+ 1309  sudo apt update
+ 1310  cd wd/DockerTestApp/
+ 1311  zed .
+ 1312  cursor .
+ 1313  cd wd/DockerTestApp/
+ 1314  docker ps
+ 1315  clear
+ 1316  exit
+ 1317  netstat -tulpn
+ 1318  cd wd/tmp/Monitoring-And-Observability/
+ 1319  ls
+ 1320  cd Docker-composes/
+ 1321  ls
+ 1322  vim compose.yml 
+ 1323  clear
+ 1324  exit
+ 1325  docker compose up -d
+ 1326  docker compose ps
+ 1327  docker compose down
+ 1328  docker compose up --build -d
+ 1329  cd nginx/
+ 1330  vim default.conf
+ 1331  cd ..
+ 1332  vim docker-compose.yaml 
+ 1333  docker compose down
+ 1334  docker compose up --build -d
+ 1335  docker compose down
+ 1336  cursor .
+ 1337  zed .
+ 1338  cd wd/tmp/nginxpractice/
+ 1339  tree
+ 1340  cursor .
+ 1341  cd ..
+ 1342  ls
+ 1343  cd ..
+ 1344  ls
+ 1345  cd DaneshkarTeamProject/
+ 1346  zed .
+ 1347  cd .ssh/
+ 1348  cat config 
+ 1349  ssh tantan-vm
+ 1350  ifconfige
+ 1351  ifconfig
+ 1352  vim config 
+ 1353  ssh vm1
+ 1354  clear
+ 1355  exit
+ 1356  ls
+ 1357  cat id_ed25519.pub 
+ 1358  cd
+ 1359  ssh vm1
+ 1360  sudo vim /etc/host
+ 1361  sudo vim /etc/hosts
+ 1362  cd wd/DaneshkarTeamProject/
+ 1363  zed .
+ 1364  cd wd/DaneshkarTeamProject/
+ 1365  clea
+ 1366  clear
+ 1367  ls
+ 1368  docker compose up --build -d
+ 1369  docker compose ps
+ 1370  docker ps -a
+ 1371  docker log 2df57d8f18b8
+ 1372  docker log
+ 1373  docker --help
+ 1374  docker logs
+ 1375  docker logs 2df57d8f18b8
+ 1376  docker logs 2df57d8f18b8 | jq
+ 1377  clear
+ 1378  docker compose down
+ 1379  clea
+ 1380  ssh vm1
+ 1381  clear
+ 1382  ssh vm1
+ 1383  htop
+ 1384  clear
+ 1385  pwd
+ 1386  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1387  ps -p $$ -o comm=
+ 1388  sudo apt update & sudo apt upgrade
+ 1389  exit
+ 1390  curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com bookworm main"   | sudo tee /etc/apt/sources.list.d/ngrok.list   && sudo apt update   && sudo apt install ngrok
+ 1391  curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com bookworm main"   | sudo tee /etc/apt/sources.list.d/ngrok.list \
+ 1392  curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null   && echo "deb https://ngrok-agent.s3.amazonaws.com bookworm main"   | sudo tee /etc/apt/sources.list.d/ngrok.list 
+ 1393  sudo apt install ngrok 
+ 1394  ngrok config add-authtoken $YOUR_AUTHTOKEN
+ 1395  cd wd/tmp/
+ 1396  ls
+ 1397  cd ansiblepractice/
+ 1398  ls
+ 1399  cursor .
+ 1400  git diff kiarash..ali
+ 1401  git diff kiarash..ali ./nginx/default.conf
+ 1402  ps -p $$ -o comm=
+ 1403  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1404  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1405  ps -p $$ -o comm=
+ 1406  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1407  ls
+ 1408  cd playbooks.dir/
+ 1409  ls
+ 1410  cd ansible_roles/
+ 1411  clear
+ 1412  ansible-glaxy init webserver
+ 1413  ansible-galaxy init webserver
+ 1414  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1415  zed .
+ 1416  ps -p $$ -o comm=
+ 1417  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1418  zed .
+ 1419  netstat -tulpn
+ 1420  docker rm -f $(docker ps -aq)
+ 1421  docker system prune -a --volumes
+ 1422  docker ps -a
+ 1423  docker images
+ 1424  clear
+ 1425  exit
+ 1426  sudo apt update
+ 1427  sudo apt remove grafana
+ 1428  sudo apt remove --purge grafana
+ 1429  sudo apt update
+ 1430  grep -rl "apt.releases.hashicorp.com\|ngrok-agent.s3.amazonaws.com\|packages.grafana.com\|apt.grafana.com" /etc/apt/sources.list.d/
+ 1431  sudo rm /etc/apt/sources.list.d/hashicorp.list
+ 1432  sudo rm /etc/apt/sources.list.d/ngrok.list
+ 1433  sudo rm /etc/apt/sources.list.d/grafana.list
+ 1434  grep -rl "apt.releases.hashicorp.com\|ngrok-agent.s3.amazonaws.com\|packages.grafana.com\|apt.grafana.com" /etc/apt/sources.list.d/
+ 1435  sudo rm /etc/apt/sources.list.d/archive_uri-https_packages_grafana_com_oss_deb-noble.list
+ 1436  grep -rl "apt.releases.hashicorp.com\|ngrok-agent.s3.amazonaws.com\|packages.grafana.com\|apt.grafana.com" /etc/apt/sources.list.d/
+ 1437  grep -rl "hashicorp\|ngrok\|grafana" /etc/apt/trusted.gpg.d/ /usr/share/keyrings/ 2>/dev/null
+ 1438  sudo apt-key list 2>/dev/null | grep -B1 "hashicorp\|ngrok\|grafana"
+ 1439  sudo apt-key del A621E701
+ 1440  sudo apt-key del 10458545
+ 1441  sudo apt-key list 2>/dev/null | grep -B1 "hashicorp\|grafana"
+ 1442  clear
+ 1443  sudo apt update
+ 1444  sudo apt remove --purge vagrant
+ 1445  sudo apt autoremove
+ 1446  du -sh ~/.vagrant.d 2>/dev/null
+ 1447  rm -rf ~/.vagrant.d
+ 1448  clear
+ 1449  sudo apt update
+ 1450  sudo apt upgrade
+ 1451  sudo apt update
+ 1452  sudo apt upgrade
+ 1453  sudo apt full-upgrade
+ 1454  sudo apt update
+ 1455  sudo apt upgrade
+ 1456  clear
+ 1457  # Force-install everything regardless of phasing
+ 1458  sudo apt-get upgrade -o APT::Get::Always-Include-Phased-Updates=1
+ 1459  # Or use full-upgrade / dist-upgrade, which sometimes pulls them in via dependency resolution
+ 1460  sudo apt full-upgrade
+ 1461  sudo apt update
+ 1462  clear
+ 1463  ps -p $$ -o comm=
+ 1464  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1465  netstat -tulpn
+ 1466  lsof -i :37539
+ 1467  htop | grep zod
+ 1468  htop
+ 1469  cd /etc/nginx/
+ 1470  ls
+ 1471  cat nginx.conf
+ 1472  clear
+ 1473  ls
+ 1474  cd conf.d/
+ 1475  ls
+ 1476  cler
+ 1477  clear
+ 1478  cd wd/DaneshkarTeamProject/
+ 1479  clear
+ 1480  docker compose up -d
+ 1481  clear
+ 1482  docker compose ps
+ 1483  docker ps
+ 1484  docker logs abc7a5d4f33b
+ 1485  docker compose down
+ 1486  docker compose up --build -d
+ 1487  docker compose ps
+ 1488  docker compose down
+ 1489  systemtl status nginx
+ 1490  systemctl status nginx
+ 1491  clear
+ 1492  docker compose down
+ 1493  docker compose up --build -d
+ 1494  sudo cp nginx/default.conf /etc/nginx/sites-available/myapp.local
+ 1495  sudo ln -sf /etc/nginx/sites-available/myapp.local /etc/nginx/sites-enabled/
+ 1496  sudo rm -f /etc/nginx/sites-enabled/default
+ 1497  sudo nginx -t && sudo systemctl reload nginx
+ 1498  cat /etc/nginx/nginx.conf
+ 1499  clear
+ 1500  systemctl status nginx
+ 1501  systemctl restart nginx
+ 1502  systemctl status nginx
+ 1503  systemctl disable nginx
+ 1504  systemctl down nginx
+ 1505  systemctl stop nginx
+ 1506  systemctl disable nginx
+ 1507  systemctl status nginx
+ 1508  clear
+ 1509  cd /etc/nginx/
+ 1510  ls
+ 1511  cd sites-enabled/
+ 1512  ls
+ 1513  cat myapp.local 
+ 1514  sudo cp nginx/default.conf /etc/nginx/sites-available/myapp.local
+ 1515  cd ../sites-available/
+ 1516  ls
+ 1517  cat default 
+ 1518  sudo rm -rf default 
+ 1519  ls
+ 1520  cat myapp.local 
+ 1521  clear
+ 1522  sudo nginx -t
+ 1523  cd ..
+ 1524  ls
+ 1525  cat nginx.conf
+ 1526  sudo rm -rf nginx.conf
+ 1527  clear
+ 1528  ls
+ 1529  sudo nginx -t
+ 1530  ls
+ 1531  sudo nginx -t
+ 1532  sudo rm -rf nginx.conf
+ 1533  ls
+ 1534  sudo nginx -t
+ 1535  systemctl status nginx
+ 1536  clear
+ 1537  exit
+ 1538  ps -p $$ -o comm=
+ 1539  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1540  zed .
+ 1541  sudo cp nginx/default.conf /etc/nginx/sites-available/myapp.local
+ 1542  sudo cp nginx/default.conf /etc/nginx/nginx.conf
+ 1543  zed .
+ 1544  netstat -tulpn
+ 1545  netstat -tulpn | grep xray
+ 1546  sudo lsof -i :8889
+ 1547  sudo lsof -i :15490
+ 1548  sudo lsof -i :1089
+ 1549  cd .config/qv2ray/
+ 1550  ls
+ 1551  cd generated/
+ 1552  ls
+ 1553  vim config.gen.json 
+ 1554  htop
+ 1555  whoami
+ 1556  groupid
+ 1557  clear
+ 1558  exit
+ 1559  cat /etc/passwd
+ 1560  clear
+ 1561  exit
+ 1562  افخح
+ 1563  htop
+ 1564  celar
+ 1565  clear
+ 1566  htop
+ 1567  sudo apt install tabby
+ 1568  cd .ssh/
+ 1569  ssh ubuntu@185.226.119.164
+ 1570  cat > ~/.ssh/id_ed25519_fanap << 'EOF'
+ 1571  -----BEGIN OPENSSH PRIVATE KEY-----
+ 1572  b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtz
+ 1573  c2gtZWQyNTUxOQAAACCFSvTl6aSR4ux3Kf3mIV0vhzoT/go3Oeu3pLOppv7u/QAA
+ 1574  AIjgM9Wn4DPVpwAAAAtzc2gtZWQyNTUxOQAAACCFSvTl6aSR4ux3Kf3mIV0vhzoT
+ 1575  /go3Oeu3pLOppv7u/QAAAECfugH+rAbslIzOhwVDyH/5zKKczkpCvOci0sDXN7Jq
+ 1576  r4VK9OXppJHi7Hcp/eYhXS+HOhP+Cjc567eks6mm/u79AAAAAAECAwQF
+ 1577  -----END OPENSSH PRIVATE KEY-----
+ 1578  EOF
+ 1579  chmod 600 ~/.ssh/id_ed25519_fanap
+ 1580  cat > ~/.ssh/id_ed25519_fanap.pub << 'EOF'
+ 1581  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIVK9OXppJHi7Hcp/eYhXS+HOhP+Cjc567eks6mm/u79
+ 1582  EOF
+ 1583  chmod 644 ~/.ssh/id_ed25519_fanap.pub
+ 1584  vim config 
+ 1585  ssh fanap
+ 1586  clear
+ 1587  ssh fanap
+ 1588  clear
+ 1589  ssh fanap
+ 1590  clear
+ 1591  vim /etc/nginx/
+ 1592  cd /etc/nginx/
+ 1593  ls
+ 1594  vim conf.d/
+ 1595  cd conf.d/
+ 1596  ls
+ 1597  cd ..
+ 1598  cat nginx.conf.52526.2026-06-25@15\:16\:23~ 
+ 1599  clear
+ 1600  ssh fanap
+ 1601  ps -p $$ -o comm=
+ 1602  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1603  ps -p $$ -o comm=
+ 1604  docker compose up -d
+ 1605  docker compose ps
+ 1606  sudo systemctl status nginx --no-pager
+ 1607  sudo ss -lntp | grep -E ':80|:443'
+ 1608  curl -v http://127.0.0.1/
+ 1609  sudo nginx -t
+ 1610  sudo cat /etc/nginx/nginx.conf
+ 1611  docker compose logs --tail=100
+ 1612  clear
+ 1613  docker compose down
+ 1614  docker compose up --build -d
+ 1615  docker compose ps
+ 1616  docker compose down
+ 1617  docker compose up -d
+ 1618  docker compose down
+ 1619  bash openssl.sh 
+ 1620  docker compose -f docker-compose-tls.yaml up --build -d
+ 1621  docker compose down
+ 1622  docker compose config
+ 1623  docker compose -f docker-compose-tls.yaml up --build -d
+ 1624  docker compose logs mongo-express --tail=100
+ 1625  docker inspect daneshkarteamproject-mongo-express-1 --format='{{json .State.Health}}'
+ 1626  docker compose down
+ 1627  docker compose -f docker-compose-tls.yaml up --build -d
+ 1628  docker compose down
+ 1629  docker compose -f docker-compose-tls.yaml up --build -d
+ 1630  docker compose down
+ 1631  docker compose -f docker-compose-tls.yaml up --build -d
+ 1632  docker compose down]
+ 1633  docker compose down
+ 1634  docker compose ps
+ 1635  docker ps -a
+ 1636  docker rm -f de32abe4fc30
+ 1637  docker ps -a
+ 1638  docker compose ps
+ 1639  docker compose -f docker-compose-tls.yaml up --build -d
+ 1640  docker compose logs mongo-express --tail=100
+ 1641  clear
+ 1642  docker compose config
+ 1643  docker compose exec mongo-express env | grep ME_CONFIG
+ 1644  docker compose down
+ 1645  docker compose ps
+ 1646  docker compose -f docker-compose-tls.yaml --build -d
+ 1647  docker compose -f docker-compose-tls.yaml up --build -d
+ 1648  docker compose logs mongo-express --tail=100
+ 1649  docker compose ps
+ 1650  docker compose down
+ 1651  docker compose -f docker-compose-tls.yaml up --build -d
+ 1652  docker compose down
+ 1653  docker compose ps
+ 1654  docker ps -a
+ 1655  docker compose -f docker-compose-tls.yaml up --build -d
+ 1656  docker compose logs mongo-express --tail=100
+ 1657  docker compose down
+ 1658  docker compose -f docker-compose-tls.yaml up --build -d
+ 1659  docker compose down
+ 1660  docker compose -f docker-compose-tls.yaml up --build -d
+ 1661  docker compose ps
+ 1662  docker compose down
+ 1663  docker compose ps
+ 1664  docker compose -f docker-compose-tls.yaml up --build -d
+ 1665  docker compose logs -f mongo-express
+ 1666  clear
+ 1667  docker compose ps
+ 1668  docker compose down
+ 1669  docker compose ps
+ 1670  docker networks
+ 1671  docker network
+ 1672  docker network ls
+ 1673  docker network prune
+ 1674  clear
+ 1675  docker compose ps
+ 1676  clear
+ 1677  docker compose config
+ 1678  docker compose up -d
+ 1679  ps -p $$ -o comm=
+ 1680  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1681  ps -p $$ -o comm=
+ 1682  docker compose up --build -d
+ 1683  docker compose down
+ 1684  sudo vim /etc/hosts
+ 1685  cd wd/DaneshkarTeamProject/
+ 1686  clearr
+ 1687  docker compose ps
+ 1688  clearr
+ 1689  clear
+ 1690  docker compose ps
+ 1691  docker compose down
+ 1692  sudo netstat -tulpn
+ 1693  docker compose up --build -d
+ 1694  sudo netstat -tulpn
+ 1695  sudo netstat -tulpn | grep docker
+ 1696  docker compose ps
+ 1697  docker ps -a
+ 1698  docker logs 9fdb02542f1c
+ 1699  docker compose logs nginx --tail=100
+ 1700  clear
+ 1701  echo "127.0.0.3 myapp.local" | sudo tee -a /etc/hosts
+ 1702  cd wd/DaneshkarTeamProject/
+ 1703  clear
+ 1704  docker compose ps
+ 1705  docker compose down
+ 1706  docker compose -f docker-compose-tls.yaml up --build -d
+ 1707  clear
+ 1708  docker compose ps
+ 1709  sudo netstat -tulpn
+ 1710  sudo netstat -tulpn | grep docker
+ 1711  curl 0.0.0.0:443
+ 1712  curl -i 0.0.0.0:443
+ 1713  docker compose ps
+ 1714  curl -i http://myapp.local/
+ 1715  docker compose down
+ 1716  ps -p $$ -o comm=
+ 1717  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1718  ssh vm1
+ 1719  clear
+ 1720  cat /etc/hosts
+ 1721  curl -I http://myapp.local/          # 301 → https
+ 1722  curl -kI https://myapp.local/        # 200
+ 1723  curl -k https://myapp.local/api/users
+ 1724  clear
+ 1725  curl -I http://myapp.local/
+ 1726  ssh vm1
+ 1727  clear
+ 1728  ssh vm1
+ 1729  sudo apt update
+ 1730  sudo apt upgrad -y
+ 1731  sudo apt upgrade -y
+ 1732  sudo apt update
+ 1733  exit
+ 1734  ps -p $$ -o comm=
+ 1735  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1736  ps -p $$ -o comm=
+ 1737  ip route show
+ 1738  shutdown --help
+ 1739  ps -p $$ -o comm=
+ 1740  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1741  cd wd
+ 1742  ls
+ 1743  rm -rf portfolio/
+ 1744  clear
+ 1745  npx create-next-app@latest
+ 1746  npm install -g npm@11.19.0
+ 1747  sudo npm install -g npm@11.19.0
+ 1748  clear
+ 1749  ls
+ 1750  cd portfolio/
+ 1751  ls
+ 1752  clear
+ 1753  npx shadcn@latest init --preset b27GcrRo --base radix --template next --rtl --pointer
+ 1754  cursor .
+ 1755  ps -p $$ -o comm=
+ 1756  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1757  ps -p $$ -o comm=
+ 1758  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1759  ps -p $$ -o comm=
+ 1760  npm run dev
+ 1761  npm run build
+ 1762  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1763  cd wd/DaneshkarTeamProject/
+ 1764  ls
+ 1765  cursor .
+ 1766  clear
+ 1767  ssh vm1
+ 1768  clear
+ 1769  car /etc/hosts
+ 1770  sudo cat /etc/hosts
+ 1771  exit
+ 1772  ps -p $$ -o comm=
+ 1773  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1774  tree
+ 1775  clear   └── ssl
+ 1776  │   │       └── tasks
+ 1777  │   │           └── main.yml
+ 1778  │   ├── server_setup.yml
+ 1779  │   └── site.yml
+ 1780  ├── backend
+ 1781  │   ├── Dockerfile
+ 1782  │   ├── index.js
+ 1783  │   ├── package.json
+ 1784  │   └── package-lock.json
+ 1785  ├── docker-compose.yml
+ 1786  ├── frontend
+ 1787  │   ├── Dockerfile
+ 1788  │   ├── package.json
+ 1789  │   ├── package-lock.json
+ 1790  │   ├── public
+ 1791  │   │   ├── favicon.ico
+ 1792  │   │   ├── images
+ 1793  │   │   │   └── delete.svg
+ 1794  │   │   ├── index.html
+ 1795  │   │   ├── logo192.png
+ 1796  │   │   ├── logo512.png
+ 1797  │   │   ├── manifest.json
+ 1798  │   │   └── robots.txt
+ 1799  │   └── src
+ 1800  │       ├── App.css
+ 1801  │       ├── App.js
+ 1802  │       ├── App.test.js
+ 1803  │       ├── components
+ 1804  │       │   ├── App.test.js
+ 1805  │       │   ├── Input.css
+ 1806  │       │   ├── Input.jsx
+ 1807  │       │   ├── UserForm.jsx
+ 1808  │       │   ├── UserList.css
+ 1809  │       │   ├── UserListItem.css
+ 1810  │       │   ├── UserListItem.jsx
+ 1811  │       │   └── UserList.jsx
+ 1812  │       ├── index.css
+ 1813  │       ├── index.js
+ 1814  │       ├── logo.svg
+ 1815  │       ├── reportWebVitals.js
+ 1816  │       ├── services
+ 1817  │       │   └── api.js
+ 1818  │       └── setupTests.js
+ 1819  ├── md
+ 1820  │   ├── architecture.md
+ 1821  │   ├── compose_explanation.md
+ 1822  │   ├── deployment_guide.md
+ 1823  │   ├── dockerfile_explanation.md
+ 1824  │   ├── nginx_explanation.md
+ 1825  │   ├── project_info.md
+ 1826  │   ├── project_summary.md
+ 1827  │   ├── server_info.md
+ 1828  │   ├── team_contribution.md
+ 1829  │   └── troubleshooting.md
+ 1830  ├── nginx
+ 1831  │   └── ssl
+ 1832  ├── README.md
+ 1833  ├── results
+ 1834  │   ├── 02_playbook_output.txt
+ 1835  │   ├── 02_verification.txt
+ 1836  │   ├── 04_container_status.txt
+ 1837  │   ├── 04_test_results.txt
+ 1838  │   ├── 05_container_status.txt
+ 1839  │   ├── 05_test_results.txt
+ 1840  │   ├── 06_test_results.txt
+ 1841  │   ├── 07_test_results.txt
+ 1842  │   ├── 08_playbook_output.txt
+ 1843  │   ├── 08_verification.txt
+ 1844  │   ├── build_log.txt
+ 1845  │   ├── certificate_info.txt
+ 1846  │   ├── collect_evidence_run.txt
+ 1847  │   ├── container_logs.txt
+ 1848  │   ├── deploy_log.txt
+ 1849  │   ├── facts.txt
+ 1850  │   ├── final_structure.txt
+ 1851  │   ├── git_history.txt
+ 1852  │   ├── hosts_file.txt
+ 1853  │   ├── inventory
+ 1854  │   ├── nginx_config.txt
+ 1855  │   ├── nginx_ssl_config.txt
+ 1856  │   ├── ping_test.txt
+ 1857  │   ├── project_structure.txt
+ 1858  │   └── server_connection.txt
+ 1859  └── scripts
+ 1860  tree
+ 1861  ps -p $$ -o comm=
+ 1862  ssh vm1
+ 1863  clea
+ 1864  clear
+ 1865  exit
+ 1866  code .
+ 1867  cursor .
+ 1868  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1869  ps -p $$ -o comm=
+ 1870  cat /etc/hosts
+ 1871  sudo apt update
+ 1872  sudo apt upgrade
+ 1873  clear
+ 1874  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1875  ps -p $$ -o comm=
+ 1876  cd wd
+ 1877  ls
+ 1878  cd tmp/
+ 1879  ls
+ 1880  git status
+ 1881  ls -alh
+ 1882  mkdir kubernetes
+ 1883  git add .
+ 1884  git commit -am "add kuber folder"
+ 1885  git status
+ 1886  git push origin
+ 1887  git status
+ 1888  git add .
+ 1889  git status
+ 1890  git add ansiblepractice/ansible/
+ 1891  git status
+ 1892  cd kubernetes/
+ 1893  clear
+ 1894  cursor .
+ 1895  sudo apt update
+ 1896  sudo apt upgrade -y
+ 1897  exit
+ 1898  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1899  ps -p $$ -o comm=
+ 1900  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1901  ps -p $$ -o comm=
+ 1902  pwd
+ 1903  ls
+ 1904  sudo su
+ 1905  pwd
+ 1906  ls
+ 1907  pwd
+ 1908  lsblk -o NAME,SIZE,FSTYPE,LABEL,UUID,MOUNTPOINTS,RO
+ 1909  clear
+ 1910  lsblk -o NAME,SIZE,FSTYPE,LABEL,UUID,MOUNTPOINTS,RO
+ 1911  mount | grep '/media/ali'
+ 1912  ls -ld /media/ali/E8EB-75C3
+ 1913  findmnt /media/ali/E8EB-75C3
+ 1914  id
+ 1915  touch /media/ali/E8EB-75C3/test.txt
+ 1916  findmnt -no OPTIONS /media/ali/E8EB-75C3
+ 1917  cd
+ 1918  sudo dmesg | tail -50
+ 1919  sudo journalctl -k -n 50 --no-pager
+ 1920  lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINTS,RO
+ 1921  udisksctl unmount -b /dev/sdc1
+ 1922  sudo fsck.fat -n /dev/sdc1
+ 1923  udisksctl unmount -b /dev/sdc1
+ 1924  sudo fsck.fat -n /dev/sdc1
+ 1925  clear
+ 1926  lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINTS,RO
+ 1927  sudo fsck.fat -n /dev/sdc1
+ 1928  lear
+ 1929  clear
+ 1930  lear
+ 1931  clear
+ 1932  sudo fsck.fat -n /dev/sdc1
+ 1933  lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINTS,RO
+ 1934  clear
+ 1935  sudo fsck.fat -n /dev/sdc1
+ 1936  clear
+ 1937  lsblk
+ 1938  sudo umount /dev/sdc1
+ 1939  sudo mkfs.vfat -F 32 -n "16 GB Volume" /dev/sdc1
+ 1940  sync
+ 1941  lsblk -o NAME,SIZE,FSTYPE,LABEL,UUID,MOUNTPOINTS,RO
+ 1942  findmnt -t vfat
+ 1943  touch /media/ali/E8EB-75C3/text.txt
+ 1944  findmnt -t vfat
+ 1945  touch /media/ali/E8EB-75C3/text.txt
+ 1946  sudo dmesg | tail -50
+ 1947  clear
+ 1948  sudo umount /dev/sdc1
+ 1949  sudo fuser -vm /media/ali/E8EB-75C3
+ 1950  sudo lsof +D /media/ali/E8EB-75C3
+ 1951  lear
+ 1952  clear
+ 1953  sudo fuser -vm /media/ali/E8EB-75C3
+ 1954  cd ~
+ 1955  sudo umount /dev/sdc1
+ 1956  sudo fuser -vm /media/ali/E8EB-75C3
+ 1957  sudo umount -l /dev/sdc1
+ 1958  clear
+ 1959  sudo mkfs.vfat -F 32 -n "16GB" /dev/sdc1
+ 1960  lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINTS,RO
+ 1961  clear
+ 1962  findmnt -t vfat
+ 1963  MOUNT=$(findmnt -no TARGET /dev/sdc1)
+ 1964  echo "hello" > "$MOUNT/test.txt"
+ 1965  cat "$MOUNT/test.txt"
+ 1966  rm "$MOUNT/test.txt"
+ 1967  sync
+ 1968  clear
+ 1969  sudo dmesg | tail -30
+ 1970  clear
+ 1971  lsblk -f /dev/sdc
+ 1972  sudo fsck.fat -v /dev/sdc1
+ 1973  clear
+ 1974  sudo umount /dev/sdc1 2>/dev/null
+ 1975  lsblk -o NAME,SIZE,FSTYPE,LABEL,MOUNTPOINTS,RO
+ 1976  touch /media/ali/16GB/test.txt
+ 1977  ls
+ 1978  cp lampshade.gcode /media/ali/16GB/lampshade.gcode
+ 1979  cursor .
+ 1980  ps -p $$ -o comm=
+ 1981  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1982  ps -p $$ -o comm=
+ 1983  sh -c echo "WSL=${WSL_DISTRO_NAME:-false}" && echo "SSH=$( [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ] && echo true || echo false )" && echo "DOCKER=$( [ -f /.dockerenv ] && echo true || echo false )" && echo "CYGWIN=${CYGWIN:-false}" && echo "MINGW=${MINGW_PREFIX:-${MSYSTEM:-false}}"
+ 1984  r 01_kubernetes_why 02_kubernetes_architecture 03_d03_docker_concepts 04_dockerimages 05_docker_containers 06_docker_dockerfile 07_docker volumes_networks 08_docker_compose
+ 1985  mkdir 01_kubernetes_why 02_kubernetes_architecture 03_d03_docker_concepts 04_dockerimages 05_docker_containers 06_docker_dockerfile 07_docker volumes_networks 08_docker_compose
+ 1986  clear
+ 1987  minikube start
+ 1988  systemctl status docker
+ 1989  clear
+ 1990  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+ 1991  sudo dpkg -i minikube_latest_amd64.deb
+ 1992  clear
+ 1993  kubectl version --client
+ 1994  kubectl get nodes
+ 1995  cd 02
+ 1996  cd 02_kubernetes_architecture/
+ 1997  clear
+ 1998  bash k8s_env_check.sh 
+ 1999  cd ../03_docker_concepts/
+ 2000  bash docker_check.sh 
+ 2001  cd ../04_docker_images/
+ 2002  bash image_ops.sh 
+ 2003  cd ../05_docker_containers/
+ 2004  clear
+ 2005  bash container_basics.sh 
+ 2006  bash port_and_exec.sh 
+ 2007  cd ../06_docker_dockerfile/
+ 2008  clear
+ 2009  bash build_and_run.sh 
+ 2010  cd ../07_docker_volumes_networks/
+ 2011  clear
+ 2012  bash volume_demo.sh 
+ 2013  bash network_demo.sh 
+ 2014  clear
+ 2015  cd ../08_docker_compose/
+ 2016  bash compose_demo.sh 
+ 2017  cd ..
+ 2018  clear
+ 2019  tree > final_structure.txt
+ 2020  history > commands_history.txt

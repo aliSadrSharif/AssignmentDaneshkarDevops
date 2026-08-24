@@ -1,0 +1,38 @@
+1. Roughly how many layers appear in the history?
+
+Looking at `docker history nginx:alpine --no-trunc`, an nginx:alpine image typically
+shows somewhere around 8-12 layers (this varies slightly by nginx version). Each
+layer corresponds to one instruction in the original Dockerfile used to build the
+image (FROM, RUN, COPY, ENV, EXPOSE, CMD, etc.) — not every line produces a
+"visible size" layer, but each still adds an entry to the history. After running
+`image_ops.sh`, check `image_history.txt` and count the rows to get the exact
+number for your pulled version.
+
+2. Why are alpine images smaller?
+
+Alpine-based images use Alpine Linux as their base, which is built around musl libc
+and BusyBox instead of the full GNU toolchain (glibc, coreutils, etc.) used by
+standard distributions like Debian/Ubuntu. Alpine:
+- Ships a minimal base filesystem (a few MB instead of 70-100+ MB for Debian-based images).
+- Excludes many default packages, documentation, and utilities that a typical
+  Linux distribution includes but a container rarely needs.
+- Uses BusyBox to provide many common Unix tools as one small compact binary,
+  instead of dozens of separate full-featured binaries.
+
+The result is images that are often 5-10x smaller than their non-alpine
+equivalents, which means faster pulls, faster deploys, and a smaller attack
+surface — at the cost of occasional compatibility issues with software that
+expects glibc.
+
+3. Difference between docker build and docker pull
+
+- `docker pull`: downloads an already-built image from a registry (like Docker
+  Hub) to your local machine. You are not creating anything new — you're fetching
+  an existing image that someone else already built and pushed.
+- `docker build`: creates a brand-new image locally from a Dockerfile. Docker
+  reads the Dockerfile instructions, executes them step by step, and produces a
+  new image (with new layers) based on your own source code/configuration. The
+  result is often tagged and can later be pushed to a registry with `docker push`.
+
+In short: `pull` = download an existing image, `build` = construct a new image
+from your own instructions and files.

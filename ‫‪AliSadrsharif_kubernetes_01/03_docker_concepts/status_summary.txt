@@ -1,0 +1,10 @@
+# Docker Status Summary
+# NOTE: fill this file in AFTER running docker_check.sh on your machine,
+# using the contents of docker_version.txt, docker_service.txt, and docker_ps.txt.
+# Max 5 lines total. Example format below (replace with your real output):
+
+Install status: Docker installed (version 2X.X.X)
+Daemon status: running
+Service status (systemctl): active
+Container count (docker ps -a): <number of lines in docker_ps.txt minus the header row>
+Notes: daemon reachable via unix socket, no errors on 'docker info'

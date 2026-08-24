@@ -3,13 +3,13 @@
 ### Checking docker compose status ###
 
 NAME            IMAGE                       COMMAND                  SERVICE         CREATED          STATUS          PORTS
-grafana         grafana/grafana:latest      "/run.sh"                grafana         33 seconds ago   Up 32 seconds   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
-node_exporter   prom/node-exporter:latest   "/bin/node_exporter …"   node_exporter   33 seconds ago   Up 32 seconds   0.0.0.0:9100->9100/tcp, [::]:9100->9100/tcp
-prometheus      prom/prometheus:latest      "/bin/prometheus --c…"   prometheus      33 seconds ago   Up 32 seconds   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+grafana         grafana/grafana:latest      "/run.sh"                grafana         21 seconds ago   Up 20 seconds   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+node_exporter   prom/node-exporter:latest   "/bin/node_exporter …"   node_exporter   22 seconds ago   Up 21 seconds   0.0.0.0:9100->9100/tcp, [::]:9100->9100/tcp
+prometheus      prom/prometheus:latest      "/bin/prometheus --c…"   prometheus      22 seconds ago   Up 21 seconds   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
 
 ### Check network for monitoring ###
 
-9c2a6db40ab7   03_monitoring_install_docker_2_monitoring   bridge    local
+21a85c6e3565   03_monitoring_install_docker_2_monitoring   bridge    local
 
 ### Check volume for monitoring ###
 
@@ -20,10 +20,25 @@ local     03_monitoring_install_docker_2_prometheus_data
 ### test prometheus endpoint ###
 
 {
-  "job": null,
-  "health": "down"
+  "job": "node_exporter",
+  "instance": "node_exporter:9100",
+  "health": "up"
 }
 {
-  "job": null,
+  "job": "prometheus",
+  "instance": "localhost:9090",
   "health": "up"
+}
+
+### Check up metric for every target ###
+
+{
+  "job": "node_exporter",
+  "instance": "node_exporter:9100",
+  "up": "1"
+}
+{
+  "job": "prometheus",
+  "instance": "localhost:9090",
+  "up": "1"
 }

@@ -1,0 +1,7 @@
+NETWORK ID     NAME                        DRIVER    SCOPE
+a6e74cc8c521   08_docker_compose_default   bridge    local
+ee773db5b242   bridge                      bridge    local
+3aebdfa30e8c   host                        host      local
+f0cdace1930d   lab-net                     bridge    local
+cf3dc5e7e12d   minikube                    bridge    local
+a5bb50761445   none                        null      local

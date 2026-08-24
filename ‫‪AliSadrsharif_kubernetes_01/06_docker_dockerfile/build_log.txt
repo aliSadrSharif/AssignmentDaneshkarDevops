@@ -1,0 +1,37 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  8.704kB
+Step 1/5 : FROM python:3.11-alpine
+3.11-alpine: Pulling from library/python
+d1db2c3adf0a: Pulling fs layer
+0021712cb493: Pulling fs layer
+b04807213722: Pulling fs layer
+0021712cb493: Download complete
+d1db2c3adf0a: Download complete
+0021712cb493: Pull complete
+b04807213722: Download complete
+d1db2c3adf0a: Pull complete
+b04807213722: Pull complete
+76c15ca870e3: Download complete
+cfb4f350198e: Download complete
+Digest: sha256:6857d2dae63e052057f2db389a7061188ac9a92a3fa8d402bde68f36df6fada1
+Status: Downloaded newer image for python:3.11-alpine
+ ---> 6857d2dae63e
+Step 2/5 : WORKDIR /app
+ ---> Running in 262febb00b3a
+ ---> Removed intermediate container 262febb00b3a
+ ---> 3a9c92fbc5b1
+Step 3/5 : COPY app/server.py .
+ ---> 46b63b5f47b4
+Step 4/5 : EXPOSE 8000
+ ---> Running in 3af9eae72e7f
+ ---> Removed intermediate container 3af9eae72e7f
+ ---> de96cdb50d33
+Step 5/5 : CMD ["python", "server.py"]
+ ---> Running in a44fde1b4d43
+ ---> Removed intermediate container a44fde1b4d43
+ ---> 31a41cdbc852
+Successfully built 31a41cdbc852
+Successfully tagged lab-python-server:1.0

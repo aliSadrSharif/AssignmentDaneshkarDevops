@@ -10,6 +10,10 @@ node_exporter:9100
 ```
 instead of relying on the host's IP or a published port. This also improves security and isolation, since containers on the same custom network can talk to each other, while services not meant to be reachable from outside don't need to expose ports on the host at all.
 
+An address like `0.0.0.0:9100` must **not** be used as a scrape target. `0.0.0.0` is a *bind* address ("listen on every interface"), not a routable destination: when Prometheus tries to connect to it from inside its own container, it resolves to the Prometheus container itself, where nothing listens on port 9100. The scrape then fails and the target is reported as `down`, with `up{job="node_exporter"} = 0`. Using the compose service name `node_exporter:9100` lets Docker's embedded DNS resolve the name to the exporter container's IP on the `monitoring` network, and the target comes up (`up = 1`).
+
+For Prometheus scraping its own `/metrics` endpoint, `localhost:9090` is correct, because in that single case the target really is the same container that performs the scrape.
+
 ## 2. What role does `depends_on` play?
 
 `depends_on` defines the **startup order** of services. In this compose file, Grafana has:

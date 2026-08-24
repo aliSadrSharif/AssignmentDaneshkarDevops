@@ -1,0 +1,13 @@
+1. The user runs `kubectl apply -f deployment.yaml`. The `kubectl` client sends the request to the Kubernetes API Server.
+
+2. The API Server authenticates and validates the request, then stores the desired state of the Deployment in `etcd`.
+
+3. The Controller Manager detects the new Deployment and creates the required ReplicaSet, which creates the required Pod object.
+
+4. The Scheduler detects that the newly created Pod does not have a Node assigned. It evaluates the available Nodes and selects a suitable Node for the Pod.
+
+5. The API Server records the selected Node as the Pod's assigned Node.
+
+6. The kubelet on the selected Node detects the Pod assignment and communicates with the Container Runtime to create and start the containers defined in the Pod.
+
+7. The kubelet continuously monitors the Pod and reports its status back to the API Server, allowing Kubernetes to compare the current state with the desired state.

@@ -2,36 +2,52 @@
 
 ### Checking prometheus status ###
 
-d87a9412bf84   prom/prometheus:latest   "/bin/prometheus --c…"   About a minute ago   Up About a minute   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp   prometheus
+099979d36f2c   prom/prometheus:latest   "/bin/prometheus --c…"   20 seconds ago   Up 20 seconds   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp   prometheus
 
 ### Log prometheus form docker ###
 
-time=2026-07-23T06:22:53.932Z level=INFO source=main.go:1724 msg="updated GOGC" old=100 new=75
-time=2026-07-23T06:22:53.933Z level=INFO source=main.go:789 msg="Leaving GOMAXPROCS=12: CPU quota undefined" component=automaxprocs
-time=2026-07-23T06:22:53.933Z level=INFO source=memlimit.go:198 msg="GOMEMLIMIT is updated" component=automemlimit package=github.com/KimMachineGun/automemlimit/memlimit GOMEMLIMIT=14885391974 previous=9223372036854775807
-time=2026-07-23T06:22:53.933Z level=INFO source=main.go:896 msg="Starting Prometheus Server" mode=server version="(version=3.13.0, branch=HEAD, revision=40af9c2cdc0eda00f3622e867a27f6359f7295f3)"
-time=2026-07-23T06:22:53.933Z level=INFO source=main.go:901 msg="operational information" build_context="(go=go1.26.4, platform=linux/amd64, user=root@4525cbec08c1, date=20260701-10:57:01, tags=netgo,builtinassets)" host_details="(Linux 7.0.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul  1 15:50:57 UTC 2 x86_64 d87a9412bf84 (none))" fd_limits="(soft=524287, hard=524288)" vm_limits="(soft=unlimited, hard=unlimited)"
-time=2026-07-23T06:22:54.071Z level=INFO source=web.go:727 msg="Start listening for connections" component=web address=0.0.0.0:9090
-time=2026-07-23T06:22:54.073Z level=INFO source=main.go:1456 msg="Starting TSDB ..."
-time=2026-07-23T06:22:54.075Z level=INFO source=tls_config.go:354 msg="Listening on" component=web address=[::]:9090
-time=2026-07-23T06:22:54.075Z level=INFO source=tls_config.go:357 msg="TLS is disabled." component=web http2=false address=[::]:9090
-time=2026-07-23T06:22:54.078Z level=INFO source=head.go:709 msg="Replaying on-disk memory mappable chunks if any" component=tsdb
-time=2026-07-23T06:22:54.079Z level=INFO source=head.go:795 msg="On-disk memory mappable chunks replay completed" component=tsdb duration=3.093µs
-time=2026-07-23T06:22:54.079Z level=INFO source=head.go:803 msg="Replaying WAL, this may take a while" component=tsdb
-time=2026-07-23T06:22:54.080Z level=INFO source=head.go:898 msg="WAL segment loaded" component=tsdb segment=0 maxSegment=0 duration=891.356µs
-time=2026-07-23T06:22:54.080Z level=INFO source=head.go:935 msg="WAL replay completed" component=tsdb checkpoint_replay_duration=290.649µs wal_replay_duration=920.173µs wbl_replay_duration=140ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=3.093µs total_replay_duration=1.230697ms
-time=2026-07-23T06:22:54.082Z level=INFO source=main.go:1477 msg="filesystem information" fs_type=EXT4_SUPER_MAGIC
-time=2026-07-23T06:22:54.082Z level=INFO source=main.go:1480 msg="TSDB started"
-time=2026-07-23T06:22:54.082Z level=INFO source=main.go:1678 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
-time=2026-07-23T06:22:54.082Z level=INFO source=main.go:1094 msg="TSDB retention updated" duration=15d size=0B percentage=0
-time=2026-07-23T06:22:54.083Z level=INFO source=main.go:1717 msg="Completed loading of configuration file" db_storage=18.423µs remote_storage=1.293µs web_handler=353ns query_engine=463ns scrape=821.904µs scrape_sd=14.304µs notify=572ns notify_sd=423ns rules=943ns tracing=3.384µs filename=/etc/prometheus/prometheus.yml totalDuration=1.012299ms
-time=2026-07-23T06:22:54.083Z level=INFO source=main.go:1441 msg="Server is ready to receive web requests."
-time=2026-07-23T06:22:54.083Z level=INFO source=manager.go:211 msg="Starting rule manager..." component="rule manager"
+time=2026-08-24T12:14:28.944Z level=INFO source=head.go:832 msg="Replaying WAL, this may take a while" component=tsdb
+time=2026-08-24T12:14:28.949Z level=INFO source=head.go:891 msg="WAL checkpoint loaded" component=tsdb
+time=2026-08-24T12:14:28.949Z level=INFO source=head.go:927 msg="WAL segment loaded" component=tsdb segment=2 maxSegment=5 duration=453.879µs
+time=2026-08-24T12:14:28.950Z level=INFO source=head.go:927 msg="WAL segment loaded" component=tsdb segment=3 maxSegment=5 duration=401.571µs
+time=2026-08-24T12:14:28.950Z level=INFO source=head.go:927 msg="WAL segment loaded" component=tsdb segment=4 maxSegment=5 duration=450.837µs
+time=2026-08-24T12:14:28.950Z level=INFO source=head.go:927 msg="WAL segment loaded" component=tsdb segment=5 maxSegment=5 duration=184.869µs
+time=2026-08-24T12:14:28.950Z level=INFO source=head.go:964 msg="WAL replay completed" component=tsdb checkpoint_replay_duration=4.681653ms wal_replay_duration=1.600309ms wbl_replay_duration=125ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=1.128µs total_replay_duration=6.303357ms
+time=2026-08-24T12:14:28.955Z level=INFO source=main.go:1489 msg="filesystem information" fs_type=EXT4_SUPER_MAGIC
+time=2026-08-24T12:14:28.955Z level=INFO source=main.go:1492 msg="TSDB started"
+time=2026-08-24T12:14:28.955Z level=INFO source=main.go:1690 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+time=2026-08-24T12:14:28.955Z level=INFO source=main.go:1106 msg="TSDB retention updated" duration=15d size=0B percentage=0
+time=2026-08-24T12:14:28.956Z level=INFO source=main.go:1729 msg="Completed loading of configuration file" db_storage=25.427µs remote_storage=6.903µs web_handler=1.694µs query_engine=16.876µs scrape=438.804µs scrape_sd=26.622µs notify=1.82µs notify_sd=1.207µs rules=1.491µs tracing=5.624µs filename=/etc/prometheus/prometheus.yml totalDuration=719.215µs
+time=2026-08-24T12:14:28.956Z level=INFO source=main.go:1453 msg="Server is ready to receive web requests."
+time=2026-08-24T12:14:28.956Z level=INFO source=manager.go:211 msg="Starting rule manager..." component="rule manager"
+time=2026-08-24T12:14:40.461Z level=INFO source=compact.go:689 msg="write block started" component=tsdb mint=1784793600000 maxt=1784800800000 ulid=01M0SV3EAD9Y0WXGCNQP5Z6ESS
+time=2026-08-24T12:14:40.480Z level=INFO source=compact.go:720 msg="write block resulted in empty block" component=tsdb mint=1784793600000 maxt=1784800800000 duration=19.761406ms
+time=2026-08-24T12:14:40.481Z level=INFO source=head.go:1623 msg="Head GC started" component=tsdb caller=truncateMemory
+time=2026-08-24T12:14:40.484Z level=INFO source=head.go:1627 msg="Head GC completed" component=tsdb caller=truncateMemory duration=3.037377ms
+time=2026-08-24T12:14:40.484Z level=INFO source=checkpoint.go:116 msg="Creating checkpoint" component=tsdb from_segment=2 to_segment=3 mint=1784800800000
+time=2026-08-24T12:14:40.489Z level=INFO source=head.go:1588 msg="WAL checkpoint complete" component=tsdb first=2 last=3 duration=4.810688ms
 
 ### test prometheus endpoint ###
 
-"global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\n  evaluation_interval: 15s\n  metric_name_validation_scheme: utf8\n  scrape_native_histograms: false\n  extra_scrape_metrics: false\nruntime:\n  gogc: 75\nscrape_configs:\n- job_name: prometheus\n  honor_timestamps: true\n  track_timestamps_staleness: false\n  scrape_interval: 15s\n  scrape_timeout: 10s\n  scrape_protocols:\n  - OpenMetricsText1.0.0\n  - OpenMetricsText0.0.1\n  - PrometheusText1.0.0\n  - PrometheusText0.0.4\n  scrape_native_histograms: false\n  always_scrape_classic_histograms: false\n  convert_classic_histograms_to_nhcb: false\n  metrics_path: /metrics\n  scheme: http\n  enable_compression: true\n  metric_name_validation_scheme: utf8\n  metric_name_escaping_scheme: allow-utf-8\n  extra_scrape_metrics: false\n  follow_redirects: true\n  enable_http2: true\n  static_configs:\n  - targets:\n    - 0.0.0.0:9090\nstorage:\n  tsdb:\n    outofordertimewindow: 0\n    retention:\n      time: 15d\notlp:\n  translation_strategy: UnderscoreEscapingWithSuffixes\n  label_name_underscore_sanitization: true\n  label_name_preserve_multiple_underscores: true\n"
+"global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\n  evaluation_interval: 15s\n  metric_name_validation_scheme: utf8\n  scrape_native_histograms: false\n  extra_scrape_metrics: false\nruntime:\n  gogc: 75\nscrape_configs:\n- job_name: prometheus\n  honor_timestamps: true\n  track_timestamps_staleness: false\n  scrape_interval: 15s\n  scrape_timeout: 10s\n  scrape_protocols:\n  - OpenMetricsText1.0.0\n  - OpenMetricsText0.0.1\n  - PrometheusText1.0.0\n  - PrometheusText0.0.4\n  scrape_native_histograms: false\n  always_scrape_classic_histograms: false\n  convert_classic_histograms_to_nhcb: false\n  metrics_path: /metrics\n  scheme: http\n  enable_compression: true\n  metric_name_validation_scheme: utf8\n  metric_name_escaping_scheme: allow-utf-8\n  extra_scrape_metrics: false\n  follow_redirects: true\n  enable_http2: true\n  static_configs:\n  - targets:\n    - localhost:9090\nstorage:\n  tsdb:\n    outofordertimewindow: 0\n    retention:\n      time: 15d\notlp:\n  translation_strategy: UnderscoreEscapingWithSuffixes\n  label_name_underscore_sanitization: true\n  label_name_preserve_multiple_underscores: true\n"
+
+### Check scrape target health ###
+
+{
+  "job": "prometheus",
+  "instance": "localhost:9090",
+  "health": "up"
+}
+
+### Check up metric ###
+
+{
+  "job": "prometheus",
+  "instance": "localhost:9090",
+  "up": "1"
+}
 
 ### Check prometheus volume ###
 
 local     02_monitoring_install_docker_1_prometheus_data
+local     03_monitoring_install_docker_2_prometheus_data

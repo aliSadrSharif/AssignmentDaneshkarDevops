@@ -1,0 +1,23 @@
+1. What does depends_on do?
+
+depends_on specifies the start order of services in docker-compose. In this project, since web depends on api (depends_on: - api), Docker Compose first starts the api service container, and then the web service container.
+
+Important note: depends_on only guarantees that the target container has "started running," not that the application inside it is fully ready and responding (healthy/ready). To ensure a service is truly ready, you need to use a healthcheck along with the condition: service_healthy clause in depends_on.
+
+2. How does the web service access api on the internal network?
+
+By default, Docker Compose creates a custom network (user-defined bridge network) specific to that compose project, and automatically connects all services defined in the yml file (here, web and api) to that network.
+
+On this network, each service's name (the key defined in docker-compose.yml, like api) is resolvable as a hostname. So the web service container can directly reach the api service container using the name "api" (without needing to know its IP) — this is exactly the same internal DNS mechanism explained in the custom Docker network section (07).
+
+3. When is docker compose more suitable than running multiple docker run commands?
+
+docker compose is preferred over running multiple separate docker run commands manually in the following cases:
+
+When the application consists of multiple interdependent services/containers (like web + api + database) that need to be run, stopped, and managed together in a coordinated way.
+When each service's configuration (ports, volumes, environment variables, networks) is complex and repetitive, making it hard and error-prone to maintain with separate commands.
+When you need a shared network definition and service-to-service communication by name (service discovery), which compose provides automatically.
+When the development team needs a single, version-controlled, and reproducible definition of the entire environment — the docker-compose.yml file can be kept in Git and run identically by all team members or in a CI environment.
+For managing the full lifecycle (up/down/restart/logs for all services with one command) instead of running individual docker run/stop/rm commands for each container.
+
+In contrast, for running a single, simple, independent container with no dependency on another service, plain docker run is still simpler and sufficient.

@@ -1,0 +1,2 @@
+NAMES       STATUS                  PORTS
+lab-nginx   Up Less than a second   80/tcp

@@ -15,7 +15,7 @@
 │   ├── stack_status.txt
 │   └── start_monitoring_stack.sh
 ├── 04_prometheus_architecture_1
-│   ├── architecture_diagram.md
+│   ├── architecture_diagram.txt
 │   ├── prometheus_architecture.md
 │   └── prometheus_components.md
 ├── 05_prometheus_architecture_2

@@ -1,0 +1,3 @@
+NAME                      IMAGE          COMMAND                  SERVICE   CREATED         STATUS         PORTS
+08_docker_compose-api-1   alpine         "sh -c 'while true; …"   api       4 seconds ago   Up 4 seconds   
+08_docker_compose-web-1   nginx:alpine   "/docker-entrypoint.…"   web       4 seconds ago   Up 4 seconds   0.0.0.0:8088->80/tcp, [::]:8088->80/tcp

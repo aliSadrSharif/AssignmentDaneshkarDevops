@@ -1,2 +1,11 @@
-#this file contains notes
+#this file contains notes about the audit run
 
+date: 2026-08-24 16:17:33
+host: sadrsharif
+user: root
+
+users: 59
+bash users: 4
+conf files: 292
+kernel: Linux 7.0.0-30-generic
+snapshot: audit_snapshot_20260824_161733.zip

@@ -1,0 +1,5 @@
+nginx:alpine                                                                             db35bfc6b295       94.2MB         27.2MB        
+nginx:latest                                                                             8541484afbc9        241MB           66MB        
+my-nginx:v1                                                                              db35bfc6b295       94.2MB         27.2MB        
+nginx:alpine                                                                             db35bfc6b295       94.2MB         27.2MB        
+nginx:latest                                                                             8541484afbc9        241MB           66MB        

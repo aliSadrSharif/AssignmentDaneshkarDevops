@@ -1,0 +1,57 @@
+[
+    {
+        "Name": "lab-net",
+        "Id": "f0cdace1930d2f797bd709789dbd6879b470025b7e8b630418e14117b0936932",
+        "Created": "2026-08-21T19:51:57.306296059+03:30",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "IPRange": "",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {
+            "03db60fb8c9d8e1e631556f9c9bad37b4c4e9feb7ca2f1118878d0a63fae9ab9": {
+                "Name": "lab-b",
+                "EndpointID": "d1b7bec215de588a02bd35e95984783370b8ffe5672cb582bc1d5242ed94913d",
+                "MacAddress": "52:8d:fd:21:7d:c3",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            },
+            "8973e08ed96c343209bde63aff0b2af8be51f64832853cbc7d1fa09a7694794e": {
+                "Name": "lab-a",
+                "EndpointID": "644005cf25a67a14415f430288246e4c176260208c8a018c7652cf9c82991b28",
+                "MacAddress": "ba:35:4d:8b:6f:5f",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.18.0.0/16": {
+                        "IPsInUse": 5,
+                        "DynamicIPsAvailable": 65531
+                    }
+                }
+            }
+        }
+    }
+]

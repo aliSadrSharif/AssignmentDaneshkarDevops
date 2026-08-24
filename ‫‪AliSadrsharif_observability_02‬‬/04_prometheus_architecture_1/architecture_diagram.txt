@@ -1,8 +1,8 @@
-# Prometheus Architecture Diagram
+##### Prometheus Architecture Diagram #####
 
-## 1. How Prometheus scrapes Exporters (Pull model)
 
-```
+### 1. How Prometheus scrapes Exporters (Pull model) ###
+
    +------------------+           HTTP GET /metrics            +--------------------+
    |                  |  ------------------------------------> |   Node Exporter    |
    |                  |         (every scrape_interval)        |   (port 9100)      |
@@ -18,15 +18,25 @@
    |                  |  ------------------------------------> |  Other Exporters   |
    |                  |  <------------------------------------ |  (MySQL, Redis...) |
    +------------------+                                        +--------------------+
-```
 
-Prometheus initiates every request (**PULL**). Targets are defined via `static_configs` or Service Discovery. Scraped samples are written into Prometheus's local TSDB with a timestamp.
+Prometheus initiates every request (PULL). Targets are defined via static_configs or
+Service Discovery. Scraped samples are written into Prometheus's local TSDB with a
+timestamp.
 
----
+Inside a Docker Compose stack the targets are addressed by their compose service name,
+because all containers share the same user-defined bridge network:
 
-## 2. How Alertmanager communicates with Prometheus
+   prometheus  --(scrape http://node_exporter:9100/metrics)-->  node_exporter
 
-```
+Using 0.0.0.0:9100 as a target address would fail: from inside the Prometheus
+container 0.0.0.0 refers to the Prometheus container itself, not to the exporter,
+so the target would be reported as "down" and up{job="node_exporter"} would be 0.
+
+
+------------------------------------------------------------------------------------
+
+### 2. How Alertmanager communicates with Prometheus ###
+
    +------------------+                                       +--------------------+
    |   Prometheus     |   evaluates alerting rules against    |                    |
    |   Server         |   stored metrics (e.g. every 15s)     |                    |
@@ -39,22 +49,22 @@ Prometheus initiates every request (**PULL**). Targets are defined via `static_c
                                                               |  - Silence         |
                                                               |  - Route           |
                                                               +---------+----------+
-                                                                         |
-                                                     sends notification  |
-                                                                         v
-                                                       +----------------------------+
-                                                       | Email / Slack / PagerDuty  |
-                                                       | / Webhook / etc.           |
-                                                       +----------------------------+
-```
+                                                                        |
+                                                    sends notification  |
+                                                                        v
+                                                      +----------------------------+
+                                                      | Email / Slack / PagerDuty  |
+                                                      | / Webhook / etc.           |
+                                                      +----------------------------+
 
-Prometheus **pushes alerts** to Alertmanager (Prometheus → Alertmanager, one-way). Alertmanager never scrapes Prometheus; it only receives alert events from it.
+Prometheus pushes alerts to Alertmanager (Prometheus -> Alertmanager, one-way).
+Alertmanager never scrapes Prometheus; it only receives alert events from it.
 
----
 
-## 3. How Grafana gets data from Prometheus
+------------------------------------------------------------------------------------
 
-```
+### 3. How Grafana gets data from Prometheus ###
+
    +------------------+        PromQL query over HTTP          +--------------------+
    |                  |  ------------------------------------> |                    |
    |     Grafana      |     GET /api/v1/query_range?query=...  |    Prometheus      |
@@ -62,16 +72,18 @@ Prometheus **pushes alerts** to Alertmanager (Prometheus → Alertmanager, one-w
    |                  |  <------------------------------------ |   (port 9090)      |
    |   Dashboards     |     JSON result (time series data)     |                    |
    +------------------+                                        +--------------------+
-```
 
-Grafana is configured with Prometheus as a **data source** (its HTTP API URL, e.g. `http://prometheus:9090`). When a dashboard panel loads or refreshes, Grafana sends a PromQL query to Prometheus's HTTP API and renders the JSON response as graphs/tables. Grafana never scrapes targets directly — it only queries Prometheus, which already holds the scraped and stored data.
+Grafana is configured with Prometheus as a data source (its HTTP API URL, e.g.
+http://prometheus:9090 -- again the compose service name). When a dashboard panel
+loads or refreshes, Grafana sends a PromQL query to Prometheus's HTTP API and renders
+the JSON response as graphs/tables. Grafana never scrapes targets directly -- it only
+queries Prometheus, which already holds the scraped and stored data.
 
----
 
-## Summary of Data Flow
+------------------------------------------------------------------------------------
 
-```
+### Summary of Data Flow ###
+
 Exporters/Apps --(pulled by)--> Prometheus Server --(stores in)--> TSDB
 Prometheus Server --(fires alerts to)--> Alertmanager --(notifies)--> Email/Slack/etc.
 Grafana --(queries via PromQL)--> Prometheus Server --(reads from)--> TSDB
-```

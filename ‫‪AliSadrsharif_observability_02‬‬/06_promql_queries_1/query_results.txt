@@ -12,23 +12,23 @@ Output:
       {
         "metric": {
           "__name__": "up",
-          "instance": "0.0.0.0:9090",
-          "job": "prometheus"
+          "instance": "node_exporter:9100",
+          "job": "node_exporter"
         },
         "value": [
-          1784800961.753,
+          1787574294.377,
           "1"
         ]
       },
       {
         "metric": {
           "__name__": "up",
-          "instance": "0.0.0.0:9100",
-          "job": "node_exporter"
+          "instance": "localhost:9090",
+          "job": "prometheus"
         },
         "value": [
-          1784800961.753,
-          "0"
+          1787574294.377,
+          "1"
         ]
       }
     ]
@@ -40,11 +40,64 @@ curl -s 'http://localhost:9090/api/v1/query?query=rate(prometheus_http_requests_
 # ignore jq function for compact response
 
 Output:
-{"status":"success","data":{"resultType":"vector","result":[{"metric":{"code":"200","handler":"/","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/-/healthy","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/-/quit","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/-/ready","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/-/reload","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/alertmanager-discovery","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/alerts","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/*path","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/admin/tsdb/clean_tombstones","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/admin/tsdb/delete_series","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/admin/tsdb/snapshot","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/alertmanagers","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/alerts","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/features","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/format_query","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/label/:name/values","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/labels","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/metadata","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/notifications","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/notifications/live","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0.006914385964912281"]},{"metric":{"code":"200","handler":"/api/v1/openapi.yaml","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/otlp/v1/metrics","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/parse_query","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/query","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0.045614035087719294"]},{"metric":{"code":"200","handler":"/api/v1/query_exemplars","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/query_range","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/read","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/rules","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/scrape_pools","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/search/label_names","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/search/label_values","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/search/metric_names","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/series","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/buildinfo","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/config","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/flags","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/runtimeinfo","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/self_metrics","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/tsdb","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/tsdb/blocks","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/status/walreplay","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/targets","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/targets/metadata","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/targets/relabel_steps","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/api/v1/write","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/assets/*filepath","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0.003508771929824561"]},{"metric":{"code":"200","handler":"/config","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/consoles/*filepath","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/debug/*subpath","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/favicon.ico","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/favicon.svg","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/federate","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/flags","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/graph","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/manifest.json","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/metrics","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0.06666666666666667"]},{"metric":{"code":"200","handler":"/query","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/rules","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/service-discovery","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/status","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/targets","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/tsdb-status","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"200","handler":"/version","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"302","handler":"/","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]},{"metric":{"code":"400","handler":"/api/v1/query","instance":"0.0.0.0:9090","job":"prometheus"},"value":[1784801117.630,"0"]}]}}
+
 
 Command 3:
 curl -s 'http://localhost:9090/api/v1/query?query=sum(prometheus_http_requests_total) by (handler)'
 # ignore jq function for compact response
 
 Output:
-{"status":"success","data":{"resultType":"vector","result":[{"metric":{"handler":"/"},"value":[1784801153.927,"1"]},{"metric":{"handler":"/-/healthy"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/-/quit"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/-/ready"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/-/reload"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/alertmanager-discovery"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/alerts"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/*path"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/admin/tsdb/clean_tombstones"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/admin/tsdb/delete_series"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/admin/tsdb/snapshot"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/alertmanagers"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/alerts"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/features"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/format_query"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/label/:name/values"},"value":[1784801153.927,"1"]},{"metric":{"handler":"/api/v1/labels"},"value":[1784801153.927,"1"]},{"metric":{"handler":"/api/v1/metadata"},"value":[1784801153.927,"1"]},{"metric":{"handler":"/api/v1/notifications"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/notifications/live"},"value":[1784801153.927,"2"]},{"metric":{"handler":"/api/v1/openapi.yaml"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/otlp/v1/metrics"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/parse_query"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/query"},"value":[1784801153.927,"27"]},{"metric":{"handler":"/api/v1/query_exemplars"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/query_range"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/read"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/rules"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/scrape_pools"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/search/label_names"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/search/label_values"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/search/metric_names"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/series"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/buildinfo"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/config"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/flags"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/runtimeinfo"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/self_metrics"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/tsdb"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/tsdb/blocks"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/status/walreplay"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/targets"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/targets/metadata"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/targets/relabel_steps"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/api/v1/write"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/assets/*filepath"},"value":[1784801153.927,"4"]},{"metric":{"handler":"/config"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/consoles/*filepath"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/debug/*subpath"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/favicon.ico"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/favicon.svg"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/federate"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/flags"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/graph"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/manifest.json"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/metrics"},"value":[1784801153.927,"33"]},{"metric":{"handler":"/query"},"value":[1784801153.927,"1"]},{"metric":{"handler":"/rules"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/service-discovery"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/status"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/targets"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/tsdb-status"},"value":[1784801153.927,"0"]},{"metric":{"handler":"/version"},"value":[1784801153.927,"0"]}]}}
+
+
+Command 4:
+# label selector must be url-encoded, so -G --data-urlencode is used
+curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=up{job="node_exporter"}' | jq
+
+Output:
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {
+          "__name__": "up",
+          "instance": "node_exporter:9100",
+          "job": "node_exporter"
+        },
+        "value": [
+          1787574294.398,
+          "1"
+        ]
+      }
+    ]
+  }
+}
+
+Command 5:
+curl -s 'http://localhost:9090/api/v1/query?query=count(node_cpu_seconds_total)' | jq
+# proves the node_exporter target is really scraped over the compose network
+
+Output:
+{
+  "status": "success",
+  "data": {
+    "resultType": "vector",
+    "result": [
+      {
+        "metric": {},
+        "value": [
+          1787574294.406,
+          "96"
+        ]
+      }
+    ]
+  }
+}
+
+Command 6:
+curl -s -G 'http://localhost:9090/api/v1/query' --data-urlencode 'query=up == 0' | jq '.data.result'
+# empty result means no target is down
+
+Output:
+[]

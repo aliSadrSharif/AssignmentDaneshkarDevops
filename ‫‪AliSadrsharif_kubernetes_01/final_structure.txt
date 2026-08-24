@@ -1,0 +1,70 @@
+.
+├── 01_kubernetes_why
+│   ├── orchestrators_comparison.md
+│   └── problems_before_orchestration.md
+├── 02_kubernetes_architecture
+│   ├── cluster_health.txt
+│   ├── components.md
+│   ├── k8s_env_check.sh
+│   ├── kubectl_version.txt
+│   ├── nodes.txt
+│   └── request_flow.txt
+├── 03_docker_concepts
+│   ├── concepts.md
+│   ├── docker_check.sh
+│   ├── docker_ps.txt
+│   ├── docker_service.txt
+│   ├── docker_version.txt
+│   └── status_summary.txt
+├── 04_docker_images
+│   ├── image_history.txt
+│   ├── image_inspect.txt
+│   ├── image_list.txt
+│   ├── image_ops.sh
+│   └── layers_summary.txt
+├── 05_docker_containers
+│   ├── container_basics.sh
+│   ├── container_logs.txt
+│   ├── container_ps.txt
+│   ├── curl_body.txt
+│   ├── curl_status.txt
+│   ├── env_vars.txt
+│   ├── exec_result.txt
+│   ├── exec_vs_attach.txt
+│   └── port_and_exec.sh
+├── 06_docker_dockerfile
+│   ├── app
+│   │   └── server.py
+│   ├── build_and_run.sh
+│   ├── build_log.txt
+│   ├── built_images.txt
+│   ├── curl_app.txt
+│   ├── Dockerfile
+│   ├── dockerfile_notes.txt
+│   └── layers_after_build.txt
+├── 07_docker_volumes_networks
+│   ├── bind_mount_curl.txt
+│   ├── network_demo.sh
+│   ├── network_inspect.txt
+│   ├── ping_by_name.txt
+│   ├── summary.txt
+│   ├── volume_demo.sh
+│   ├── volume_inspect.txt
+│   ├── volume_persist.txt
+│   └── web
+│       └── index.html
+├── 08_docker_compose
+│   ├── compose_demo.sh
+│   ├── compose_down.txt
+│   ├── compose_networks.txt
+│   ├── compose_ping.txt
+│   ├── compose_ps.txt
+│   ├── compose_summary.txt
+│   ├── compose_up.txt
+│   ├── compose_web.txt
+│   ├── docker-compose.yml
+│   └── web
+│       └── index.html
+└── final_structure.txt
+
+12 directories, 56 files

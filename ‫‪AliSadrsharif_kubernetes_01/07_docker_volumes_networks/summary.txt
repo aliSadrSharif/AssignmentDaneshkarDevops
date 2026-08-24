@@ -1,0 +1,25 @@
+1. Difference between bind mount and named volume
+
+Named volume:
+
+Managed and stored by Docker itself (typically under /var/lib/docker/volumes/...).
+Independent of the host's filesystem structure; the user doesn't manage its exact path on the host.
+More suitable for real persistent data (like a database), since Docker makes backing it up/migrating it easier.
+Can be shared across multiple containers without depending on a specific host path.
+Created with docker volume create and referenced by name (not path), like lab-data.
+
+Bind mount:
+
+A specific path from the host filesystem is mapped directly into the container (example: $(pwd)/web:/usr/share/nginx/html).
+Completely dependent on the host's structure and path; if the path moves, the mount has to change too.
+Very useful for development and local testing, since file changes on the host are immediately reflected in the container.
+Access control (like read-only mode with :ro) is simple and direct.
+Docker doesn't manage the lifecycle of this data; that responsibility belongs to the user/host.
+
+Summary: a named volume is suitable for persistent storage managed by Docker, while a bind mount is better suited for directly connecting to files that already exist on the host (e.g., code or static files during active development).
+
+2. Why can containers communicate by name on a custom network?
+
+When a custom network (user-defined bridge network) is created with docker network create, Docker automatically provides an internal DNS (embedded DNS server) for that network. Any container that connects to this network with --network is automatically registered in this DNS under its own name (--name). So other containers on the same network can use the container's name (e.g., lab-b) as a hostname instead of an IP, and Docker resolves that name to the corresponding container's internal IP.
+
+This feature only exists on custom (user-defined) networks; the default bridge network does not support this kind of automatic DNS resolution between containers — there, you have to use IPs or manual links instead.

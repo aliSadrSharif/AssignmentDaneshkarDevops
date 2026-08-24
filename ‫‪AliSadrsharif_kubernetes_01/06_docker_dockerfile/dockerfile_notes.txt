@@ -1,0 +1,26 @@
+Role of each Dockerfile instruction (one line each)
+
+FROM python:3.11-alpine
+  Sets the base image to build on top of — here, a minimal Python 3.11
+  runtime built on Alpine Linux. This is always the first instruction and
+  defines the starting filesystem/layers for everything that follows.
+
+WORKDIR /app
+  Sets /app as the working directory inside the image/container. All
+  subsequent relative paths (in COPY, CMD, RUN, etc.) are resolved relative
+  to this directory, and it's automatically created if it doesn't exist.
+
+COPY app/server.py .
+  Copies the server.py file from the build context (the host machine, where
+  `docker build` is run) into the current WORKDIR (/app) inside the image.
+  This is how application code gets baked into the image.
+
+EXPOSE 8000
+  Documents that the application inside the container listens on port 8000.
+  This is purely informational/metadata — it does NOT actually publish the
+  port to the host; that only happens at runtime with `docker run -p`.
+
+CMD ["python", "server.py"]
+  Defines the default command that runs when a container is started from
+  this image (unless overridden). Here it launches the Python HTTP server.
+  Only one CMD is effective per image — if there are several, the last one wins.
